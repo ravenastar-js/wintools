@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Menu de Opções</title>
+    
+	<style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1a1a1a;
+            color: #33ff33;
+            text-align: center;
+            padding: 50px;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-shadow: 0 0 10px #33ff33, 0 0 20px #33ff33;
+            animation: blink 1s infinite;
+        }
+
+        .fbt2 {
+            cursor: pointer;
+            background-color: #1a1a1a;
+            border: none;
+        }
+
+        .fbt {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #33ff33;
+            background-color: #1a1a1a;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #33ff33, 0 0 20px #33ff33;
+            border: 1px solid #33ff33;
+        }
+
+        .fbt:hover {
+            background-color: #33ff33;
+            color: #1a1a1a;
+            border: 1px solid #33ff33;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: #1a1a1a;
+            text-align: center;
+            border-top: 1px solid #33ff33;
+        }
+
+        .logopng {
+            width: 150px;
+            height: auto;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Menu de Opções</h1>
+    <button class="fbt" onclick="rebootBIOS()">Reiniciar para BIOS (UEFI)</button>
+    <button class="fbt" onclick="rebootNormal()">Reiniciar normalmente</button>
+    <button class="fbt" onclick="shutdown()">Desligar o PC</button>
+    <button class="fbt" onclick="taskManager()">Iniciar Gerenciador de Tarefas</button>
+    <button class="fbt" onclick="lockScreen()">Bloquear a Tela</button>
+    <button class="fbt" onclick="openAppsfolder()">Abrir a pasta de Aplicativos</button>
+    <button class="fbt" onclick="openGodMode()">Abrir God Mode</button>
+	<button class="fbt" onclick="LimparArquivosTemp()">Limpar Arquivo Temp</button>
+    <footer>
+        <button onclick="openAbrirSite()" class="fbt2"><img class="logopng" src="img/gh-ravenastar.png"
+                alt="ravenastar"></button>
+    </footer>
+    <script>
+        function executeScript(script) {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run(script, 0, false);
+        }
+
+        function rebootBIOS() {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run("cmd.exe /c \"[A]reboot_bios.lnk\"", 0, false);
+        }
+
+        function rebootNormal() {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run("cmd.exe /c \"[A]reboot_normal.lnk\"", 0, false);
+        }
+
+        function shutdown() {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run("cmd.exe /c \"[A]shutdown.lnk\"", 0, false);
+        }
+		
+		function LimparArquivosTemp() {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run("cmd.exe /c \"[A]script-baboo-v32.lnk\"", 0, false);
+        }
+        function taskManager() {
+            executeScript("task_manager.cmd");
+        }
+
+        function lockScreen() {
+            executeScript("lock_screen.cmd");
+        }
+
+        function openAppsfolder() {
+            executeScript("open_appsfolder.cmd");
+        }
+
+        function openGodMode() {
+            executeScript('cmd.exe /c "mkdir %userprofile%\\Desktop\\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C} & explorer %userprofile%\\Desktop\\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"');
+        }
+
+        function openAbrirSite() {
+            executeScript('abrir_site.cmd');
+        }
+    </script>
+</body>
+
+</html>
