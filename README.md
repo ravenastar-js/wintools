@@ -27,7 +27,7 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 
 ### ✨ Observações
 - O arquivo `WINTOOLS (CMD)` é o [TOOLS/menu.cmd](TOOLS/menu.cmd), um atalho para facilitar a execução do script.
-- Se o atalho `WINTOOLS (CMD)` não estiver funcionando, basta editar o atalho e mudar o caminho deles apontando para os arquivos respectivos:
+- Se o atalho `WINTOOLS (CMD)` não funcionar, basta editar e mudar o caminho e apontar para o arquivo respectivo:
   - `WINTOOLS (CMD)` => [TOOLS/menu.cmd](TOOLS/menu.cmd)
 
 ### 📷 Prévias
