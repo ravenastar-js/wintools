@@ -33,5 +33,17 @@ cscript //nologo "%scriptPath%"
 
 color %color_green%
 echo Atalhos criados com sucesso!
+echo.
+echo ##########################################
+echo #                                        #
+echo #     AVISO IMPORTANTE                   #
+echo #                                        #
+echo #  Configure os atalhos para             #
+echo #  "Executar como administrador".        #
+echo #  Altere manualmente as propriedades    #
+echo #  de cada atalho.                       #
+echo #                                        #
+echo ##########################################
+echo.
 pause
 endlocal

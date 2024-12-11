@@ -35,11 +35,6 @@ for (var i = 0; i < shortcuts.length; i++) {
         oLink.IconLocation = targetPath + ", 0";
         oLink.Description = "Atalho criado pelo script";
         oLink.Save();
-
-        // Incluir a opção "Executar como administrador" manualmente, se necessário
-        // Este trecho é ilustrativo e pode precisar ser ajustado para atender às necessidades específicas
-        WshShell.Run('cmd /c powershell -Command "Start-Process \\"cmd\\" -ArgumentList \\"/c icacls \\"' + shortcutPath + '\\" /grant:r Everyone:(OI)(CI)(F)\\" -Verb runAs"', 0, true);
-
     } catch (e) {
         WScript.Echo("Erro ao criar o atalho: " + shortcutPath + ". Detalhes: " + e.message);
     }
