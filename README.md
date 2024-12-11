@@ -6,7 +6,7 @@
 
 <details>
 <summary>Veja como alterar o atalho para "Executar como administrador".</summary>
-<img src="https://i.imgur.com/ut1iNxN.gif" alt="alterar o atalho para Executar como administrador."/>
+<img src="https://i.imgur.com/8kDOAq5.gif" alt="alterar o atalho para Executar como administrador."/>
 </details>
 
 ### 🚀 **WinTools: Um Simples e Útil Kit de Ferramentas para Windows!**
@@ -26,22 +26,15 @@ Este projeto oferece uma coleção de scripts que facilitam suas tarefas diária
 Ideal para administradores de sistemas, desenvolvedores, e todos que desejam otimizar seu fluxo de trabalho no Windows. 💻✨
 
 ### ✨ Observações
-- O arquivo `WINTOOLS TECLADO (CMD)` é o [TOOLS/menu.cmd](TOOLS/menu.cmd), um atalho para facilitar a execução do script.
-- O arquivo `WINTOOLS MOUSE (HTA)` é o [TOOLS/mouse/menu.hta](TOOLS/mouse/menu.hta), um atalho para facilitar a execução do script.
-> `WINTOOLS MOUSE (HTA)` Foi criado para, caso o dispositivo não tenha um teclado funcionando, seja possível executar os scripts via mouse.
-- Se os atalhos `WINTOOLS TECLADO (CMD)` e `WINTOOLS MOUSE (HTA)` não estiverem funcionando, basta editar o atalho e mudar o caminho deles apontando para os arquivos respectivos:
-  - `WINTOOLS TECLADO (CMD)` => [TOOLS/menu.cmd](TOOLS/menu.cmd)
-  - `WINTOOLS MOUSE (HTA)` => [TOOLS/mouse/menu.hta](TOOLS/mouse/menu.hta)
+- O arquivo `WINTOOLS (CMD)` é o [TOOLS/menu.cmd](TOOLS/menu.cmd), um atalho para facilitar a execução do script.
+- Se o atalho `WINTOOLS (CMD)` não estiver funcionando, basta editar o atalho e mudar o caminho deles apontando para os arquivos respectivos:
+  - `WINTOOLS (CMD)` => [TOOLS/menu.cmd](TOOLS/menu.cmd)
 
 ### 📷 Prévias
 
 <details>
 <summary>⌨ WINTOOLS TECLADO (CMD)</summary>
-<img src="TOOLS/mouse/img/wintools_teclado.png" alt="WinTools Teclado CMD"/>
-</details>
-<details>
-<summary>🖱️ WINTOOLS MOUSE (HTA)</summary>
-<img src="TOOLS/mouse/img/wintools_mouse.png" alt="WinTools Mouse HTA"/>
+<img src="TOOLS/img/wintools_cmd.png" alt="WinTools CMD"/>
 </details>
 
 ![WinTools](https://i.imgur.com/I8HpeHd.jpeg)

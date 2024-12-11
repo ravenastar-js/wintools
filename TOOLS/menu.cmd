@@ -78,8 +78,11 @@ explorer "%userprofile%\Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"
 goto menu
 
 :clean_temp
-start "" "%~dp0mouse\[A]clean_temp_files.lnk"
+cd %~dp0..\..\..
+powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\clean_temp_files.cmd' -Verb RunAs"
 goto menu
+
+
 
 :enable_f8
 bcdedit /set {default} bootmenupolicy legacy
