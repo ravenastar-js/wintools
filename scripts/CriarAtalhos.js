@@ -4,19 +4,19 @@ var CurrentDirectory = WshShell.CurrentDirectory;
 var shortcuts = [
     { shortcut: "WINTOOLS MOUSE (HTA).lnk", target: "tools\\mouse\\menu.hta", root: true },
     { shortcut: "WINTOOLS TECLADO (CMD).lnk", target: "tools\\menu.cmd", root: true },
-    { shortcut: "reboot_normal.lnk", target: "tools\\mouse\\reboot_normal.cmd", root: false },
-    { shortcut: "reboot_bios.lnk", target: "tools\\mouse\\reboot_bios.cmd", root: false },
-    { shortcut: "shutdown.lnk", target: "tools\\mouse\\shutdown.cmd", root: false },
-    { shortcut: "task_manager.lnk", target: "tools\\mouse\\task_manager.cmd", root: false },
-    { shortcut: "lock_screen.lnk", target: "tools\\mouse\\lock_screen.cmd", root: false },
-    { shortcut: "open_appsfolder.lnk", target: "tools\\mouse\\open_appsfolder.cmd", root: false },
-    { shortcut: "god_mode.lnk", target: "tools\\mouse\\god_mode.cmd", root: false },
-    { shortcut: "clean_temp_files.lnk", target: "tools\\mouse\\clean_temp_files.cmd", root: false },
-    { shortcut: "enable_f8.lnk", target: "tools\\mouse\\enable_f8.cmd", root: false },
-    { shortcut: "disable_f8.lnk", target: "tools\\mouse\\disable_f8.cmd", root: false },
-    { shortcut: "create_restore_point.lnk", target: "tools\\mouse\\create_restore_point.cmd", root: false },
-    { shortcut: "enable_unlimited_restore_points.lnk", target: "tools\\mouse\\enable_unlimited_restore_points.cmd", root: false },
-    { shortcut: "open_site.lnk", target: "tools\\mouse\\open_site.cmd", root: false }
+    { shortcut: "tools\\mouse\\reboot_normal.lnk", target: "tools\\mouse\\reboot_normal.cmd", root: false },
+    { shortcut: "tools\\mouse\\reboot_bios.lnk", target: "tools\\mouse\\reboot_bios.cmd", root: false },
+    { shortcut: "tools\\mouse\\shutdown.lnk", target: "tools\\mouse\\shutdown.cmd", root: false },
+    { shortcut: "tools\\mouse\\task_manager.lnk", target: "tools\\mouse\\task_manager.cmd", root: false },
+    { shortcut: "tools\\mouse\\lock_screen.lnk", target: "tools\\mouse\\lock_screen.cmd", root: false },
+    { shortcut: "tools\\mouse\\open_appsfolder.lnk", target: "tools\\mouse\\open_appsfolder.cmd", root: false },
+    { shortcut: "tools\\mouse\\god_mode.lnk", target: "tools\\mouse\\god_mode.cmd", root: false },
+    { shortcut: "tools\\mouse\\clean_temp_files.lnk", target: "tools\\mouse\\clean_temp_files.cmd", root: false },
+    { shortcut: "tools\\mouse\\enable_f8.lnk", target: "tools\\mouse\\enable_f8.cmd", root: false },
+    { shortcut: "tools\\mouse\\disable_f8.lnk", target: "tools\\mouse\\disable_f8.cmd", root: false },
+    { shortcut: "tools\\mouse\\create_restore_point.lnk", target: "tools\\mouse\\create_restore_point.cmd", root: false },
+    { shortcut: "tools\\mouse\\enable_unlimited_restore_points.lnk", target: "tools\\mouse\\enable_unlimited_restore_points.cmd", root: false },
+    { shortcut: "tools\\mouse\\open_site.lnk", target: "tools\\mouse\\open_site.cmd", root: false }
 ];
 
 for (var i = 0; i < shortcuts.length; i++) {
@@ -24,7 +24,7 @@ for (var i = 0; i < shortcuts.length; i++) {
     var target = shortcuts[i].target;
     var root = shortcuts[i].root;
 
-    var shortcutPath = root ? (CurrentDirectory + "\\" + shortcut) : (CurrentDirectory + "\\tools\\mouse\\" + shortcut);
+    var shortcutPath = root ? (CurrentDirectory + "\\" + shortcut) : (CurrentDirectory + "\\" + shortcut);
     var targetPath = CurrentDirectory + "\\" + target;
 
     try {
@@ -35,6 +35,11 @@ for (var i = 0; i < shortcuts.length; i++) {
         oLink.IconLocation = targetPath + ", 0";
         oLink.Description = "Atalho criado pelo script";
         oLink.Save();
+
+        // Incluir a opção "Executar como administrador" manualmente, se necessário
+        // Este trecho é ilustrativo e pode precisar ser ajustado para atender às necessidades específicas
+        WshShell.Run('cmd /c powershell -Command "Start-Process \\"cmd\\" -ArgumentList \\"/c icacls \\"' + shortcutPath + '\\" /grant:r Everyone:(OI)(CI)(F)\\" -Verb runAs"', 0, true);
+
     } catch (e) {
         WScript.Echo("Erro ao criar o atalho: " + shortcutPath + ". Detalhes: " + e.message);
     }

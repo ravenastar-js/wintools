@@ -9,7 +9,7 @@ rem Verifica se o script está sendo executado como administrador
 net session >nul 2>&1
 if %errorLevel% neq 0 (
     color %color_red%
-    echo Soliciting permissões de administrador...
+    echo Solicitando permissões de administrador...
     goto :elevate
 ) else (
     goto :runScript
