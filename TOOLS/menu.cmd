@@ -4,7 +4,7 @@ color 0A
 cls
 echo ==================================================
 echo.
-echo               linktr.ee/ravenastar
+echo          github.com/ravenastar-js/wintools
 echo.
 echo ==================================================
 echo.
