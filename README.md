@@ -8,8 +8,6 @@
 <summary>Como alterar o atalho para "Executar como administrador".</summary>
 <img src="https://i.imgur.com/ut1iNxN.gif" alt="alterar o atalho para Executar como administrador."/>
 </details>
-<details>
-</details>
 
 ### 🚀 **WinTools: Um Simples e Útil Kit de Ferramentas para Windows!**
 
