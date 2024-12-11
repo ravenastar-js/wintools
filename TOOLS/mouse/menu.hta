@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu de Opções</title>
-    
-	<style>
+
+    <style>
         body {
             font-family: 'Courier New', Courier, monospace;
             background-color: #1a1a1a;
@@ -27,8 +27,8 @@
         }
 
         .fbt {
-            display: block;
-            margin: 20px auto;
+            display: inline-block;
+            margin: 10px;
             padding: 10px 20px;
             font-size: 16px;
             color: #33ff33;
@@ -54,7 +54,19 @@
             padding: 10px;
             background-color: #1a1a1a;
             text-align: center;
+            /* Centraliza o texto */
             border-top: 1px solid #33ff33;
+            display: flex;
+            justify-content: center;
+            /* Centraliza o conteúdo do footer */
+            align-items: center;
+            /* Alinha verticalmente ao centro */
+        }
+
+        .allbt {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .logopng {
@@ -78,18 +90,27 @@
 
 <body>
     <h1>Menu de Opções</h1>
-    <button class="fbt" onclick="rebootBIOS()">Reiniciar para BIOS (UEFI)</button>
-    <button class="fbt" onclick="rebootNormal()">Reiniciar normalmente</button>
-    <button class="fbt" onclick="shutdown()">Desligar o PC</button>
-    <button class="fbt" onclick="taskManager()">Iniciar Gerenciador de Tarefas</button>
-    <button class="fbt" onclick="lockScreen()">Bloquear a Tela</button>
-    <button class="fbt" onclick="openAppsfolder()">Abrir a pasta de Aplicativos</button>
-    <button class="fbt" onclick="openGodMode()">Abrir God Mode</button>
-	<button class="fbt" onclick="LimparArquivosTemp()">Limpar Arquivo Temp</button>
+
+    <div class="allbt">
+        <button class="fbt" onclick="rebootBIOS()">Reiniciar para BIOS (UEFI)</button>
+        <button class="fbt" onclick="rebootNormal()">Reiniciar normalmente</button>
+        <button class="fbt" onclick="shutdown()">Desligar o PC</button>
+        <button class="fbt" onclick="taskManager()">Iniciar Gerenciador de Tarefas</button>
+        <button class="fbt" onclick="lockScreen()">Bloquear a Tela</button>
+        <button class="fbt" onclick="openAppsfolder()">Abrir a pasta de Aplicativos</button>
+        <button class="fbt" onclick="openGodMode()">Abrir God Mode</button>
+        <button class="fbt" onclick="LimparArquivosTemp()">Limpar Arquivo Temp</button>
+        <button class="fbt" onclick="HF8()">Habilitar F8</button>
+        <button class="fbt" onclick="DF8()">Desabilitar F8</button>
+        <button class="fbt" onclick="createRestorePoint()">Criar Ponto de Rest</button>
+        <button class="fbt" onclick="enableUnlimitedRestorePoints()">Habilitar Ponto de Rest Ilimitado</button>
+    </div>
+
     <footer>
         <button onclick="openAbrirSite()" class="fbt2"><img class="logopng" src="img/gh-ravenastar.png"
                 alt="ravenastar"></button>
     </footer>
+    
     <script>
         function executeScript(script) {
             var shell = new ActiveXObject("WScript.Shell");
@@ -110,10 +131,26 @@
             var shell = new ActiveXObject("WScript.Shell");
             shell.Run("cmd.exe /c \"[A]shutdown.lnk\"", 0, false);
         }
-		
-		function LimparArquivosTemp() {
+
+        function LimparArquivosTemp() {
             var shell = new ActiveXObject("WScript.Shell");
             shell.Run("cmd.exe /c \"[A]script-baboo-v32.lnk\"", 0, false);
+        }
+        function HF8() {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run("cmd.exe /c \"[A]enable_f8.lnk\"", 0, false);
+        }
+        function DF8() {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run("cmd.exe /c \"[A]disable_f8.lnk\"", 0, false);
+        }
+        function createRestorePoint() {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run("cmd.exe /c \"[A]create_restore_point.lnk\"", 0, false);
+        }
+        function enableUnlimitedRestorePoints() {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run("cmd.exe /c \"[A]enable_unlimited_restore_points.lnk\"", 0, false);
         }
         function taskManager() {
             executeScript("task_manager.cmd");

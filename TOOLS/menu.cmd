@@ -19,7 +19,7 @@ echo [ 8 ] Limpar Arquivos Temp
 echo [ 9 ] Habilitar F8
 echo [ 10 ] Desabilitar F8
 echo [ 11 ] Criar Ponto de Rest
-echo [ 12 ] Habilitar Pontos de Rest Ilimitados
+echo [ 12 ] Habilitar Ponto de Rest Ilimitado
 echo [ 13 ] Sair
 echo.
 echo ==================================================
