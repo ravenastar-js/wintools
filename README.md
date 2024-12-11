@@ -37,3 +37,10 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 </details>
 
 ![WinTools](https://i.imgur.com/I8HpeHd.jpeg)
+
+<center>
+BANNER INSPIRADO EM
+<div align="center">
+<a href="https://store.steampowered.com/app/1507580/Enigma_do_Medo" >
+  <img src="https://i.imgur.com/Gbyx94i.png" width="180">
+</a>
