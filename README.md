@@ -26,8 +26,8 @@ Este projeto oferece uma coleção de scripts que facilitam suas tarefas diária
 Ideal para administradores de sistemas, desenvolvedores, e todos que desejam otimizar seu fluxo de trabalho no Windows. 💻✨
 
 ### ✨ Observações
-- O arquivo `WINTOOLS TECLADO (CMD)` é o [TOOLS/menu.cmd](TOOLS/menu.cmd), um atalho para facilitar a execução do escript.
-- O arquivo `WINTOOLS MOUSE (HTA)` é o [TOOLS/mouse/menu.hta](TOOLS/mouse/menu.hta), um atalho para facilitar a execução do escript.
+- O arquivo `WINTOOLS TECLADO (CMD)` é o [TOOLS/menu.cmd](TOOLS/menu.cmd), um atalho para facilitar a execução do script.
+- O arquivo `WINTOOLS MOUSE (HTA)` é o [TOOLS/mouse/menu.hta](TOOLS/mouse/menu.hta), um atalho para facilitar a execução do script.
 > `WINTOOLS MOUSE (HTA)` Foi criado para, caso o dispositivo não tenha um teclado funcionando, seja possível executar os scripts via mouse.
 - Se os atalhos `WINTOOLS TECLADO (CMD)` e `WINTOOLS MOUSE (HTA)` não estiverem funcionando, basta editar o atalho e mudar o caminho deles apontando para os arquivos respectivos:
   - `WINTOOLS TECLADO (CMD)` => [TOOLS/menu.cmd](TOOLS/menu.cmd)
