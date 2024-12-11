@@ -78,7 +78,7 @@ explorer "%userprofile%\Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"
 goto menu
 
 :clean_temp
-start "" "%~dp0[A]clean_temp_files.lnk"
+start "" "%~dp0mouse\[A]clean_temp_files.lnk"
 goto menu
 
 :enable_f8
