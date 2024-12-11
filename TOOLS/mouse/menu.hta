@@ -169,7 +169,8 @@
         }
 
         function openAbrirSite() {
-            executeScript('abrir_site.cmd');
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run("cmd.exe /c start https://github.com/ravenastar-js/wintools", 0, false);
         }
     </script>
 </body>
