@@ -1,6 +1,9 @@
 > [!IMPORTANT]    
 > ⚠️  Para evitar problemas, execute os scripts como administrador.
 
+> [!IMPORTANT]    
+> Execute o arquivo `CriarAtalhos.bat` para criar os atalhos necessários para o funcionamento do script.
+
 ### 🚀 **WinTools: Um Simples e Útil Kit de Ferramentas para Windows!**
 
 Este projeto oferece uma coleção de scripts que facilitam suas tarefas diárias no Windows, permitindo que você:
