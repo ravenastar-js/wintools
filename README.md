@@ -20,7 +20,7 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 ### ✨ Observações
 - O arquivo `WINTOOLS TECLADO (CMD)` é o [TOOLS/menu.cmd](TOOLS/menu.cmd), um atalho para facilitar e executar o script como administrador.
 - O arquivo `WINTOOLS MOUSE (HTA)` é o [TOOLS/mouse/menu.hta](TOOLS/mouse/menu.hta), um atalho para facilitar e executar o script como administrador.
-> Foi criado para, caso o dispositivo não tenha um teclado funcionando, seja possível executar os scripts via mouse.
+> `WINTOOLS MOUSE (HTA)` Foi criado para, caso o dispositivo não tenha um teclado funcionando, seja possível executar os scripts via mouse.
 - Se os atalhos `WINTOOLS TECLADO (CMD)` e `WINTOOLS MOUSE (HTA)` não estiverem funcionando, basta editar o atalho e mudar o caminho deles apontando para os arquivos respectivos:
   - `WINTOOLS TECLADO (CMD)` => [TOOLS/menu.cmd](TOOLS/menu.cmd)
   - `WINTOOLS MOUSE (HTA)` => [TOOLS/mouse/menu.hta](TOOLS/mouse/menu.hta)
