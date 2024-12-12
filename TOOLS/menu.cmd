@@ -1,6 +1,15 @@
 @echo off
 color 0A
 
+:: Verifica se está sendo executado como administrador
+openfiles >nul 2>&1
+if %errorlevel% neq 0 (
+    color 0C
+    echo Por favor, execute este script como administrador.
+    pause
+    exit /b
+)
+
 :menu
 cls
 echo ==================================================
@@ -54,6 +63,7 @@ if /i "%choice%"=="18" goto event_viewer
 if /i "%choice%"=="H" goto help
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
+
 :reboot_bios
 cls
 echo Detectando tipo de BIOS...
