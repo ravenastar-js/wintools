@@ -29,9 +29,9 @@ echo [ 17 ] Verificar Arquivos de Sistema (sfc)
 echo [ 18 ] Abrir Visualizador de Eventos
 echo [0m
 echo [ [93mH[0m ] [93mAjuda - Exibe esta tela de ajuda.[0m
-echo [ [91mS[0m ] [91mSair - Sai do script.[32m
+echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-18, H ou S):
+set /p choice=Digite a sua escolha (1-18, H ou E):
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto reboot_normal
@@ -52,7 +52,7 @@ if /i "%choice%"=="16" goto msconfig
 if /i "%choice%"=="17" goto sfc_scan
 if /i "%choice%"=="18" goto event_viewer
 if /i "%choice%"=="H" goto help
-if /i "%choice%"=="S" goto exit
+if /i "%choice%"=="E" goto exit
 goto invalid_choice
 :reboot_bios
 cls
@@ -188,7 +188,7 @@ echo [ 17 ] Verificar Arquivos de Sistema - Verifica e repara arquivos de sistem
 echo [ 18 ] Abrir Visualizador de Eventos - Abre o Visualizador de Eventos do Windows.
 echo.
 echo [ H ] Ajuda - Exibe esta tela de ajuda.
-echo [ S ] Sai do script.
+echo [ E ] Sai do script.
 color 0E
 pause
 color 0A
