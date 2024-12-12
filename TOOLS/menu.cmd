@@ -22,11 +22,16 @@ echo [ 10 ] Desabilitar F8
 echo [ 11 ] Criar Ponto de Restauracao
 echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado
 echo [ 13 ] Acessar Codigo Fonte no GitHub
-echo [ 14 ] Sair
-echo [ H ] Ajuda
-echo.
+echo [ 14 ] Exibir Informacoes do Sistema
+echo [ 15 ] Verificar e Reparar Disco
+echo [ 16 ] Configurar Inicio do Sistema (msconfig)
+echo [ 17 ] Verificar Arquivos de Sistema (sfc)
+echo [ 18 ] Abrir Visualizador de Eventos
+echo [0m
+echo [ [93mH[0m ] [93mAjuda - Exibe esta tela de ajuda.[0m
+echo [ [91mS[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-14 ou H para ajuda):
+set /p choice=Digite a sua escolha (1-18, H ou S):
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto reboot_normal
@@ -41,10 +46,14 @@ if /i "%choice%"=="10" goto disable_f8
 if /i "%choice%"=="11" goto create_restore_point
 if /i "%choice%"=="12" goto enable_unlimited_restore_points
 if /i "%choice%"=="13" goto github
-if /i "%choice%"=="14" goto exit
+if /i "%choice%"=="14" goto system_info
+if /i "%choice%"=="15" goto check_disk
+if /i "%choice%"=="16" goto msconfig
+if /i "%choice%"=="17" goto sfc_scan
+if /i "%choice%"=="18" goto event_viewer
 if /i "%choice%"=="H" goto help
+if /i "%choice%"=="S" goto exit
 goto invalid_choice
-
 :reboot_bios
 cls
 echo Detectando tipo de BIOS...
@@ -125,8 +134,33 @@ start https://github.com/ravenastar-js/wintools
 pause
 goto menu
 
+:system_info
+systeminfo
+pause
+goto menu
+
+:check_disk
+chkdsk C: /F /R
+pause
+goto menu
+
+:msconfig
+start msconfig
+pause
+goto menu
+
+:sfc_scan
+sfc /scannow
+pause
+goto menu
+
+:event_viewer
+start eventvwr
+pause
+goto menu
+
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 14.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 18, H ou S.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu
 
@@ -141,13 +175,21 @@ echo [ 4 ] Iniciar Gerenciador de Tarefas - Abre o Gerenciador de Tarefas.
 echo [ 5 ] Bloquear a Tela - Bloqueia a tela do computador.
 echo [ 6 ] Abrir a pasta de Aplicativos - Abre a pasta de Aplicativos.
 echo [ 7 ] Abrir God Mode - Cria e abre a pasta God Mode.
-echo [ 8 ] Limpar Arquivos Temp - Limpa arquivos temporarios.
+echo [ 8 ] Limpar Arquivos Temporarios - Limpa arquivos temporarios.
 echo [ 9 ] Habilitar F8 - Habilita o menu F8 no boot.
 echo [ 10 ] Desabilitar F8 - Desabilita o menu F8 no boot.
-echo [ 11 ] Criar Ponto de Resta - Cria um ponto de restauracao do sistema.
-echo [ 12 ] Habilitar Ponto de Resta Ilimitado - Habilita a criacao ilimitada de pontos de restauracao.
+echo [ 11 ] Criar Ponto de Restauracao - Cria um ponto de restauracao do sistema.
+echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado - Habilita a criacao ilimitada de pontos de restauracao.
 echo [ 13 ] Acessar Codigo Fonte no GitHub - Abre o repositorio no GitHub.
-echo [ 14 ] Sair - Sai do script.
+echo [ 14 ] Exibir Informacoes do Sistema - Exibe informacoes detalhadas do sistema.
+echo [ 15 ] Verificar e Reparar Disco - Executa uma verificacao e reparo do disco.
+echo [ 16 ] Configurar Inicio do Sistema - Abre as configuracoes de inicializacao do sistema (msconfig).
+echo [ 17 ] Verificar Arquivos de Sistema - Verifica e repara arquivos de sistema corrompidos.
+echo [ 18 ] Abrir Visualizador de Eventos - Abre o Visualizador de Eventos do Windows.
+echo.
+echo [ H ] Ajuda - Exibe esta tela de ajuda.
+echo [ S ] Sai do script.
+color 0E
 pause
 color 0A
 goto menu
