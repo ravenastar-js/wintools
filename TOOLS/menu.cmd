@@ -1,5 +1,6 @@
 @echo off
 color 0A
+
 :menu
 cls
 echo ==================================================
@@ -15,29 +16,33 @@ echo [ 4 ] Iniciar Gerenciador de Tarefas
 echo [ 5 ] Bloquear a Tela
 echo [ 6 ] Abrir a pasta de Aplicativos
 echo [ 7 ] Abrir God Mode
-echo [ 8 ] Limpar Arquivos Temp
+echo [ 8 ] Limpar Arquivos Temporarios
 echo [ 9 ] Habilitar F8
 echo [ 10 ] Desabilitar F8
-echo [ 11 ] Criar Ponto de Rest
-echo [ 12 ] Habilitar Ponto de Rest Ilimitado
-echo [ 13 ] Sair
+echo [ 11 ] Criar Ponto de Restauracao
+echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado
+echo [ 13 ] Acessar Codigo Fonte no GitHub
+echo [ 14 ] Sair
+echo [ H ] Ajuda
 echo.
 echo ==================================================
-set /p choice=Digite a sua escolha (1-13):
+set /p choice=Digite a sua escolha (1-14 ou H para ajuda):
 
-if "%choice%"=="1" goto reboot_bios
-if "%choice%"=="2" goto reboot_normal
-if "%choice%"=="3" goto shutdown
-if "%choice%"=="4" goto task_manager
-if "%choice%"=="5" goto lock_screen
-if "%choice%"=="6" goto open_appsfolder
-if "%choice%"=="7" goto open_godmode
-if "%choice%"=="8" goto clean_temp
-if "%choice%"=="9" goto enable_f8
-if "%choice%"=="10" goto disable_f8
-if "%choice%"=="11" goto create_restore_point
-if "%choice%"=="12" goto enable_unlimited_restore_points
-if "%choice%"=="13" goto exit
+if /i "%choice%"=="1" goto reboot_bios
+if /i "%choice%"=="2" goto reboot_normal
+if /i "%choice%"=="3" goto shutdown
+if /i "%choice%"=="4" goto task_manager
+if /i "%choice%"=="5" goto lock_screen
+if /i "%choice%"=="6" goto open_appsfolder
+if /i "%choice%"=="7" goto open_godmode
+if /i "%choice%"=="8" goto clean_temp
+if /i "%choice%"=="9" goto enable_f8
+if /i "%choice%"=="10" goto disable_f8
+if /i "%choice%"=="11" goto create_restore_point
+if /i "%choice%"=="12" goto enable_unlimited_restore_points
+if /i "%choice%"=="13" goto github
+if /i "%choice%"=="14" goto exit
+if /i "%choice%"=="H" goto help
 goto invalid_choice
 
 :reboot_bios
@@ -50,50 +55,59 @@ if %errorlevel%==0 (
 ) else (
     powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Sistema BIOS legado detectado. Reinicializacao direta para BIOS nao suportada.', 'Erro', 'OK', 'Error')}"
 )
+pause
 goto menu
 
 :reboot_normal
 shutdown /r /t 0
-goto exit
+pause
+goto menu
 
 :shutdown
 shutdown /s /t 0
-goto exit
+pause
+goto menu
 
 :task_manager
 start taskmgr
+pause
 goto menu
 
 :lock_screen
 rundll32.exe user32.dll,LockWorkStation
+pause
 goto menu
 
 :open_appsfolder
 explorer shell:appsfolder
+pause
 goto menu
 
 :open_godmode
 mkdir "%userprofile%\Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"
 explorer "%userprofile%\Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"
+pause
 goto menu
 
 :clean_temp
 cd %~dp0..\..\..
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\clean_temp_files.cmd' -Verb RunAs"
+pause
 goto menu
-
-
 
 :enable_f8
 bcdedit /set {default} bootmenupolicy legacy
+pause
 goto menu
 
 :disable_f8
 bcdedit /set {default} bootmenupolicy standard
+pause
 goto menu
 
 :create_restore_point
 Wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint "Criado via atalho", 100, 7
+pause
 goto menu
 
 :enable_unlimited_restore_points
@@ -103,10 +117,39 @@ if %errorlevel%==0 (
 ) else (
     reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v SystemRestorePointCreationFrequency /t REG_DWORD /d 0 /f
 )
+pause
+goto menu
+
+:github
+start https://github.com/ravenastar-js/wintools
+pause
 goto menu
 
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 13.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 14.', 'Erro', 'OK', 'Error')}"
+pause
+goto menu
+
+:help
+cls
+color 0E
+echo Ajuda:
+echo [ 1 ] Reiniciar para BIOS (UEFI) - Reinicia o computador para o menu BIOS/UEFI.
+echo [ 2 ] Reiniciar normalmente - Reinicia o computador normalmente.
+echo [ 3 ] Desligar o PC - Desliga o computador.
+echo [ 4 ] Iniciar Gerenciador de Tarefas - Abre o Gerenciador de Tarefas.
+echo [ 5 ] Bloquear a Tela - Bloqueia a tela do computador.
+echo [ 6 ] Abrir a pasta de Aplicativos - Abre a pasta de Aplicativos.
+echo [ 7 ] Abrir God Mode - Cria e abre a pasta God Mode.
+echo [ 8 ] Limpar Arquivos Temp - Limpa arquivos temporarios.
+echo [ 9 ] Habilitar F8 - Habilita o menu F8 no boot.
+echo [ 10 ] Desabilitar F8 - Desabilita o menu F8 no boot.
+echo [ 11 ] Criar Ponto de Resta - Cria um ponto de restauracao do sistema.
+echo [ 12 ] Habilitar Ponto de Resta Ilimitado - Habilita a criacao ilimitada de pontos de restauracao.
+echo [ 13 ] Acessar Codigo Fonte no GitHub - Abre o repositorio no GitHub.
+echo [ 14 ] Sair - Sai do script.
+pause
+color 0A
 goto menu
 
 :exit
