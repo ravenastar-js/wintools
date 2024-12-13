@@ -47,6 +47,7 @@ echo [ 15 ] Verificar e Reparar Disco
 echo [ 16 ] Configurar Inicio do Sistema (msconfig)
 echo [ 17 ] Verificar Arquivos de Sistema
 echo [ 18 ] Abrir Visualizador de Eventos
+echo [0m
 echo [ [93mH[0m ] [93mAjuda - Exibe esta tela de ajuda.[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================

@@ -49,7 +49,7 @@ function generateCmdScript(options) {
     for (var i = 0; i < options.length; i++) {
         script += 'echo [ ' + (i + 1) + ' ] ' + options[i].label + '\r\n';
     }
-
+    script += 'echo [0m\r\n'
     script += 'echo [ \x1b[93mH\x1b[0m ] \x1b[93mAjuda - Exibe esta tela de ajuda.\x1b[0m\r\n';
     script += 'echo [ \x1b[91mE\x1b[0m ] \x1b[91mSair - Sai do script.\x1b[32m\r\n';
     script += 'echo ==================================================\r\n';
