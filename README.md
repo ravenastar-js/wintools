@@ -27,12 +27,20 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 - Se o atalho `WINTOOLS (CMD)` não funcionar, basta editar e mudar o caminho e apontar para o arquivo respectivo:
   - `WINTOOLS (CMD)` => [TOOLS/menu.cmd](TOOLS/menu.cmd)
 
+
 ### 📷 Prévias
 
 <details>
 <summary>WINTOOLS (CMD)</summary>
 <img src="TOOLS/img/wintools_cmd.png" alt="WinTools CMD"/>
 </details>
+
+<details>
+<summary>Criando a Quick Launch</summary>
+<img src="TOOLS/img/create_quicklaunch.gif" alt="Criando a Quick Launch"/>
+</details>
+
+<br>
 
 ![WinTools](https://i.imgur.com/I8HpeHd.jpeg)
 
