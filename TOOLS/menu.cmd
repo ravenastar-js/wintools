@@ -77,46 +77,37 @@ if /i "%choice%"=="E" goto exit
 goto invalid_choice
 
 :reboot_bios
-echo Detectando tipo de BIOS...
-powershell -command "Confirm-SecureBootUEFI" | findstr "True"
-if %errorlevel%==0 (
-    msg * "Sistema UEFI detectado. Reiniciando para BIOS..."
-    shutdown /r /fw /t 0
-) else (
-    powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Sistema BIOS legado detectado. Reinicializacao direta para BIOS nao suportada.', 'Erro', 'OK', 'Error')}"
-    goto menu
-)
+powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\reboot_bios.cmd' -Verb RunAs"
 pause
 goto menu
 
 :reboot_normal
-shutdown /r /t 0
+cmd /c %~dp0cmd\reboot_normal.cmd
 pause
 goto menu
 
 :shutdown
-shutdown /s /t 0
+cmd /c %~dp0cmd\shutdown.cmd
 pause
 goto menu
 
 :task_manager
-start taskmgr
+cmd /c %~dp0cmd\task_manager.cmd
 pause
 goto menu
 
 :lock_screen
-rundll32.exe user32.dll,LockWorkStation
+cmd /c %~dp0cmd\lock_screen.cmd
 pause
 goto menu
 
 :open_appsfolder
-explorer shell:appsfolder
+cmd /c %~dp0cmd\open_appsfolder.cmd
 pause
 goto menu
 
 :open_godmode
-mkdir "%userprofile%\Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"
-explorer "%userprofile%\Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"
+cmd /c %~dp0cmd\open_godmode.cmd
 pause
 goto menu
 
@@ -126,56 +117,47 @@ pause
 goto menu
 
 :enable_f8
-bcdedit /set {default} bootmenupolicy legacy
+powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\enable_f8.cmd' -Verb RunAs"
 pause
 goto menu
 
 :disable_f8
-bcdedit /set {default} bootmenupolicy standard
+powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\disable_f8.cmd' -Verb RunAs"
 pause
 goto menu
 
 :create_restore_point
-Wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint "Criado via atalho", 100, 7
+powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\create_restore_point.cmd' -Verb RunAs"
 pause
 goto menu
 
 :enable_unlimited_restore_points
-echo Habilitando Ponto de Restauracao Ilimitados...
-:: Habilitar Pontos de Restauração Ilimitados
-reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v SystemRestorePointCreationFrequency >nul 2>&1
-if %errorlevel%==0 (
-    powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('A chave ja existe.', 'Aviso', 'OK', 'Warning')}"
-    goto menu
-) else (
-    reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v SystemRestorePointCreationFrequency /t REG_DWORD /d 0 /f
-    goto menu
-)
+powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\enable_unlimited_restore_points.cmd' -Verb RunAs"
 pause
 goto menu
 
 :system_info
-systeminfo
+cmd /c %~dp0cmd\system_info.cmd
 pause
 goto menu
 
 :check_disk
-chkdsk C: /F /R
+powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\check_disk.cmd' -Verb RunAs"
 pause
 goto menu
 
 :msconfig
-start msconfig
+cmd /c %~dp0cmd\msconfig.cmd
 pause
 goto menu
 
 :sfc_scan
-sfc /scannow
+powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\sfc_scan.cmd' -Verb RunAs"
 pause
 goto menu
 
 :event_viewer
-start eventvwr
+cmd /c %~dp0cmd\event_viewer.cmd
 pause
 goto menu
 

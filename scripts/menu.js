@@ -1,22 +1,22 @@
 // Definindo as opções do menu em um array sem números
 var menuOptions = [
-    { label: 'Reiniciar para BIOS (UEFI)', cmd: 'reboot_bios', script: 'echo Detectando tipo de BIOS...\r\npowershell -command "Confirm-SecureBootUEFI" | findstr "True"\r\nif %errorlevel%==0 (\r\n    msg * "Sistema UEFI detectado. Reiniciando para BIOS..."\r\n    shutdown /r /fw /t 0\r\n) else (\r\n    powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show(\'Sistema BIOS legado detectado. Reinicializacao direta para BIOS nao suportada.\', \'Erro\', \'OK\', \'Error\')}"\r\n    goto menu\r\n)' },
-    { label: 'Reiniciar normalmente', cmd: 'reboot_normal', script: 'shutdown /r /t 0' },
-    { label: 'Desligar o PC', cmd: 'shutdown', script: 'shutdown /s /t 0' },
-    { label: 'Iniciar Gerenciador de Tarefas', cmd: 'task_manager', script: 'start taskmgr' },
-    { label: 'Bloquear a Tela', cmd: 'lock_screen', script: 'rundll32.exe user32.dll,LockWorkStation' },
-    { label: 'Abrir a pasta de Aplicativos', cmd: 'open_appsfolder', script: 'explorer shell:appsfolder' },
-    { label: 'Abrir God Mode', cmd: 'open_godmode', script: 'mkdir "%userprofile%\\Desktop\\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"\r\nexplorer "%userprofile%\\Desktop\\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"' },
+    { label: 'Reiniciar para BIOS (UEFI)', cmd: 'reboot_bios', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\reboot_bios.cmd\' -Verb RunAs"' },
+    { label: 'Reiniciar normalmente', cmd: 'reboot_normal', script: 'cmd /c %~dp0cmd\\reboot_normal.cmd' },
+    { label: 'Desligar o PC', cmd: 'shutdown', script: 'cmd /c %~dp0cmd\\shutdown.cmd' },
+    { label: 'Iniciar Gerenciador de Tarefas', cmd: 'task_manager', script: 'cmd /c %~dp0cmd\\task_manager.cmd' },
+    { label: 'Bloquear a Tela', cmd: 'lock_screen', script: 'cmd /c %~dp0cmd\\lock_screen.cmd' },
+    { label: 'Abrir a pasta de Aplicativos', cmd: 'open_appsfolder', script: 'cmd /c %~dp0cmd\\open_appsfolder.cmd' },
+    { label: 'Abrir God Mode', cmd: 'open_godmode', script: 'cmd /c %~dp0cmd\\open_godmode.cmd' },
     { label: 'Limpar Arquivos Temporarios', cmd: 'clean_temp', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\clean_temp_files.cmd\' -Verb RunAs"' },
-    { label: 'Habilitar F8', cmd: 'enable_f8', script: 'bcdedit /set {default} bootmenupolicy legacy' },
-    { label: 'Desabilitar F8', cmd: 'disable_f8', script: 'bcdedit /set {default} bootmenupolicy standard' },
-    { label: 'Criar Ponto de Restauracao', cmd: 'create_restore_point', script: 'Wmic.exe /Namespace:\\\\root\\default Path SystemRestore Call CreateRestorePoint "Criado via atalho", 100, 7' },
-    { label: 'Habilitar Ponto de Restauracao Ilimitado', cmd: 'enable_unlimited_restore_points', script: 'echo Habilitando Ponto de Restauracao Ilimitados...\r\n:: Habilitar Pontos de Restauração Ilimitados\r\nreg query "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\SystemRestore" /v SystemRestorePointCreationFrequency >nul 2>&1\r\nif %errorlevel%==0 (\r\n    powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show(\'A chave ja existe.\', \'Aviso\', \'OK\', \'Warning\')}"\r\n    goto menu\r\n) else (\r\n    reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\SystemRestore" /v SystemRestorePointCreationFrequency /t REG_DWORD /d 0 /f\r\n    goto menu\r\n)' },
-    { label: 'Exibir Informacoes do Sistema', cmd: 'system_info', script: 'systeminfo' },
-    { label: 'Verificar e Reparar Disco', cmd: 'check_disk', script: 'chkdsk C: /F /R' },
-    { label: 'Configurar Inicio do Sistema (msconfig)', cmd: 'msconfig', script: 'start msconfig' },
-    { label: 'Verificar Arquivos de Sistema', cmd: 'sfc_scan', script: 'sfc /scannow' },
-    { label: 'Abrir Visualizador de Eventos', cmd: 'event_viewer', script: 'start eventvwr' }
+    { label: 'Habilitar F8', cmd: 'enable_f8', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\enable_f8.cmd\' -Verb RunAs"' },
+    { label: 'Desabilitar F8', cmd: 'disable_f8', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\disable_f8.cmd\' -Verb RunAs"' },
+    { label: 'Criar Ponto de Restauracao', cmd: 'create_restore_point', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\create_restore_point.cmd\' -Verb RunAs"' },
+    { label: 'Habilitar Ponto de Restauracao Ilimitado', cmd: 'enable_unlimited_restore_points', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\enable_unlimited_restore_points.cmd\' -Verb RunAs"' },
+    { label: 'Exibir Informacoes do Sistema', cmd: 'system_info', script: 'cmd /c %~dp0cmd\\system_info.cmd' },
+    { label: 'Verificar e Reparar Disco', cmd: 'check_disk', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\check_disk.cmd\' -Verb RunAs"' },
+    { label: 'Configurar Inicio do Sistema (msconfig)', cmd: 'msconfig', script: 'cmd /c %~dp0cmd\\msconfig.cmd' },
+    { label: 'Verificar Arquivos de Sistema', cmd: 'sfc_scan', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\sfc_scan.cmd\' -Verb RunAs"' },
+    { label: 'Abrir Visualizador de Eventos', cmd: 'event_viewer', script: 'cmd /c %~dp0cmd\\event_viewer.cmd' }
 ];
 
 // Função para gerar o script CMD
