@@ -142,7 +142,7 @@ pause
 goto menu
 
 :check_disk
-powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\check_disk.cmd' -Verb RunAs"
+cmd /c sfc /scannow
 pause
 goto menu
 
