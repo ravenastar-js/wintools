@@ -23,6 +23,7 @@ cd /d "%~dp0"
 
 :menu
 cls
+echo [32m
 echo ==================================================
 echo.
 echo          github.com/ravenastar-js/wintools
@@ -41,17 +42,17 @@ echo [ 9 ] Habilitar F8
 echo [ 10 ] Desabilitar F8
 echo [ 11 ] Criar Ponto de Restauracao
 echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado
-echo [ 13 ] Acessar Codigo Fonte no GitHub
-echo [ 14 ] Exibir Informacoes do Sistema
-echo [ 15 ] Verificar e Reparar Disco
-echo [ 16 ] Configurar Inicio do Sistema (msconfig)
-echo [ 17 ] Verificar Arquivos de Sistema
-echo [ 18 ] Abrir Visualizador de Eventos
+echo [ 13 ] Exibir Informacoes do Sistema
+echo [ 14 ] Verificar e Reparar Disco
+echo [ 15 ] Configurar Inicio do Sistema (msconfig)
+echo [ 16 ] Verificar Arquivos de Sistema
+echo [ 17 ] Abrir Visualizador de Eventos
 echo [0m
+echo [ [97mG[0m ] [97mAcessar Codigo Fonte no GitHub[0m
 echo [ [93mH[0m ] [93mAjuda - Exibe tela de ajuda.[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-18, H ou E):
+set /p choice=Digite a sua escolha (1-17, H, E, ou G):[0m
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto reboot_normal
@@ -65,12 +66,12 @@ if /i "%choice%"=="9" goto enable_f8
 if /i "%choice%"=="10" goto disable_f8
 if /i "%choice%"=="11" goto create_restore_point
 if /i "%choice%"=="12" goto enable_unlimited_restore_points
-if /i "%choice%"=="13" goto github
-if /i "%choice%"=="14" goto system_info
-if /i "%choice%"=="15" goto check_disk
-if /i "%choice%"=="16" goto msconfig
-if /i "%choice%"=="17" goto sfc_scan
-if /i "%choice%"=="18" goto event_viewer
+if /i "%choice%"=="13" goto system_info
+if /i "%choice%"=="14" goto check_disk
+if /i "%choice%"=="15" goto msconfig
+if /i "%choice%"=="16" goto sfc_scan
+if /i "%choice%"=="17" goto event_viewer
+if /i "%choice%"=="G" goto github
 if /i "%choice%"=="H" goto help
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
@@ -137,11 +138,6 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemR
 pause
 goto menu
 
-:github
-start https://github.com/ravenastar-js/wintools
-pause
-goto menu
-
 :system_info
 systeminfo
 pause
@@ -167,6 +163,11 @@ start eventvwr
 pause
 goto menu
 
+:github
+start https://github.com/ravenastar-js/wintools
+pause
+goto menu
+
 :help
 cls
 color 0E
@@ -183,12 +184,12 @@ echo [ 9 ] Habilitar F8
 echo [ 10 ] Desabilitar F8
 echo [ 11 ] Criar Ponto de Restauracao
 echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado
-echo [ 13 ] Acessar Codigo Fonte no GitHub
-echo [ 14 ] Exibir Informacoes do Sistema
-echo [ 15 ] Verificar e Reparar Disco
-echo [ 16 ] Configurar Inicio do Sistema (msconfig)
-echo [ 17 ] Verificar Arquivos de Sistema
-echo [ 18 ] Abrir Visualizador de Eventos
+echo [ 13 ] Exibir Informacoes do Sistema
+echo [ 14 ] Verificar e Reparar Disco
+echo [ 15 ] Configurar Inicio do Sistema (msconfig)
+echo [ 16 ] Verificar Arquivos de Sistema
+echo [ 17 ] Abrir Visualizador de Eventos
+echo [ G ] Acessar Codigo Fonte no GitHub
 echo [ H ] Ajuda - Exibe esta tela de ajuda.
 echo [ E ] Sai do script.
 color 0E
@@ -199,6 +200,6 @@ goto menu
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 18, H ou E.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 17, H, E, ou G.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu

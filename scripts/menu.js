@@ -12,7 +12,6 @@ var menuOptions = [
     { label: 'Desabilitar F8', cmd: 'disable_f8', script: 'bcdedit /set {default} bootmenupolicy standard' },
     { label: 'Criar Ponto de Restauracao', cmd: 'create_restore_point', script: 'Wmic.exe /Namespace:\\\\root\\default Path SystemRestore Call CreateRestorePoint "Criado via atalho", 100, 7' },
     { label: 'Habilitar Ponto de Restauracao Ilimitado', cmd: 'enable_unlimited_restore_points', script: 'reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\SystemRestore" /v SystemRestorePointCreationFrequency /t REG_DWORD /d 0 /f' },
-    { label: 'Acessar Codigo Fonte no GitHub', cmd: 'github', script: 'start https://github.com/ravenastar-js/wintools' },
     { label: 'Exibir Informacoes do Sistema', cmd: 'system_info', script: 'systeminfo' },
     { label: 'Verificar e Reparar Disco', cmd: 'check_disk', script: 'chkdsk C: /F /R' },
     { label: 'Configurar Inicio do Sistema (msconfig)', cmd: 'msconfig', script: 'start msconfig' },
@@ -50,15 +49,18 @@ function generateCmdScript(options) {
         script += 'echo [ ' + (i + 1) + ' ] ' + options[i].label + '\r\n';
     }
     script += 'echo [0m\r\n'
+    script += 'echo [ \x1b[97mG\x1b[0m ] \x1b[97mAcessar Codigo Fonte no GitHub\x1b[0m\r\n';
     script += 'echo [ \x1b[93mH\x1b[0m ] \x1b[93mAjuda - Exibe tela de ajuda.\x1b[0m\r\n';
     script += 'echo [ \x1b[91mE\x1b[0m ] \x1b[91mSair - Sai do script.\x1b[32m\r\n';
+
     script += 'echo ==================================================\r\n';
-    script += 'set /p choice=Digite a sua escolha (1-' + options.length + ', H ou E):\r\n\r\n';
+    script += 'set /p choice=Digite a sua escolha (1-' + options.length + ', H, E, ou G):\x1b[0m\r\n\r\n';
 
     for (var i = 0; i < options.length; i++) {
         script += 'if /i "%choice%"=="' + (i + 1) + '" goto ' + options[i].cmd + '\r\n';
     }
 
+    script += 'if /i "%choice%"=="G" goto github\r\n';
     script += 'if /i "%choice%"=="H" goto help\r\n';
     script += 'if /i "%choice%"=="E" goto exit\r\n';
     script += 'goto invalid_choice\r\n\r\n';
@@ -70,19 +72,23 @@ function generateCmdScript(options) {
         script += 'goto menu\r\n\r\n';
     }
 
+    script += ':github\r\nstart https://github.com/ravenastar-js/wintools\r\npause\r\ngoto menu\r\n\r\n';
+
     script += ':help\r\ncls\r\ncolor 0E\r\necho Ajuda:\r\n';
 
     for (var i = 0; i < options.length; i++) {
         script += 'echo [ ' + (i + 1) + ' ] ' + options[i].label + '\r\n';
     }
 
+    script += 'echo [ G ] Acessar Codigo Fonte no GitHub\r\n';
     script += 'echo [ H ] Ajuda - Exibe esta tela de ajuda.\r\n';
     script += 'echo [ E ] Sai do script.\r\n';
+
     script += 'color 0E\r\npause\r\ncolor 0A\r\ngoto menu\r\n\r\n';
 
     script += ':exit\r\nexit\r\n';
 
-    script += ':invalid_choice\r\npowershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show(\'Escolher entre 1 a ' + options.length + ', H ou E.\', \'Erro\', \'OK\', \'Error\')}"\r\npause\r\ngoto menu\r\n';
+    script += ':invalid_choice\r\npowershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show(\'Escolher entre 1 a ' + options.length + ', H, E, ou G.\', \'Erro\', \'OK\', \'Error\')}"\r\npause\r\ngoto menu\r\n';
 
     return script;
 }
