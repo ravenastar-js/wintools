@@ -16,8 +16,12 @@ var menuOptions = [
     { label: 'Verificar e Reparar Disco', cmd: 'check_disk', script: 'cmd /c sfc /scannow' },
     { label: 'Configurar Inicio do Sistema (msconfig)', cmd: 'msconfig', script: 'cmd /c %~dp0cmd\\msconfig.cmd' },
     { label: 'Verificar Arquivos de Sistema', cmd: 'sfc_scan', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\sfc_scan.cmd\' -Verb RunAs"' },
-    { label: 'Abrir Visualizador de Eventos', cmd: 'event_viewer', script: 'cmd /c %~dp0cmd\\event_viewer.cmd' }
+    { label: 'Abrir Visualizador de Eventos', cmd: 'event_viewer', script: 'cmd /c %~dp0cmd\\event_viewer.cmd' },
+    { label: 'Abrir Quick Launch', cmd: 'open_quicklaunch', script: 'start explorer "%appdata%\\Microsoft\\Internet Explorer\\Quick Launch"' },
+    { label: 'Criar Quick Launch', cmd: 'create_quicklaunch', script: 'cmd /c %~dp0cmd\\create_quicklaunch.cmd' }
 ];
+
+
 
 // Função para gerar o script CMD
 function generateCmdScript(options) {
@@ -105,5 +109,3 @@ var cmdFile = fso.CreateTextFile(cmdFilePath, true);
 var cmdScript = generateCmdScript(menuOptions);
 cmdFile.Write(cmdScript);
 cmdFile.Close();
-
-
