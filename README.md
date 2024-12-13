@@ -6,12 +6,6 @@
 > 
 > O arquivo `GerarArquivos.bat` cria o atalho `WINTOOLS (CMD)` que fica no diretório raiz do projeto e o arquivo `menu.cmd` que fica na pasta `TOOLS`, caso o `menu.cmd` exista, o conteúdo de `menu.cmd` será atualizado caso execute o arquivo `GerarArquivos.bat`. 
 
-
-<details>
-<summary>Veja como alterar o atalho para "Executar como administrador".</summary>
-<img src="https://i.imgur.com/8kDOAq5.gif" alt="alterar o atalho para Executar como administrador."/>
-</details>
-
 ### 🚀 **WinTools: Um Simples e Útil Kit de Ferramentas para Windows!**
 
 Este projeto oferece uma coleção de scripts que facilitam suas tarefas diárias no Windows, permitindo que você:
