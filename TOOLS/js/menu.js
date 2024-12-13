@@ -93,20 +93,17 @@ function generateCmdScript(options) {
     return script;
 }
 
-// Utilizando WScript.Shell para criar e escrever o arquivo menu.cmd na pasta "TOOLS" uma pasta acima da atual
+// Utilizando WScript.Shell para criar e escrever o arquivo menu.cmd na pasta anterior à pasta em que o script está sendo executado (que é a pasta "js")
 var shell = new ActiveXObject("WScript.Shell");
 var fso = new ActiveXObject("Scripting.FileSystemObject");
 var currentFolder = fso.GetParentFolderName(WScript.ScriptFullName);
 var parentFolder = fso.GetParentFolderName(currentFolder);
-var toolsFolder = fso.BuildPath(parentFolder, "TOOLS");
 
-if (!fso.FolderExists(toolsFolder)) {
-    fso.CreateFolder(toolsFolder);
-}
-
-var cmdFilePath = fso.BuildPath(toolsFolder, "menu.cmd");
+var cmdFilePath = fso.BuildPath(parentFolder, "menu.cmd");
 var cmdFile = fso.CreateTextFile(cmdFilePath, true);
 
 var cmdScript = generateCmdScript(menuOptions);
 cmdFile.Write(cmdScript);
 cmdFile.Close();
+
+
