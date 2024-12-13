@@ -43,18 +43,17 @@ echo [ 10 ] Desabilitar F8
 echo [ 11 ] Criar Ponto de Restauracao
 echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado
 echo [ 13 ] Exibir Informacoes do Sistema
-echo [ 14 ] Verificar e Reparar Disco
-echo [ 15 ] Configurar Inicio do Sistema (msconfig)
-echo [ 16 ] Verificar Arquivos de Sistema
-echo [ 17 ] Abrir Visualizador de Eventos
-echo [ 18 ] Abrir Quick Launch
-echo [ 19 ] Criar Quick Launch
+echo [ 14 ] Configurar Inicio do Sistema (msconfig)
+echo [ 15 ] Verificar Arquivos de Sistema
+echo [ 16 ] Abrir Visualizador de Eventos
+echo [ 17 ] Abrir Quick Launch
+echo [ 18 ] Criar Quick Launch
 echo [0m
 echo [ [97mG[0m ] [97mAcessar Codigo Fonte no GitHub[0m
 echo [ [93mH[0m ] [93mAjuda - Exibe tela de ajuda.[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-19, H, E, ou G):[0m
+set /p choice=Digite a sua escolha (1-18, H, E, ou G):[0m
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto reboot_normal
@@ -69,12 +68,11 @@ if /i "%choice%"=="10" goto disable_f8
 if /i "%choice%"=="11" goto create_restore_point
 if /i "%choice%"=="12" goto enable_unlimited_restore_points
 if /i "%choice%"=="13" goto system_info
-if /i "%choice%"=="14" goto check_disk
-if /i "%choice%"=="15" goto msconfig
-if /i "%choice%"=="16" goto sfc_scan
-if /i "%choice%"=="17" goto event_viewer
-if /i "%choice%"=="18" goto open_quicklaunch
-if /i "%choice%"=="19" goto create_quicklaunch
+if /i "%choice%"=="14" goto msconfig
+if /i "%choice%"=="15" goto sfc_scan
+if /i "%choice%"=="16" goto event_viewer
+if /i "%choice%"=="17" goto open_quicklaunch
+if /i "%choice%"=="18" goto create_quicklaunch
 if /i "%choice%"=="G" goto github
 if /i "%choice%"=="H" goto help
 if /i "%choice%"=="E" goto exit
@@ -145,11 +143,6 @@ cmd /c %~dp0cmd\system_info.cmd
 pause
 goto menu
 
-:check_disk
-cmd /c chkdsk C: /F /R
-pause
-goto menu
-
 :msconfig
 cmd /c %~dp0cmd\msconfig.cmd
 pause
@@ -197,12 +190,11 @@ echo [ 10 ] Desabilitar F8
 echo [ 11 ] Criar Ponto de Restauracao
 echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado
 echo [ 13 ] Exibir Informacoes do Sistema
-echo [ 14 ] Verificar e Reparar Disco
-echo [ 15 ] Configurar Inicio do Sistema (msconfig)
-echo [ 16 ] Verificar Arquivos de Sistema
-echo [ 17 ] Abrir Visualizador de Eventos
-echo [ 18 ] Abrir Quick Launch
-echo [ 19 ] Criar Quick Launch
+echo [ 14 ] Configurar Inicio do Sistema (msconfig)
+echo [ 15 ] Verificar Arquivos de Sistema
+echo [ 16 ] Abrir Visualizador de Eventos
+echo [ 17 ] Abrir Quick Launch
+echo [ 18 ] Criar Quick Launch
 echo [ G ] Acessar Codigo Fonte no GitHub
 echo [ H ] Ajuda - Exibe esta tela de ajuda.
 echo [ E ] Sai do script.
@@ -214,6 +206,6 @@ goto menu
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 19, H, E, ou G.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 18, H, E, ou G.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu

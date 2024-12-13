@@ -13,7 +13,6 @@ var menuOptions = [
     { label: 'Criar Ponto de Restauracao', cmd: 'create_restore_point', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\create_restore_point.cmd\' -Verb RunAs"' },
     { label: 'Habilitar Ponto de Restauracao Ilimitado', cmd: 'enable_unlimited_restore_points', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\enable_unlimited_restore_points.cmd\' -Verb RunAs"' },
     { label: 'Exibir Informacoes do Sistema', cmd: 'system_info', script: 'cmd /c %~dp0cmd\\system_info.cmd' },
-    { label: 'Verificar e Reparar Disco', cmd: 'check_disk', script: 'cmd /c chkdsk C: /F /R' },
     { label: 'Configurar Inicio do Sistema (msconfig)', cmd: 'msconfig', script: 'cmd /c %~dp0cmd\\msconfig.cmd' },
     { label: 'Verificar Arquivos de Sistema', cmd: 'sfc_scan', script: 'cmd /c sfc /scannow' },
     { label: 'Abrir Visualizador de Eventos', cmd: 'event_viewer', script: 'cmd /c %~dp0cmd\\event_viewer.cmd' },
