@@ -146,7 +146,7 @@ pause
 goto menu
 
 :check_disk
-cmd /c sfc /scannow
+cmd /c chkdsk C: /F /R
 pause
 goto menu
 
@@ -156,7 +156,7 @@ pause
 goto menu
 
 :sfc_scan
-powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\sfc_scan.cmd' -Verb RunAs"
+cmd /c sfc /scannow
 pause
 goto menu
 
