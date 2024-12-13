@@ -104,5 +104,3 @@ var cmdFile = fso.CreateTextFile(cmdFilePath, true);
 var cmdScript = generateCmdScript(menuOptions);
 cmdFile.Write(cmdScript);
 cmdFile.Close();
-
-// shell.Popup('Script menu.cmd gerado com sucesso na pasta TOOLS!', 5);
