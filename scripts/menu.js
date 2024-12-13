@@ -1,6 +1,6 @@
 // Definindo as opções do menu em um array sem números
 var menuOptions = [
-    { label: 'Reiniciar para BIOS (UEFI)', cmd: 'reboot_bios', script: 'msg * "Sistema UEFI detectado. Reiniciando para BIOS..."\r\nshutdown /r /fw /t 0' },
+    { label: 'Reiniciar para BIOS (UEFI)', cmd: 'reboot_bios', script: 'echo Detectando tipo de BIOS...\r\npowershell -command "Confirm-SecureBootUEFI" | findstr "True"\r\nif %errorlevel%==0 (\r\n    msg * "Sistema UEFI detectado. Reiniciando para BIOS..."\r\n    shutdown /r /fw /t 0\r\n) else (\r\n    powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show(\'Sistema BIOS legado detectado. Reinicializacao direta para BIOS nao suportada.\', \'Erro\', \'OK\', \'Error\')}"\r\n    goto menu\r\n)' },
     { label: 'Reiniciar normalmente', cmd: 'reboot_normal', script: 'shutdown /r /t 0' },
     { label: 'Desligar o PC', cmd: 'shutdown', script: 'shutdown /s /t 0' },
     { label: 'Iniciar Gerenciador de Tarefas', cmd: 'task_manager', script: 'start taskmgr' },
@@ -11,7 +11,7 @@ var menuOptions = [
     { label: 'Habilitar F8', cmd: 'enable_f8', script: 'bcdedit /set {default} bootmenupolicy legacy' },
     { label: 'Desabilitar F8', cmd: 'disable_f8', script: 'bcdedit /set {default} bootmenupolicy standard' },
     { label: 'Criar Ponto de Restauracao', cmd: 'create_restore_point', script: 'Wmic.exe /Namespace:\\\\root\\default Path SystemRestore Call CreateRestorePoint "Criado via atalho", 100, 7' },
-    { label: 'Habilitar Ponto de Restauracao Ilimitado', cmd: 'enable_unlimited_restore_points', script: 'reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\SystemRestore" /v SystemRestorePointCreationFrequency /t REG_DWORD /d 0 /f' },
+    { label: 'Habilitar Ponto de Restauracao Ilimitado', cmd: 'enable_unlimited_restore_points', script: 'echo Habilitando Ponto de Restauracao Ilimitados...\r\n:: Habilitar Pontos de Restauração Ilimitados\r\nreg query "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\SystemRestore" /v SystemRestorePointCreationFrequency >nul 2>&1\r\nif %errorlevel%==0 (\r\n    powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show(\'A chave ja existe.\', \'Aviso\', \'OK\', \'Warning\')}"\r\n    goto menu\r\n) else (\r\n    reg add "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\SystemRestore" /v SystemRestorePointCreationFrequency /t REG_DWORD /d 0 /f\r\n    goto menu\r\n)' },
     { label: 'Exibir Informacoes do Sistema', cmd: 'system_info', script: 'systeminfo' },
     { label: 'Verificar e Reparar Disco', cmd: 'check_disk', script: 'chkdsk C: /F /R' },
     { label: 'Configurar Inicio do Sistema (msconfig)', cmd: 'msconfig', script: 'start msconfig' },
@@ -39,7 +39,7 @@ function generateCmdScript(options) {
     script += ':runScript\r\n';
     script += 'rem Muda para o diretório correto\r\n';
     script += 'cd /d "%~dp0"\r\n\r\n';
-    script += ':menu\r\ncls\r\n';
+    script += ':menu\r\ncls\r\ncolor 0A\r\n'; // Adiciona a cor verde
     script += 'echo ==================================================\r\n';
     script += 'echo.\r\n' + 'echo          github.com/ravenastar-js/wintools\r\n' + 'echo.\r\n';
     script += 'echo ==================================================\r\n';
@@ -48,7 +48,7 @@ function generateCmdScript(options) {
     for (var i = 0; i < options.length; i++) {
         script += 'echo [ ' + (i + 1) + ' ] ' + options[i].label + '\r\n';
     }
-    script += 'echo [0m\r\n'
+    script += 'echo [0m\r\n';
     script += 'echo [ \x1b[97mG\x1b[0m ] \x1b[97mAcessar Codigo Fonte no GitHub\x1b[0m\r\n';
     script += 'echo [ \x1b[93mH\x1b[0m ] \x1b[93mAjuda - Exibe tela de ajuda.\x1b[0m\r\n';
     script += 'echo [ \x1b[91mE\x1b[0m ] \x1b[91mSair - Sai do script.\x1b[32m\r\n';

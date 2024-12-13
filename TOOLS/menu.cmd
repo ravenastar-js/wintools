@@ -23,7 +23,7 @@ cd /d "%~dp0"
 
 :menu
 cls
-echo [32m
+color 0A
 echo ==================================================
 echo.
 echo          github.com/ravenastar-js/wintools
@@ -77,8 +77,15 @@ if /i "%choice%"=="E" goto exit
 goto invalid_choice
 
 :reboot_bios
-msg * "Sistema UEFI detectado. Reiniciando para BIOS..."
-shutdown /r /fw /t 0
+echo Detectando tipo de BIOS...
+powershell -command "Confirm-SecureBootUEFI" | findstr "True"
+if %errorlevel%==0 (
+    msg * "Sistema UEFI detectado. Reiniciando para BIOS..."
+    shutdown /r /fw /t 0
+) else (
+    powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Sistema BIOS legado detectado. Reinicializacao direta para BIOS nao suportada.', 'Erro', 'OK', 'Error')}"
+    goto menu
+)
 pause
 goto menu
 
@@ -134,7 +141,16 @@ pause
 goto menu
 
 :enable_unlimited_restore_points
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v SystemRestorePointCreationFrequency /t REG_DWORD /d 0 /f
+echo Habilitando Ponto de Restauracao Ilimitados...
+:: Habilitar Pontos de Restauração Ilimitados
+reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v SystemRestorePointCreationFrequency >nul 2>&1
+if %errorlevel%==0 (
+    powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('A chave ja existe.', 'Aviso', 'OK', 'Warning')}"
+    goto menu
+) else (
+    reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v SystemRestorePointCreationFrequency /t REG_DWORD /d 0 /f
+    goto menu
+)
 pause
 goto menu
 
