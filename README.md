@@ -1,8 +1,11 @@
-> [!IMPORTANT]    
-> ⚠️  Para evitar problemas, execute os scripts como administrador.
+> [!IMPORTANT]
+> ⚠️ Para evitar problemas, os scripts são executados automaticamente como administrador.
 
-> [!IMPORTANT]    
-> Execute o arquivo `CriarAtalhos.bat` para criar os atalhos necessários para o funcionamento do script, não esqueça de alterar manualmente as propriedades de cada atalho para "Executar como administrador". 
+> [!IMPORTANT]
+> Execute o arquivo `GerarArquivos.bat` para criar os arquivos necessários para o funcionamento do script.
+> 
+> O arquivo `GerarArquivos.bat` cria o atalho `WINTOOLS (CMD)` que fica no diretório raiz do projeto e o arquivo `menu.cmd` que fica na pasta `TOOLS`, caso o `menu.cmd` exista, o conteúdo de `menu.cmd` será atualizado caso execute o arquivo `GerarArquivos.bat`. 
+
 
 <details>
 <summary>Veja como alterar o atalho para "Executar como administrador".</summary>
@@ -33,7 +36,7 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 ### 📷 Prévias
 
 <details>
-<summary>⌨ WINTOOLS TECLADO (CMD)</summary>
+<summary>WINTOOLS (CMD)</summary>
 <img src="TOOLS/img/wintools_cmd.png" alt="WinTools CMD"/>
 </details>
 

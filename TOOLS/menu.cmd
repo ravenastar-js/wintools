@@ -1,14 +1,25 @@
 @echo off
 color 0A
 
-:: Verifica se está sendo executado como administrador
-openfiles >nul 2>&1
-if %errorlevel% neq 0 (
+rem Verifica se o script está sendo executado como administrador
+net session >nul 2>&1
+if %errorLevel% neq 0 (
     color 0C
-    echo Por favor, execute este script como administrador.
-    pause
-    exit /b
+    echo Solicitando permissao de administrador...
+    goto elevate
+) else (
+    goto runScript
 )
+
+:elevate
+rem Reexecuta o script com permissões de administrador
+cd /d "%~dp0"
+powershell -Command "Start-Process '%~s0' -Verb RunAs"
+exit /b
+
+:runScript
+rem Muda para o diretório correto
+cd /d "%~dp0"
 
 :menu
 cls
@@ -34,9 +45,8 @@ echo [ 13 ] Acessar Codigo Fonte no GitHub
 echo [ 14 ] Exibir Informacoes do Sistema
 echo [ 15 ] Verificar e Reparar Disco
 echo [ 16 ] Configurar Inicio do Sistema (msconfig)
-echo [ 17 ] Verificar Arquivos de Sistema (sfc)
+echo [ 17 ] Verificar Arquivos de Sistema
 echo [ 18 ] Abrir Visualizador de Eventos
-echo [0m
 echo [ [93mH[0m ] [93mAjuda - Exibe esta tela de ajuda.[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
@@ -65,15 +75,8 @@ if /i "%choice%"=="E" goto exit
 goto invalid_choice
 
 :reboot_bios
-cls
-echo Detectando tipo de BIOS...
-powershell -command "Confirm-SecureBootUEFI" | findstr "True"
-if %errorlevel%==0 (
-    msg * "Sistema UEFI detectado. Reiniciando para BIOS..."
-    shutdown /r /fw /t 0
-) else (
-    powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Sistema BIOS legado detectado. Reinicializacao direta para BIOS nao suportada.', 'Erro', 'OK', 'Error')}"
-)
+msg * "Sistema UEFI detectado. Reiniciando para BIOS..."
+shutdown /r /fw /t 0
 pause
 goto menu
 
@@ -109,7 +112,6 @@ pause
 goto menu
 
 :clean_temp
-cd %~dp0..\..\..
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\clean_temp_files.cmd' -Verb RunAs"
 pause
 goto menu
@@ -130,12 +132,7 @@ pause
 goto menu
 
 :enable_unlimited_restore_points
-reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v SystemRestorePointCreationFrequency >nul 2>&1
-if %errorlevel%==0 (
-    powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('A chave ja existe.', 'Aviso', 'OK', 'Warning')}"
-) else (
-    reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v SystemRestorePointCreationFrequency /t REG_DWORD /d 0 /f
-)
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v SystemRestorePointCreationFrequency /t REG_DWORD /d 0 /f
 pause
 goto menu
 
@@ -169,34 +166,28 @@ start eventvwr
 pause
 goto menu
 
-:invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 18, H ou S.', 'Erro', 'OK', 'Error')}"
-pause
-goto menu
-
 :help
 cls
 color 0E
 echo Ajuda:
-echo [ 1 ] Reiniciar para BIOS (UEFI) - Reinicia o computador para o menu BIOS/UEFI.
-echo [ 2 ] Reiniciar normalmente - Reinicia o computador normalmente.
-echo [ 3 ] Desligar o PC - Desliga o computador.
-echo [ 4 ] Iniciar Gerenciador de Tarefas - Abre o Gerenciador de Tarefas.
-echo [ 5 ] Bloquear a Tela - Bloqueia a tela do computador.
-echo [ 6 ] Abrir a pasta de Aplicativos - Abre a pasta de Aplicativos.
-echo [ 7 ] Abrir God Mode - Cria e abre a pasta God Mode.
-echo [ 8 ] Limpar Arquivos Temporarios - Limpa arquivos temporarios.
-echo [ 9 ] Habilitar F8 - Habilita o menu F8 no boot.
-echo [ 10 ] Desabilitar F8 - Desabilita o menu F8 no boot.
-echo [ 11 ] Criar Ponto de Restauracao - Cria um ponto de restauracao do sistema.
-echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado - Habilita a criacao ilimitada de pontos de restauracao.
-echo [ 13 ] Acessar Codigo Fonte no GitHub - Abre o repositorio no GitHub.
-echo [ 14 ] Exibir Informacoes do Sistema - Exibe informacoes detalhadas do sistema.
-echo [ 15 ] Verificar e Reparar Disco - Executa uma verificacao e reparo do disco.
-echo [ 16 ] Configurar Inicio do Sistema - Abre as configuracoes de inicializacao do sistema (msconfig).
-echo [ 17 ] Verificar Arquivos de Sistema - Verifica e repara arquivos de sistema corrompidos.
-echo [ 18 ] Abrir Visualizador de Eventos - Abre o Visualizador de Eventos do Windows.
-echo.
+echo [ 1 ] Reiniciar para BIOS (UEFI)
+echo [ 2 ] Reiniciar normalmente
+echo [ 3 ] Desligar o PC
+echo [ 4 ] Iniciar Gerenciador de Tarefas
+echo [ 5 ] Bloquear a Tela
+echo [ 6 ] Abrir a pasta de Aplicativos
+echo [ 7 ] Abrir God Mode
+echo [ 8 ] Limpar Arquivos Temporarios
+echo [ 9 ] Habilitar F8
+echo [ 10 ] Desabilitar F8
+echo [ 11 ] Criar Ponto de Restauracao
+echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado
+echo [ 13 ] Acessar Codigo Fonte no GitHub
+echo [ 14 ] Exibir Informacoes do Sistema
+echo [ 15 ] Verificar e Reparar Disco
+echo [ 16 ] Configurar Inicio do Sistema (msconfig)
+echo [ 17 ] Verificar Arquivos de Sistema
+echo [ 18 ] Abrir Visualizador de Eventos
 echo [ H ] Ajuda - Exibe esta tela de ajuda.
 echo [ E ] Sai do script.
 color 0E
@@ -206,3 +197,7 @@ goto menu
 
 :exit
 exit
+:invalid_choice
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 18, H ou E.', 'Erro', 'OK', 'Error')}"
+pause
+goto menu
