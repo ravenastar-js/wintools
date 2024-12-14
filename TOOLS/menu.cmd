@@ -49,12 +49,13 @@ echo [ 16 ] Abrir Visualizador de Eventos
 echo [ 17 ] Abrir Quick Launch
 echo [ 18 ] Criar Quick Launch
 echo [ 19 ] Desinstalar ou alterar um programa
+echo [ 20 ] Teclas de Atalho do Windows
 echo [0m
 echo [ [97mG[0m ] [97mAcessar Codigo Fonte no GitHub[0m
 echo [ [93mH[0m ] [93mAjuda - Exibe tela de ajuda.[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-19, H, E, ou G):[0m
+set /p choice=Digite a sua escolha (1-20, H, E, ou G):[0m
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto reboot_normal
@@ -75,6 +76,7 @@ if /i "%choice%"=="16" goto event_viewer
 if /i "%choice%"=="17" goto open_quicklaunch
 if /i "%choice%"=="18" goto create_quicklaunch
 if /i "%choice%"=="19" goto uninstall_programs
+if /i "%choice%"=="20" goto windows_keys
 if /i "%choice%"=="G" goto github
 if /i "%choice%"=="H" goto help
 if /i "%choice%"=="E" goto exit
@@ -175,6 +177,11 @@ cmd /c %~dp0cmd\uninstall_programs.cmd
 pause
 goto menu
 
+:windows_keys
+cmd /c %~dp0cmd\windows_keys.cmd
+pause
+goto menu
+
 :github
 start https://github.com/ravenastar-js/wintools
 pause
@@ -203,6 +210,7 @@ echo [ 16 ] Abrir Visualizador de Eventos
 echo [ 17 ] Abrir Quick Launch
 echo [ 18 ] Criar Quick Launch
 echo [ 19 ] Desinstalar ou alterar um programa
+echo [ 20 ] Teclas de Atalho do Windows
 echo [ G ] Acessar Codigo Fonte no GitHub
 echo [ H ] Ajuda - Exibe esta tela de ajuda.
 echo [ E ] Sai do script.
@@ -214,6 +222,6 @@ goto menu
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 19, H, E, ou G.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 20, H, E, ou G.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu
