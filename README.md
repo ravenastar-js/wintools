@@ -42,27 +42,47 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 
 <details>
 <summary>Teclas de Atalho do Windows</summary>
-
-| **Função**                     | **Tecla de Atalho**               |
-|--------------------------------|-----------------------------------|
-| **Copiar**                     | Ctrl + C                          |
-| **Colar**                      | Ctrl + V                          |
-| **Recortar**                   | Ctrl + X                          |
-| **Desfazer**                   | Ctrl + Z                          |
-| **Selecionar tudo**            | Ctrl + A                          |
-| **Alternar entre janelas abertas** | Alt + Tab                  |
-| **Fechar a janela ativa**      | Alt + F4                          |
-| **Mostrar área de trabalho**   | Win + D                           |
-| **Bloquear o computador**      | Win + L                           |
-| **Abrir o Explorador de Arquivos** | Win + E                       |
-| **Abrir Configurações**        | Win + I                           |
-| **Abrir a busca**              | Win + S                           |
-| **Capturar a tela inteira e salvar como arquivo** | Win + PrtScn  |
-| **Redimensionar e mover janelas** | Win + Setas (↑ ↓ ← →)           |
-| **Minimizar todas as janelas** | Win + M                           |
-| **Restaurar janelas minimizadas** | Win + Shift + M                |
-| **Abrir o Gerenciador de Tarefas** | Ctrl + Shift + Esc            |
-| **Reiniciar a placa gráfica**  | Win + Ctrl + Shift + B            |
+  
+  | **Função**                                   | **Tecla de Atalho**               |
+|----------------------------------------------|-----------------------------------|
+| **Copiar**                                   | Ctrl + C                          |
+| **Colar**                                    | Ctrl + V                          |
+| **Recortar**                                 | Ctrl + X                          |
+| **Desfazer**                                 | Ctrl + Z                          |
+| **Selecionar tudo**                          | Ctrl + A                          |
+| **Alternar entre janelas abertas**           | Alt + Tab                         |
+| **Fechar a janela ativa**                    | Alt + F4                          |
+| **Mostrar área de trabalho**                 | Win + D                           |
+| **Minimizar todas as janelas**               | Win + M                           |
+| **Restaurar janelas minimizadas**            | Win + Shift + M                   |
+| **Redimensionar e mover janelas**            | Win + Setas (↑ ↓ ← →)             |
+| **Bloquear o computador**                    | Win + L                           |
+| **Abrir o Explorador de Arquivos**           | Win + E                           |
+| **Abrir Configurações**                      | Win + I                           |
+| **Abrir a busca**                            | Win + S                           |
+| **Capturar a tela inteira e salvar como arquivo** | Win + PrtScn                 |
+| **Reiniciar a placa gráfica**                | Win + Ctrl + Shift + B            |
+| **Abrir o Gerenciador de Tarefas**           | Ctrl + Shift + Esc                |
+| **Abrir a Central de Ações**                 | Win + A                           |
+| **Abrir a Barra de Notificações**            | Win + N                           |
+| **Abrir a Visão de Tarefas**                 | Win + Tab                         |
+| **Abrir o Menu Iniciar**                     | Ctrl + Esc ou Win                 |
+| **Mostrar ou esconder a Barra de Tarefas**   | Win + T                           |
+| **Maximizar a janela**                       | Win + Setas (↑)                   |
+| **Minimizar a janela**                       | Win + Setas (↓)                   |
+| **Restaurar janela maximizada**              | Win + Setas (↓)                   |
+| **Mover janela para a metade esquerda**      | Win + Setas (←)                   |
+| **Mover janela para a metade direita**       | Win + Setas (→)                   |
+| **Criar uma nova Área de Trabalho**          | Win + Ctrl + D                    |
+| **Fechar a Área de Trabalho atual**          | Win + Ctrl + F4                   |
+| **Alternar entre Áreas de Trabalho**         | Win + Ctrl + Setas (← →)          |
+| **Abrir Cortana (por voz)**                  | Win + C                           |
+| **Abrir o Hub de Feedback**                  | Win + F                           |
+| **Abrir a Conexão de Projeção**              | Win + K                           |
+| **Selecionar a barra de endereços**          | Ctrl + L                          |
+| **Exibir histórico de comandos**             | F7                                |
+| **Abrir Busca de arquivo ou pasta**          | F3                                |
+  
 </details>
 
 <br>
