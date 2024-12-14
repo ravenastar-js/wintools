@@ -10,10 +10,10 @@
 
 Este projeto oferece uma coleção de scripts que facilitam suas tarefas diárias no Windows, permitindo que você:
 
-- Reinicie diretamente para a BIOS (UEFI) com apenas alguns cliques.
+- Reinicie diretamente para a BIOS (UEFI).
 - Reiniciar o seu dispositivo normalmente.
 - Desligar seu dispositivo.
-- Inicie o Gerenciador de Tarefas num piscar de olhos.
+- Inicie o Gerenciador de Tarefas.
 - Bloqueie a tela de seu dispositivo.
 - Acesse facilmente a pasta de aplicativos do Explorer.
 - Desvende o God Mode do Windows para um controle total do sistema.
