@@ -42,8 +42,8 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 
 <details>
 <summary>Teclas de Atalho do Windows</summary>
-  
-  | **Função**                                   | **Tecla de Atalho**               |
+
+| **Função**                                   | **Tecla de Atalho**               |
 |----------------------------------------------|-----------------------------------|
 | **Copiar**                                   | Ctrl + C                          |
 | **Colar**                                    | Ctrl + V                          |
@@ -61,6 +61,7 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 | **Abrir Configurações**                      | Win + I                           |
 | **Abrir a busca**                            | Win + S                           |
 | **Capturar a tela inteira e salvar como arquivo** | Win + PrtScn                 |
+| **Capturar uma parte da tela**               | Win + Shift + S                   |
 | **Reiniciar a placa gráfica**                | Win + Ctrl + Shift + B            |
 | **Abrir o Gerenciador de Tarefas**           | Ctrl + Shift + Esc                |
 | **Abrir a Central de Ações**                 | Win + A                           |
@@ -82,7 +83,7 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 | **Selecionar a barra de endereços**          | Ctrl + L                          |
 | **Exibir histórico de comandos**             | F7                                |
 | **Abrir Busca de arquivo ou pasta**          | F3                                |
-  
+
 </details>
 
 <br>
