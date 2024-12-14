@@ -43,15 +43,10 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 <details>
 <summary>Teclas de Atalho do Windows</summary>
 
+#### Atalhos com Tecla Win
+
 | **Função**                                   | **Tecla de Atalho**               |
 |----------------------------------------------|-----------------------------------|
-| **Copiar**                                   | Ctrl + C                          |
-| **Colar**                                    | Ctrl + V                          |
-| **Recortar**                                 | Ctrl + X                          |
-| **Desfazer**                                 | Ctrl + Z                          |
-| **Selecionar tudo**                          | Ctrl + A                          |
-| **Alternar entre janelas abertas**           | Alt + Tab                         |
-| **Fechar a janela ativa**                    | Alt + F4                          |
 | **Mostrar área de trabalho**                 | Win + D                           |
 | **Minimizar todas as janelas**               | Win + M                           |
 | **Restaurar janelas minimizadas**            | Win + Shift + M                   |
@@ -63,11 +58,9 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 | **Capturar a tela inteira e salvar como arquivo** | Win + PrtScn                 |
 | **Capturar uma parte da tela**               | Win + Shift + S                   |
 | **Reiniciar a placa gráfica**                | Win + Ctrl + Shift + B            |
-| **Abrir o Gerenciador de Tarefas**           | Ctrl + Shift + Esc                |
 | **Abrir a Central de Ações**                 | Win + A                           |
 | **Abrir a Barra de Notificações**            | Win + N                           |
 | **Abrir a Visão de Tarefas**                 | Win + Tab                         |
-| **Abrir o Menu Iniciar**                     | Ctrl + Esc ou Win                 |
 | **Mostrar ou esconder a Barra de Tarefas**   | Win + T                           |
 | **Maximizar a janela**                       | Win + Setas (↑)                   |
 | **Minimizar a janela**                       | Win + Setas (↓)                   |
@@ -80,6 +73,22 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 | **Abrir Cortana (por voz)**                  | Win + C                           |
 | **Abrir o Hub de Feedback**                  | Win + F                           |
 | **Abrir a Conexão de Projeção**              | Win + K                           |
+| **Acessar a área de transferência**          | Win + V                           |
+| **Desbloquear o narrador**                   | Win + Ctrl + Enter                |
+
+#### Outros Atalhos
+
+| **Função**                                   | **Tecla de Atalho**               |
+|----------------------------------------------|-----------------------------------|
+| **Copiar**                                   | Ctrl + C                          |
+| **Colar**                                    | Ctrl + V                          |
+| **Recortar**                                 | Ctrl + X                          |
+| **Desfazer**                                 | Ctrl + Z                          |
+| **Selecionar tudo**                          | Ctrl + A                          |
+| **Alternar entre janelas abertas**           | Alt + Tab                         |
+| **Fechar a janela ativa**                    | Alt + F4                          |
+| **Abrir o Gerenciador de Tarefas**           | Ctrl + Shift + Esc                |
+| **Abrir o Menu Iniciar**                     | Ctrl + Esc ou Win                 |
 | **Selecionar a barra de endereços**          | Ctrl + L                          |
 | **Exibir histórico de comandos**             | F7                                |
 | **Abrir Busca de arquivo ou pasta**          | F3                                |
