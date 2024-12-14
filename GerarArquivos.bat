@@ -10,7 +10,7 @@ rem Verifica se o script está sendo executado como administrador
 net session >nul 2>&1
 if %errorLevel% neq 0 (
     color %color_red%
-    echo Solicitando permissão de administrador...
+    echo Solicitando permissao de administrador...
     goto :elevate
 ) else (
     goto :runScript
@@ -33,14 +33,14 @@ set scriptPath2=%~dp0TOOLS\js\menu.js
 rem Verifica se os arquivos existem
 if not exist "%scriptPath1%" (
     color %color_red%
-    echo Arquivo %scriptPath1% não encontrado.
+    echo Arquivo %scriptPath1% nao encontrado.
     pause
     exit /b
 )
 
 if not exist "%scriptPath2%" (
     color %color_red%
-    echo Arquivo %scriptPath2% não encontrado.
+    echo Arquivo %scriptPath2% nao encontrado.
     pause
     exit /b
 )
