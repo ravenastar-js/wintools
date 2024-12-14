@@ -40,6 +40,31 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 <img src="TOOLS/img/create_quicklaunch.gif" alt="Criando a Quick Launch"/>
 </details>
 
+<details>
+<summary>Teclas de Atalho do Windows</summary>
+
+| **Função**                     | **Tecla de Atalho**               |
+|--------------------------------|-----------------------------------|
+| **Copiar**                     | Ctrl + C                          |
+| **Colar**                      | Ctrl + V                          |
+| **Recortar**                   | Ctrl + X                          |
+| **Desfazer**                   | Ctrl + Z                          |
+| **Selecionar tudo**            | Ctrl + A                          |
+| **Alternar entre janelas abertas** | Alt + Tab                  |
+| **Fechar a janela ativa**      | Alt + F4                          |
+| **Mostrar área de trabalho**   | Win + D                           |
+| **Bloquear o computador**      | Win + L                           |
+| **Abrir o Explorador de Arquivos** | Win + E                       |
+| **Abrir Configurações**        | Win + I                           |
+| **Abrir a busca**              | Win + S                           |
+| **Capturar a tela inteira e salvar como arquivo** | Win + PrtScn  |
+| **Redimensionar e mover janelas** | Win + Setas (↑ ↓ ← →)           |
+| **Minimizar todas as janelas** | Win + M                           |
+| **Restaurar janelas minimizadas** | Win + Shift + M                |
+| **Abrir o Gerenciador de Tarefas** | Ctrl + Shift + Esc            |
+| **Reiniciar a placa gráfica**  | Win + Ctrl + Shift + B            |
+</details>
+
 <br>
 
 ![WinTools](https://i.imgur.com/I8HpeHd.jpeg)
