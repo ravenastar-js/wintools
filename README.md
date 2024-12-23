@@ -101,7 +101,7 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 <summary> <img src="https://i.imgur.com/GvkFWI0.png" width="14"> Windows Rápido e Seguro 2.0</summary>
 <br>
 ● <a href="https://www.baboo.com.br/cursos/aula-02">
-Aula 1: Aula 01: Introdução e erros a evitar
+Aula 1: Introdução e erros a evitar
 </a><br><br>
 ● <a href="https://www.baboo.com.br/cursos/aula-02">
 Aula 02: Análise do disco rígido e SSD
