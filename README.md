@@ -100,36 +100,17 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 <details>
 <summary> <img src="https://i.imgur.com/GvkFWI0.png" width="14"> Windows Rápido e Seguro 2.0</summary>
 <br>
-● <a href="https://www.baboo.com.br/cursos/aula-02">
-Aula 1: Introdução e erros a evitar
-</a><br><br>
-● <a href="https://www.baboo.com.br/cursos/aula-02">
-Aula 02: Análise do disco rígido e SSD
-</a><br><br>
-● <a href="https://www.baboo.com.br/cursos/aula-03">
-Aula 03: CHKDSK SFC DISM
-</a><br><br>
-● <a href="https://www.baboo.com.br/cursos/aula-04">
-Aula 04: Windows Update
-</a><br><br>
-● <a href="https://www.baboo.com.br/cursos/aula-05">
-Aula 05: Desinstalação de programas dispensáveis
-</a><br><br>
-● <a href="https://www.baboo.com.br/cursos/aula-06">
-Aula 06: Remoção de arquivos temporários
-</a><br><br>
-● <a href="https://www.baboo.com.br/cursos/aula-07">
-Aula 07: AdwCleaner + uBlock Origin + TrafficLight
-</a><br><br>
-● <a href="https://www.baboo.com.br/cursos/aula-08">
-Aula 08: KVRT e HouseCall
-</a><br><br>
-● <a href="https://www.baboo.com.br/cursos/aula-09">
-Aula 09: ESET Online Scanner, Emsisoft Emergency Kit e Malwarebytes Premium
-</a><br><br>
-● <a href="https://www.baboo.com.br/cursos/aula-10">
-Aula 10: Desfragmentação e dicas finais
-</a><br><br>
+  
+`Aula 1:` <a href="https://www.baboo.com.br/cursos/aula-01">Introdução e erros a evitar</a><br>
+`Aula 2:` <a href="https://www.baboo.com.br/cursos/aula-02">Análise do disco rígido e SSD</a><br>
+`Aula 3:` <a href="https://www.baboo.com.br/cursos/aula-03">CHKDSK SFC DISM</a><br>
+`Aula 4:` <a href="https://www.baboo.com.br/cursos/aula-04">Windows Update</a><br>
+`Aula 5:` <a href="https://www.baboo.com.br/cursos/aula-05">Desinstalação de programas dispensáveis</a><br>
+`Aula 6:` <a href="https://www.baboo.com.br/cursos/aula-06">Remoção de arquivos temporários</a><br>
+`Aula 7:` <a href="https://www.baboo.com.br/cursos/aula-07">AdwCleaner + uBlock Origin + TrafficLight</a><br>
+`Aula 8:` <a href="https://www.baboo.com.br/cursos/aula-08">KVRT e HouseCall</a><br>
+`Aula 9:` <a href="https://www.baboo.com.br/cursos/aula-09">ESET Online Scanner, Emsisoft Emergency Kit e Malwarebytes Premium</a><br>
+`Aula 10:` <a href="https://www.baboo.com.br/cursos/aula-010">Desfragmentação e dicas finais</a><br>
 </details>
 
 
