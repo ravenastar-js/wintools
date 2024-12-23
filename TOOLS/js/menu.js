@@ -12,7 +12,7 @@ var menuOptions = [
     { label: 'Desabilitar F8', cmd: 'disable_f8', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\disable_f8.cmd\' -Verb RunAs"' },
     { label: 'Criar Ponto de Restauracao', cmd: 'create_restore_point', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\create_restore_point.cmd\' -Verb RunAs"' },
     { label: 'Habilitar Ponto de Restauracao Ilimitado', cmd: 'enable_unlimited_restore_points', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\enable_unlimited_restore_points.cmd\' -Verb RunAs"' },
-    { label: 'Exibir Informacoes do Sistema', cmd: 'system_info', script: 'cmd /c %~dp0cmd\\system_info.cmd' },
+    { label: 'Exibir Informaçoes do Sistema', cmd: 'system_info', script: 'cmd /c %~dp0cmd\\system_info.cmd' },
     { label: 'Configurar Inicio do Sistema (msconfig)', cmd: 'msconfig', script: 'cmd /c %~dp0cmd\\msconfig.cmd' },
     { label: 'Verificar Arquivos de Sistema', cmd: 'sfc_scan', script: 'cmd /c sfc /scannow' },
     { label: 'Abrir Visualizador de Eventos', cmd: 'event_viewer', script: 'cmd /c %~dp0cmd\\event_viewer.cmd' },
@@ -22,78 +22,82 @@ var menuOptions = [
     { label: 'Teclas de Atalho do Windows', cmd: 'windows_keys', script: 'cmd /c %~dp0cmd\\windows_keys.cmd' }
 ];
 
+var COLORS = {
+    DEFAULT: '0A',
+    ERROR: '0C'
+};
 
-
+// Função para adicionar espaços e alinhar o texto à direita
+function padRight(text, length) {
+    if (text.length >= length) {
+        return text;
+    }
+    var padding = '';
+    for (var i = 0; i < (length - text.length); i++) {
+        padding += ' ';
+    }
+    return text + padding;
+}
 // Função para gerar o script CMD
 function generateCmdScript(options) {
-    var script = '@echo off\r\ncolor 0A\r\n\r\n';
-    script += 'rem Verifica se o script está sendo executado como administrador\r\n';
+    var script = '@echo off\r\ncolor ' + COLORS.DEFAULT + '\r\n\r\n';
+    script += 'rem Verifica se o script esta sendo executado como administrador\r\n';
     script += 'net session >nul 2>&1\r\n';
     script += 'if %errorLevel% neq 0 (\r\n';
-    script += '    color 0C\r\n';
+    script += '    color ' + COLORS.ERROR + '\r\n';
     script += '    echo Solicitando permissao de administrador...\r\n';
     script += '    goto elevate\r\n';
     script += ') else (\r\n';
     script += '    goto runScript\r\n';
     script += ')\r\n\r\n';
     script += ':elevate\r\n';
-    script += 'rem Reexecuta o script com permissões de administrador\r\n';
+    script += 'rem Reexecuta o script com permissoes de administrador\r\n';
     script += 'cd /d "%~dp0"\r\n';
     script += 'powershell -Command "Start-Process \'%~s0\' -Verb RunAs"\r\n';
     script += 'exit /b\r\n\r\n';
     script += ':runScript\r\n';
-    script += 'rem Muda para o diretório correto\r\n';
+    script += 'rem Muda para o diretorio correto\r\n';
     script += 'cd /d "%~dp0"\r\n\r\n';
-    script += ':menu\r\ncls\r\ncolor 0A\r\n'; // Adiciona a cor verde
+    script += ':menu\r\ncls\r\ncolor ' + COLORS.DEFAULT + '\r\n'; // Adiciona a cor verde
     script += 'echo ==================================================\r\n';
     script += 'echo.\r\n' + 'echo          github.com/ravenastar-js/wintools\r\n' + 'echo.\r\n';
     script += 'echo ==================================================\r\n';
     script += 'echo.\r\n';
 
-    for (var i = 0; i < options.length; i++) {
-        script += 'echo [ ' + (i + 1) + ' ] ' + options[i].label + '\r\n';
+    var midIndex = Math.ceil(options.length / 2);
+    for (var i = 0; i < midIndex; i++) {
+        var leftLabel = '[ ' + (i + 1) + ' ] ' + options[i].label;
+        var rightLabel = (i + midIndex < options.length) ? '[ ' + (i + midIndex + 1) + ' ] ' + options[i + midIndex].label : '';
+        script += 'echo ' + padRight(leftLabel, 40) + rightLabel + '\r\n';
     }
+
     script += 'echo [0m\r\n';
     script += 'echo [ \x1b[97mG\x1b[0m ] \x1b[97mAcessar Codigo Fonte no GitHub\x1b[0m\r\n';
-    script += 'echo [ \x1b[93mH\x1b[0m ] \x1b[93mAjuda - Exibe tela de ajuda.\x1b[0m\r\n';
     script += 'echo [ \x1b[91mE\x1b[0m ] \x1b[91mSair - Sai do script.\x1b[32m\r\n';
-
+    
+    
     script += 'echo ==================================================\r\n';
-    script += 'set /p choice=Digite a sua escolha (1-' + options.length + ', H, E, ou G):\x1b[0m\r\n\r\n';
+    script += 'set /p choice=Digite a sua escolha (1-' + options.length + ', G ou E):\x1b[93m \r\n\r\n';
 
     for (var i = 0; i < options.length; i++) {
         script += 'if /i "%choice%"=="' + (i + 1) + '" goto ' + options[i].cmd + '\r\n';
     }
 
     script += 'if /i "%choice%"=="G" goto github\r\n';
-    script += 'if /i "%choice%"=="H" goto help\r\n';
     script += 'if /i "%choice%"=="E" goto exit\r\n';
     script += 'goto invalid_choice\r\n\r\n';
 
     for (var i = 0; i < options.length; i++) {
-        script += ':' + options[i].cmd + '\r\n';
+        script += ': ' + options[i].cmd + '\r\n';
+        script += 'echo [0m\r\n'
         script += options[i].script + '\r\n';
         script += 'pause\r\n';
         script += 'goto menu\r\n\r\n';
     }
 
     script += ':github\r\nstart https://github.com/ravenastar-js/wintools\r\npause\r\ngoto menu\r\n\r\n';
-
-    script += ':help\r\ncls\r\ncolor 0E\r\necho Ajuda:\r\n';
-
-    for (var i = 0; i < options.length; i++) {
-        script += 'echo [ ' + (i + 1) + ' ] ' + options[i].label + '\r\n';
-    }
-
-    script += 'echo [ G ] Acessar Codigo Fonte no GitHub\r\n';
-    script += 'echo [ H ] Ajuda - Exibe esta tela de ajuda.\r\n';
-    script += 'echo [ E ] Sai do script.\r\n';
-
-    script += 'color 0E\r\npause\r\ncolor 0A\r\ngoto menu\r\n\r\n';
-
     script += ':exit\r\nexit\r\n';
-
-    script += ':invalid_choice\r\npowershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show(\'Escolher entre 1 a ' + options.length + ', H, E, ou G.\', \'Erro\', \'OK\', \'Error\')}"\r\npause\r\ngoto menu\r\n';
+    script += ':invalid_choice\r\npowershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show(\'Escolher entre 1 a ' + options.length + ', G ou E.\', \'Erro\', \'OK\', \'Error\')}"\r\npause\r\ngoto menu\r\n';
 
     return script;
 }

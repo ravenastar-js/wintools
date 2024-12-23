@@ -1,7 +1,7 @@
 @echo off
 color 0A
 
-rem Verifica se o script está sendo executado como administrador
+rem Verifica se o script esta sendo executado como administrador
 net session >nul 2>&1
 if %errorLevel% neq 0 (
     color 0C
@@ -12,13 +12,13 @@ if %errorLevel% neq 0 (
 )
 
 :elevate
-rem Reexecuta o script com permissões de administrador
+rem Reexecuta o script com permissoes de administrador
 cd /d "%~dp0"
 powershell -Command "Start-Process '%~s0' -Verb RunAs"
 exit /b
 
 :runScript
-rem Muda para o diretório correto
+rem Muda para o diretorio correto
 cd /d "%~dp0"
 
 :menu
@@ -30,32 +30,21 @@ echo          github.com/ravenastar-js/wintools
 echo.
 echo ==================================================
 echo.
-echo [ 1 ] Reiniciar para BIOS (UEFI)
-echo [ 2 ] Reiniciar normalmente
-echo [ 3 ] Desligar o PC
-echo [ 4 ] Iniciar Gerenciador de Tarefas
-echo [ 5 ] Bloquear a Tela
-echo [ 6 ] Abrir a pasta de Aplicativos
-echo [ 7 ] Abrir God Mode
-echo [ 8 ] Limpar Arquivos Temporarios
-echo [ 9 ] Habilitar F8
-echo [ 10 ] Desabilitar F8
-echo [ 11 ] Criar Ponto de Restauracao
-echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado
-echo [ 13 ] Exibir Informacoes do Sistema
-echo [ 14 ] Configurar Inicio do Sistema (msconfig)
-echo [ 15 ] Verificar Arquivos de Sistema
-echo [ 16 ] Abrir Visualizador de Eventos
-echo [ 17 ] Abrir Quick Launch
-echo [ 18 ] Criar Quick Launch
-echo [ 19 ] Desinstalar ou alterar um programa
-echo [ 20 ] Teclas de Atalho do Windows
+echo [ 1 ] Reiniciar para BIOS (UEFI)        [ 11 ] Criar Ponto de Restauracao
+echo [ 2 ] Reiniciar normalmente             [ 12 ] Habilitar Ponto de Restauracao Ilimitado
+echo [ 3 ] Desligar o PC                     [ 13 ] Exibir Informaçoes do Sistema
+echo [ 4 ] Iniciar Gerenciador de Tarefas    [ 14 ] Configurar Inicio do Sistema (msconfig)
+echo [ 5 ] Bloquear a Tela                   [ 15 ] Verificar Arquivos de Sistema
+echo [ 6 ] Abrir a pasta de Aplicativos      [ 16 ] Abrir Visualizador de Eventos
+echo [ 7 ] Abrir God Mode                    [ 17 ] Abrir Quick Launch
+echo [ 8 ] Limpar Arquivos Temporarios       [ 18 ] Criar Quick Launch
+echo [ 9 ] Habilitar F8                      [ 19 ] Desinstalar ou alterar um programa
+echo [ 10 ] Desabilitar F8                   [ 20 ] Teclas de Atalho do Windows
 echo [0m
 echo [ [97mG[0m ] [97mAcessar Codigo Fonte no GitHub[0m
-echo [ [93mH[0m ] [93mAjuda - Exibe tela de ajuda.[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-20, H, E, ou G):[0m
+set /p choice=Digite a sua escolha (1-20, G ou E):[93m 
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto reboot_normal
@@ -78,106 +67,125 @@ if /i "%choice%"=="18" goto create_quicklaunch
 if /i "%choice%"=="19" goto uninstall_programs
 if /i "%choice%"=="20" goto windows_keys
 if /i "%choice%"=="G" goto github
-if /i "%choice%"=="H" goto help
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
 
-:reboot_bios
+: reboot_bios
+echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\reboot_bios.cmd' -Verb RunAs"
 pause
 goto menu
 
-:reboot_normal
+: reboot_normal
+echo [0m
 cmd /c %~dp0cmd\reboot_normal.cmd
 pause
 goto menu
 
-:shutdown
+: shutdown
+echo [0m
 cmd /c %~dp0cmd\shutdown.cmd
 pause
 goto menu
 
-:task_manager
+: task_manager
+echo [0m
 cmd /c %~dp0cmd\task_manager.cmd
 pause
 goto menu
 
-:lock_screen
+: lock_screen
+echo [0m
 cmd /c %~dp0cmd\lock_screen.cmd
 pause
 goto menu
 
-:open_appsfolder
+: open_appsfolder
+echo [0m
 cmd /c %~dp0cmd\open_appsfolder.cmd
 pause
 goto menu
 
-:open_godmode
+: open_godmode
+echo [0m
 cmd /c %~dp0cmd\open_godmode.cmd
 pause
 goto menu
 
-:clean_temp
+: clean_temp
+echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\clean_temp_files.cmd' -Verb RunAs"
 pause
 goto menu
 
-:enable_f8
+: enable_f8
+echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\enable_f8.cmd' -Verb RunAs"
 pause
 goto menu
 
-:disable_f8
+: disable_f8
+echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\disable_f8.cmd' -Verb RunAs"
 pause
 goto menu
 
-:create_restore_point
+: create_restore_point
+echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\create_restore_point.cmd' -Verb RunAs"
 pause
 goto menu
 
-:enable_unlimited_restore_points
+: enable_unlimited_restore_points
+echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\enable_unlimited_restore_points.cmd' -Verb RunAs"
 pause
 goto menu
 
-:system_info
+: system_info
+echo [0m
 cmd /c %~dp0cmd\system_info.cmd
 pause
 goto menu
 
-:msconfig
+: msconfig
+echo [0m
 cmd /c %~dp0cmd\msconfig.cmd
 pause
 goto menu
 
-:sfc_scan
+: sfc_scan
+echo [0m
 cmd /c sfc /scannow
 pause
 goto menu
 
-:event_viewer
+: event_viewer
+echo [0m
 cmd /c %~dp0cmd\event_viewer.cmd
 pause
 goto menu
 
-:open_quicklaunch
+: open_quicklaunch
+echo [0m
 start explorer "%appdata%\Microsoft\Internet Explorer\Quick Launch"
 pause
 goto menu
 
-:create_quicklaunch
+: create_quicklaunch
+echo [0m
 cmd /c %~dp0cmd\create_quicklaunch.cmd
 pause
 goto menu
 
-:uninstall_programs
+: uninstall_programs
+echo [0m
 cmd /c %~dp0cmd\uninstall_programs.cmd
 pause
 goto menu
 
-:windows_keys
+: windows_keys
+echo [0m
 cmd /c %~dp0cmd\windows_keys.cmd
 pause
 goto menu
@@ -187,41 +195,9 @@ start https://github.com/ravenastar-js/wintools
 pause
 goto menu
 
-:help
-cls
-color 0E
-echo Ajuda:
-echo [ 1 ] Reiniciar para BIOS (UEFI)
-echo [ 2 ] Reiniciar normalmente
-echo [ 3 ] Desligar o PC
-echo [ 4 ] Iniciar Gerenciador de Tarefas
-echo [ 5 ] Bloquear a Tela
-echo [ 6 ] Abrir a pasta de Aplicativos
-echo [ 7 ] Abrir God Mode
-echo [ 8 ] Limpar Arquivos Temporarios
-echo [ 9 ] Habilitar F8
-echo [ 10 ] Desabilitar F8
-echo [ 11 ] Criar Ponto de Restauracao
-echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado
-echo [ 13 ] Exibir Informacoes do Sistema
-echo [ 14 ] Configurar Inicio do Sistema (msconfig)
-echo [ 15 ] Verificar Arquivos de Sistema
-echo [ 16 ] Abrir Visualizador de Eventos
-echo [ 17 ] Abrir Quick Launch
-echo [ 18 ] Criar Quick Launch
-echo [ 19 ] Desinstalar ou alterar um programa
-echo [ 20 ] Teclas de Atalho do Windows
-echo [ G ] Acessar Codigo Fonte no GitHub
-echo [ H ] Ajuda - Exibe esta tela de ajuda.
-echo [ E ] Sai do script.
-color 0E
-pause
-color 0A
-goto menu
-
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 20, H, E, ou G.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 20, G ou E.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu
