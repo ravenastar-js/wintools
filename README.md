@@ -99,14 +99,24 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 
 <details>
 <summary>Corrigindo arquivos do Windows</summary>
-<br>
   <img src="https://i.imgur.com/GvkFWI0.png" width="14">
   Leia a matéria
 <a href="https://www.baboo.com.br/cursos/aula-03-chkdsk-sfc-dism-windows-rapido-seguro-2-0/">
 clicando aqui
 </a>
+<br><br>
 </details>
-<br>
+
+<details>
+<summary>Remoção de arquivos temporários</summary>
+  <img src="https://i.imgur.com/GvkFWI0.png" width="14">
+  Leia a matéria
+<a href="https://www.baboo.com.br/cursos/aula-06-remocao-arquivos-temporarios-windows-rapido-seguro-2-0/">
+clicando aqui
+</a>
+<br><br>
+</details>
+
 
 ![WinTools](https://i.imgur.com/I8HpeHd.jpeg)
 
