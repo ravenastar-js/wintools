@@ -102,7 +102,7 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 <br>
   <img src="https://i.imgur.com/GvkFWI0.png" width="14">
   Leia a matéria
-<a href="https://www.baboo.com.br/tutorial-windows/script-do-baboo-para-apagar-arquivos-temporarios/" target="_blank" >
+<a href="https://www.baboo.com.br/tutorial-windows/script-do-baboo-para-apagar-arquivos-temporarios/">
 clicando aqui
 </a>
 </details>
