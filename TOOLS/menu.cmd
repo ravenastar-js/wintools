@@ -30,21 +30,22 @@ echo          github.com/ravenastar-js/wintools
 echo.
 echo ==================================================
 echo.
-echo [ 1 ] Reiniciar para BIOS (UEFI)        [ 11 ] Criar Ponto de Restauracao
-echo [ 2 ] Reiniciar normalmente             [ 12 ] Habilitar Ponto de Restauracao Ilimitado
-echo [ 3 ] Desligar o PC                     [ 13 ] Exibir Informaçoes do Sistema
-echo [ 4 ] Iniciar Gerenciador de Tarefas    [ 14 ] Configurar Inicio do Sistema (msconfig)
-echo [ 5 ] Bloquear a Tela                   [ 15 ] Verificar Arquivos de Sistema
-echo [ 6 ] Abrir a pasta de Aplicativos      [ 16 ] Abrir Visualizador de Eventos
-echo [ 7 ] Abrir God Mode                    [ 17 ] Abrir Quick Launch
-echo [ 8 ] Limpar Arquivos Temporarios       [ 18 ] Criar Quick Launch
-echo [ 9 ] Habilitar F8                      [ 19 ] Desinstalar ou alterar um programa
-echo [ 10 ] Desabilitar F8                   [ 20 ] Teclas de Atalho do Windows
+echo [ 1 ] Reiniciar para BIOS (UEFI)        [ 12 ] Habilitar Ponto de Restauracao Ilimitado
+echo [ 2 ] Reiniciar normalmente             [ 13 ] Exibir Informaçoes do Sistema
+echo [ 3 ] Desligar o PC                     [ 14 ] Configurar Inicio do Sistema (msconfig)
+echo [ 4 ] Iniciar Gerenciador de Tarefas    [ 15 ] Verificar Arquivos de Sistema
+echo [ 5 ] Bloquear a Tela                   [ 16 ] Abrir Visualizador de Eventos
+echo [ 6 ] Abrir a pasta de Aplicativos      [ 17 ] Abrir Quick Launch
+echo [ 7 ] Abrir God Mode                    [ 18 ] Criar Quick Launch
+echo [ 8 ] Limpar Arquivos Temporarios       [ 19 ] Desinstalar ou alterar um programa
+echo [ 9 ] Habilitar F8                      [ 20 ] Teclas de Atalho do Windows
+echo [ 10 ] Desabilitar F8                   [ 21 ] Curso gratuito Windows Rapido e Seguro 2.0
+echo [ 11 ] Criar Ponto de Restauracao       
 echo [0m
 echo [ [97mG[0m ] [97mAcessar Codigo Fonte no GitHub[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-20, G ou E):[93m 
+set /p choice=Digite a sua escolha (1-21, G ou E):[93m 
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto reboot_normal
@@ -66,6 +67,7 @@ if /i "%choice%"=="17" goto open_quicklaunch
 if /i "%choice%"=="18" goto create_quicklaunch
 if /i "%choice%"=="19" goto uninstall_programs
 if /i "%choice%"=="20" goto windows_keys
+if /i "%choice%"=="21" goto wrs_2
 if /i "%choice%"=="G" goto github
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
@@ -190,6 +192,12 @@ cmd /c %~dp0cmd\windows_keys.cmd
 pause
 goto menu
 
+: wrs_2
+echo [0m
+cmd /c %~dp0cmd\wrs_2.cmd
+pause
+goto menu
+
 :github
 start https://github.com/ravenastar-js/wintools
 pause
@@ -198,6 +206,6 @@ goto menu
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 20, G ou E.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 21, G ou E.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu
