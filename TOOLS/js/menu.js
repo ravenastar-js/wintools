@@ -20,7 +20,8 @@ var menuOptions = [
     { label: 'Criar Quick Launch', cmd: 'create_quicklaunch', script: 'cmd /c %~dp0cmd\\create_quicklaunch.cmd' },
     { label: 'Desinstalar ou alterar um programa', cmd: 'uninstall_programs', script: 'cmd /c %~dp0cmd\\uninstall_programs.cmd' },
     { label: 'Teclas de Atalho do Windows', cmd: 'windows_keys', script: 'cmd /c %~dp0cmd\\windows_keys.cmd' },
-    { label: 'Curso gratuito Windows Rapido e Seguro 2.0', cmd: 'wrs_2', script: 'cmd /c %~dp0cmd\\wrs_2.cmd' }
+    { label: 'Curso gratuito Windows Rapido e Seguro 2.0', cmd: 'wrs_2', script: 'cmd /c %~dp0cmd\\wrs_2.cmd' },
+    { label: 'Formatar e criar unidades flash USB inicializaveis (softwares)', cmd: 'usb_boot_tools', script: 'cmd /c %~dp0cmd\\usb_boot_tools.cmd' }
 ];
 
 var COLORS = {

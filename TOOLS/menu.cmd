@@ -40,12 +40,12 @@ echo [ 7 ] Abrir God Mode                    [ 18 ] Criar Quick Launch
 echo [ 8 ] Limpar Arquivos Temporarios       [ 19 ] Desinstalar ou alterar um programa
 echo [ 9 ] Habilitar F8                      [ 20 ] Teclas de Atalho do Windows
 echo [ 10 ] Desabilitar F8                   [ 21 ] Curso gratuito Windows Rapido e Seguro 2.0
-echo [ 11 ] Criar Ponto de Restauracao       
+echo [ 11 ] Criar Ponto de Restauracao       [ 22 ] Formatar e criar unidades flash USB inicializaveis (softwares)
 echo [0m
 echo [ [97mG[0m ] [97mAcessar Codigo Fonte no GitHub[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-21, G ou E):[93m 
+set /p choice=Digite a sua escolha (1-22, G ou E):[93m 
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto reboot_normal
@@ -68,6 +68,7 @@ if /i "%choice%"=="18" goto create_quicklaunch
 if /i "%choice%"=="19" goto uninstall_programs
 if /i "%choice%"=="20" goto windows_keys
 if /i "%choice%"=="21" goto wrs_2
+if /i "%choice%"=="22" goto usb_boot_tools
 if /i "%choice%"=="G" goto github
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
@@ -198,6 +199,12 @@ cmd /c %~dp0cmd\wrs_2.cmd
 pause
 goto menu
 
+: usb_boot_tools
+echo [0m
+cmd /c %~dp0cmd\usb_boot_tools.cmd
+pause
+goto menu
+
 :github
 start https://github.com/ravenastar-js/wintools
 pause
@@ -206,6 +213,6 @@ goto menu
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 21, G ou E.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 22, G ou E.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu
