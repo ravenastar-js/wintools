@@ -98,24 +98,40 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 ### 💡 EXTRAS 
 
 <details>
-<summary>Corrigindo arquivos do Windows</summary>
-  <img src="https://i.imgur.com/GvkFWI0.png" width="14">
-  Leia a matéria
-<a href="https://www.baboo.com.br/cursos/aula-03-chkdsk-sfc-dism-windows-rapido-seguro-2-0/">
-clicando aqui
-</a>
-<br><br>
+<summary> <img src="https://i.imgur.com/GvkFWI0.png" width="14"> Windows Rápido e Seguro 2.0</summary>
+<br>
+● <a href="https://www.baboo.com.br/cursos/aula-02">
+Aula 1: Aula 01: Introdução e erros a evitar
+</a><br><br>
+● <a href="https://www.baboo.com.br/cursos/aula-02">
+Aula 02: Análise do disco rígido e SSD
+</a><br><br>
+● <a href="https://www.baboo.com.br/cursos/aula-03">
+Aula 03: CHKDSK SFC DISM
+</a><br><br>
+● <a href="https://www.baboo.com.br/cursos/aula-04">
+Aula 04: Windows Update
+</a><br><br>
+● <a href="https://www.baboo.com.br/cursos/aula-05">
+Aula 05: Desinstalação de programas dispensáveis
+</a><br><br>
+● <a href="https://www.baboo.com.br/cursos/aula-06">
+Aula 06: Remoção de arquivos temporários
+</a><br><br>
+● <a href="https://www.baboo.com.br/cursos/aula-07">
+Aula 07: AdwCleaner + uBlock Origin + TrafficLight
+</a><br><br>
+● <a href="https://www.baboo.com.br/cursos/aula-08">
+Aula 08: KVRT e HouseCall
+</a><br><br>
+● <a href="https://www.baboo.com.br/cursos/aula-09">
+Aula 09: ESET Online Scanner, Emsisoft Emergency Kit e Malwarebytes Premium
+</a><br><br>
+● <a href="https://www.baboo.com.br/cursos/aula-10">
+Aula 10: Desfragmentação e dicas finais
+</a><br><br>
 </details>
 
-<details>
-<summary>Remoção de arquivos temporários</summary>
-  <img src="https://i.imgur.com/GvkFWI0.png" width="14">
-  Leia a matéria
-<a href="https://www.baboo.com.br/cursos/aula-06-remocao-arquivos-temporarios-windows-rapido-seguro-2-0/">
-clicando aqui
-</a>
-<br><br>
-</details>
 
 
 ![WinTools](https://i.imgur.com/I8HpeHd.jpeg)
