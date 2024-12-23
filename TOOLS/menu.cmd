@@ -31,7 +31,7 @@ echo.
 echo ==================================================
 echo.
 echo [ 1 ] Reiniciar para BIOS (UEFI)        [ 12 ] Habilitar Ponto de Restauracao Ilimitado
-echo [ 2 ] Reiniciar normalmente             [ 13 ] Exibir Informaçoes do Sistema
+echo [ 2 ] Reiniciar normalmente             [ 13 ] Exibir Informacoes do Sistema
 echo [ 3 ] Desligar o PC                     [ 14 ] Configurar Inicio do Sistema (msconfig)
 echo [ 4 ] Iniciar Gerenciador de Tarefas    [ 15 ] Verificar Arquivos de Sistema
 echo [ 5 ] Bloquear a Tela                   [ 16 ] Abrir Visualizador de Eventos
