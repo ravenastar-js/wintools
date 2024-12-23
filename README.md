@@ -95,6 +95,14 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 
 </details>
 
+### 💡 EXTRAS 
+
+<details>
+<summary>Corrigindo arquivos do Windows</summary>
+<br>
+
+  ![](https://i.imgur.com/GvkFWI0.png) Leia a matéria [clicando aqui](https://www.baboo.com.br/tutorial-windows/script-do-baboo-para-apagar-arquivos-temporarios/)
+</details>
 <br>
 
 ![WinTools](https://i.imgur.com/I8HpeHd.jpeg)
