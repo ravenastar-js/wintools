@@ -19,9 +19,14 @@ var menuOptions = [
     { label: 'Abrir Quick Launch', cmd: 'open_quicklaunch', script: 'start explorer "%appdata%\\Microsoft\\Internet Explorer\\Quick Launch"' },
     { label: 'Criar Quick Launch', cmd: 'create_quicklaunch', script: 'cmd /c %~dp0cmd\\create_quicklaunch.cmd' },
     { label: 'Desinstalar ou alterar um programa', cmd: 'uninstall_programs', script: 'cmd /c %~dp0cmd\\uninstall_programs.cmd' },
+    { label: 'Conexoes de Rede', cmd: 'conexoes_redes', script: 'cmd /c %~dp0cmd\\conexoes_redes.cmd' },
+    { label: 'Mostrar o cache DNS', cmd: 'display_dns', script: 'cmd /c %~dp0cmd\\display_dns.cmd' },
+    { label: 'Limpar o cache DNS', cmd: 'flush_dns', script: 'cmd /c %~dp0cmd\\flush_dns.cmd' },
+    { label: 'Abrir Aba DNS navegador Firefox', cmd: 'firefox_dns', script: 'cmd /c %~dp0cmd\\firefox_dns.cmd' },
+    { label: '(caminho) Aba DNS navegador Google', cmd: 'chrome_dns', script: 'cmd /c %~dp0cmd\\chrome_dns.cmd' },
     { label: 'Teclas de Atalho do Windows', cmd: 'windows_keys', script: 'cmd /c %~dp0cmd\\windows_keys.cmd' },
     { label: 'Curso gratuito Windows Rapido e Seguro 2.0', cmd: 'wrs_2', script: 'cmd /c %~dp0cmd\\wrs_2.cmd' },
-    { label: 'Formatar e criar unidades flash USB inicializaveis (softwares)', cmd: 'usb_boot_tools', script: 'cmd /c %~dp0cmd\\usb_boot_tools.cmd' }
+    { label: 'Flash USB inicializaveis (softwares)', cmd: 'usb_boot_tools', script: 'cmd /c %~dp0cmd\\usb_boot_tools.cmd' }
 ];
 
 var COLORS = {
@@ -70,7 +75,7 @@ function generateCmdScript(options) {
     for (var i = 0; i < midIndex; i++) {
         var leftLabel = '[ ' + (i + 1) + ' ] ' + options[i].label;
         var rightLabel = (i + midIndex < options.length) ? '[ ' + (i + midIndex + 1) + ' ] ' + options[i + midIndex].label : '';
-        script += 'echo ' + padRight(leftLabel, 40) + rightLabel + '\r\n';
+        script += 'echo ' + padRight(leftLabel, 50) + rightLabel + '\r\n';
     }
 
     script += 'echo [0m\r\n';
@@ -97,7 +102,7 @@ function generateCmdScript(options) {
         script += 'goto menu\r\n\r\n';
     }
 
-    script += ':github\r\nstart https://github.com/ravenastar-js/wintools\r\npause\r\ngoto menu\r\n\r\n';
+    script += ':github\r\necho [0m\r\nstart https://github.com/ravenastar-js/wintools\r\npause\r\ngoto menu\r\n\r\n';
     script += ':exit\r\nexit\r\n';
     script += ':invalid_choice\r\npowershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show(\'Escolher entre 1 a ' + options.length + ', G ou E.\', \'Erro\', \'OK\', \'Error\')}"\r\npause\r\ngoto menu\r\n';
 

@@ -30,22 +30,25 @@ echo          github.com/ravenastar-js/wintools
 echo.
 echo ==================================================
 echo.
-echo [ 1 ] Reiniciar para BIOS (UEFI)        [ 12 ] Habilitar Ponto de Restauracao Ilimitado
-echo [ 2 ] Reiniciar normalmente             [ 13 ] Exibir Informacoes do Sistema
-echo [ 3 ] Desligar o PC                     [ 14 ] Configurar Inicio do Sistema (msconfig)
-echo [ 4 ] Iniciar Gerenciador de Tarefas    [ 15 ] Verificar Arquivos de Sistema
-echo [ 5 ] Bloquear a Tela                   [ 16 ] Abrir Visualizador de Eventos
-echo [ 6 ] Abrir a pasta de Aplicativos      [ 17 ] Abrir Quick Launch
-echo [ 7 ] Abrir God Mode                    [ 18 ] Criar Quick Launch
-echo [ 8 ] Limpar Arquivos Temporarios       [ 19 ] Desinstalar ou alterar um programa
-echo [ 9 ] Habilitar F8                      [ 20 ] Teclas de Atalho do Windows
-echo [ 10 ] Desabilitar F8                   [ 21 ] Curso gratuito Windows Rapido e Seguro 2.0
-echo [ 11 ] Criar Ponto de Restauracao       [ 22 ] Formatar e criar unidades flash USB inicializaveis (softwares)
+echo [ 1 ] Reiniciar para BIOS (UEFI)                  [ 15 ] Verificar Arquivos de Sistema
+echo [ 2 ] Reiniciar normalmente                       [ 16 ] Abrir Visualizador de Eventos
+echo [ 3 ] Desligar o PC                               [ 17 ] Abrir Quick Launch
+echo [ 4 ] Iniciar Gerenciador de Tarefas              [ 18 ] Criar Quick Launch
+echo [ 5 ] Bloquear a Tela                             [ 19 ] Desinstalar ou alterar um programa
+echo [ 6 ] Abrir a pasta de Aplicativos                [ 20 ] Conexoes de Rede
+echo [ 7 ] Abrir God Mode                              [ 21 ] Mostrar o cache DNS
+echo [ 8 ] Limpar Arquivos Temporarios                 [ 22 ] Limpar o cache DNS
+echo [ 9 ] Habilitar F8                                [ 23 ] Abrir Aba DNS navegador Firefox
+echo [ 10 ] Desabilitar F8                             [ 24 ] (caminho) Aba DNS navegador Google
+echo [ 11 ] Criar Ponto de Restauracao                 [ 25 ] Teclas de Atalho do Windows
+echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado   [ 26 ] Curso gratuito Windows Rapido e Seguro 2.0
+echo [ 13 ] Exibir Informacoes do Sistema              [ 27 ] Flash USB inicializaveis (softwares)
+echo [ 14 ] Configurar Inicio do Sistema (msconfig)    
 echo [0m
 echo [ [97mG[0m ] [97mAcessar Codigo Fonte no GitHub[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-22, G ou E):[93m 
+set /p choice=Digite a sua escolha (1-27, G ou E):[93m 
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto reboot_normal
@@ -66,9 +69,14 @@ if /i "%choice%"=="16" goto event_viewer
 if /i "%choice%"=="17" goto open_quicklaunch
 if /i "%choice%"=="18" goto create_quicklaunch
 if /i "%choice%"=="19" goto uninstall_programs
-if /i "%choice%"=="20" goto windows_keys
-if /i "%choice%"=="21" goto wrs_2
-if /i "%choice%"=="22" goto usb_boot_tools
+if /i "%choice%"=="20" goto conexoes_redes
+if /i "%choice%"=="21" goto display_dns
+if /i "%choice%"=="22" goto flush_dns
+if /i "%choice%"=="23" goto firefox_dns
+if /i "%choice%"=="24" goto chrome_dns
+if /i "%choice%"=="25" goto windows_keys
+if /i "%choice%"=="26" goto wrs_2
+if /i "%choice%"=="27" goto usb_boot_tools
 if /i "%choice%"=="G" goto github
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
@@ -187,6 +195,36 @@ cmd /c %~dp0cmd\uninstall_programs.cmd
 pause
 goto menu
 
+: conexoes_redes
+echo [0m
+cmd /c %~dp0cmd\conexoes_redes.cmd
+pause
+goto menu
+
+: display_dns
+echo [0m
+cmd /c %~dp0cmd\display_dns.cmd
+pause
+goto menu
+
+: flush_dns
+echo [0m
+cmd /c %~dp0cmd\flush_dns.cmd
+pause
+goto menu
+
+: firefox_dns
+echo [0m
+cmd /c %~dp0cmd\firefox_dns.cmd
+pause
+goto menu
+
+: chrome_dns
+echo [0m
+cmd /c %~dp0cmd\chrome_dns.cmd
+pause
+goto menu
+
 : windows_keys
 echo [0m
 cmd /c %~dp0cmd\windows_keys.cmd
@@ -206,6 +244,7 @@ pause
 goto menu
 
 :github
+echo [0m
 start https://github.com/ravenastar-js/wintools
 pause
 goto menu
@@ -213,6 +252,6 @@ goto menu
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 22, G ou E.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 27, G ou E.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu
