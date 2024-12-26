@@ -8,6 +8,7 @@ if %errorLevel% neq 0 (
     echo Solicitando permissao de administrador...
     goto elevate
 ) else (
+    chcp 65001
     goto runScript
 )
 
@@ -30,20 +31,20 @@ echo          github.com/ravenastar-js/wintools
 echo.
 echo ==================================================
 echo.
-echo [ 1 ] Reiniciar para BIOS (UEFI)                  [ 15 ] Verificar Arquivos de Sistema
+echo [ 1 ] Reiniciar para BIOS (UEFI)                  [ 15 ] Verificar arquivos de sistema
 echo [ 2 ] Reiniciar normalmente                       [ 16 ] Abrir Visualizador de Eventos
 echo [ 3 ] Desligar o PC                               [ 17 ] Abrir Quick Launch
 echo [ 4 ] Iniciar Gerenciador de Tarefas              [ 18 ] Criar Quick Launch
-echo [ 5 ] Bloquear a Tela                             [ 19 ] Desinstalar ou alterar um programa
-echo [ 6 ] Abrir a pasta de Aplicativos                [ 20 ] Conexoes de Rede
+echo [ 5 ] Bloquear a tela                             [ 19 ] Desinstalar ou alterar um programa
+echo [ 6 ] Abrir a pasta de aplicativos                [ 20 ] Conexões de Rede
 echo [ 7 ] Abrir God Mode                              [ 21 ] Mostrar o cache DNS
-echo [ 8 ] Limpar Arquivos Temporarios                 [ 22 ] Limpar o cache DNS
-echo [ 9 ] Habilitar F8                                [ 23 ] Abrir Aba DNS navegador Firefox
-echo [ 10 ] Desabilitar F8                             [ 24 ] (caminho) Aba DNS navegador Google
-echo [ 11 ] Criar Ponto de Restauracao                 [ 25 ] Teclas de Atalho do Windows
-echo [ 12 ] Habilitar Ponto de Restauracao Ilimitado   [ 26 ] Curso gratuito Windows Rapido e Seguro 2.0
-echo [ 13 ] Exibir Informacoes do Sistema              [ 27 ] Flash USB inicializaveis (softwares)
-echo [ 14 ] Configurar Inicio do Sistema (msconfig)    
+echo [ 8 ] Limpar arquivos temporários                [ 22 ] Limpar o cache DNS
+echo [ 9 ] Habilitar F8                                [ 23 ] Abrir aba DNS navegador Firefox
+echo [ 10 ] Desabilitar F8                             [ 24 ] Abrir aba DNS navegador Google
+echo [ 11 ] Criar ponto de restauração               [ 25 ] Teclas de atalho do Windows
+echo [ 12 ] Habilitar ponto de restauração ilimitado [ 26 ] Curso gratuito Windows Rápido e Seguro 2.0
+echo [ 13 ] Exibir informações do sistema            [ 27 ] Flash USB inicializáveis (softwares)
+echo [ 14 ] Configurar início do sistema (msconfig)   
 echo [0m
 echo [ [97mG[0m ] [97mAcessar Codigo Fonte no GitHub[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m

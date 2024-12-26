@@ -4,29 +4,29 @@ var menuOptions = [
     { label: 'Reiniciar normalmente', cmd: 'reboot_normal', script: 'cmd /c %~dp0cmd\\reboot_normal.cmd' },
     { label: 'Desligar o PC', cmd: 'shutdown', script: 'cmd /c %~dp0cmd\\shutdown.cmd' },
     { label: 'Iniciar Gerenciador de Tarefas', cmd: 'task_manager', script: 'cmd /c %~dp0cmd\\task_manager.cmd' },
-    { label: 'Bloquear a Tela', cmd: 'lock_screen', script: 'cmd /c %~dp0cmd\\lock_screen.cmd' },
-    { label: 'Abrir a pasta de Aplicativos', cmd: 'open_appsfolder', script: 'cmd /c %~dp0cmd\\open_appsfolder.cmd' },
+    { label: 'Bloquear a tela', cmd: 'lock_screen', script: 'cmd /c %~dp0cmd\\lock_screen.cmd' },
+    { label: 'Abrir a pasta de aplicativos', cmd: 'open_appsfolder', script: 'cmd /c %~dp0cmd\\open_appsfolder.cmd' },
     { label: 'Abrir God Mode', cmd: 'open_godmode', script: 'cmd /c %~dp0cmd\\open_godmode.cmd' },
-    { label: 'Limpar Arquivos Temporarios', cmd: 'clean_temp', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\clean_temp_files.cmd\' -Verb RunAs"' },
+    { label: 'Limpar arquivos temporários', cmd: 'clean_temp', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\clean_temp_files.cmd\' -Verb RunAs"' },
     { label: 'Habilitar F8', cmd: 'enable_f8', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\enable_f8.cmd\' -Verb RunAs"' },
     { label: 'Desabilitar F8', cmd: 'disable_f8', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\disable_f8.cmd\' -Verb RunAs"' },
-    { label: 'Criar Ponto de Restauracao', cmd: 'create_restore_point', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\create_restore_point.cmd\' -Verb RunAs"' },
-    { label: 'Habilitar Ponto de Restauracao Ilimitado', cmd: 'enable_unlimited_restore_points', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\enable_unlimited_restore_points.cmd\' -Verb RunAs"' },
-    { label: 'Exibir Informacoes do Sistema', cmd: 'system_info', script: 'cmd /c %~dp0cmd\\system_info.cmd' },
-    { label: 'Configurar Inicio do Sistema (msconfig)', cmd: 'msconfig', script: 'cmd /c %~dp0cmd\\msconfig.cmd' },
-    { label: 'Verificar Arquivos de Sistema', cmd: 'sfc_scan', script: 'cmd /c sfc /scannow' },
+    { label: 'Criar ponto de restauração', cmd: 'create_restore_point', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\create_restore_point.cmd\' -Verb RunAs"' },
+    { label: 'Habilitar ponto de restauração ilimitado', cmd: 'enable_unlimited_restore_points', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\enable_unlimited_restore_points.cmd\' -Verb RunAs"' },
+    { label: 'Exibir informações do sistema', cmd: 'system_info', script: 'cmd /c %~dp0cmd\\system_info.cmd' },
+    { label: 'Configurar início do sistema (msconfig)', cmd: 'msconfig', script: 'cmd /c %~dp0cmd\\msconfig.cmd' },
+    { label: 'Verificar arquivos de sistema', cmd: 'sfc_scan', script: 'cmd /c sfc /scannow' },
     { label: 'Abrir Visualizador de Eventos', cmd: 'event_viewer', script: 'cmd /c %~dp0cmd\\event_viewer.cmd' },
     { label: 'Abrir Quick Launch', cmd: 'open_quicklaunch', script: 'start explorer "%appdata%\\Microsoft\\Internet Explorer\\Quick Launch"' },
     { label: 'Criar Quick Launch', cmd: 'create_quicklaunch', script: 'cmd /c %~dp0cmd\\create_quicklaunch.cmd' },
     { label: 'Desinstalar ou alterar um programa', cmd: 'uninstall_programs', script: 'cmd /c %~dp0cmd\\uninstall_programs.cmd' },
-    { label: 'Conexoes de Rede', cmd: 'conexoes_redes', script: 'cmd /c %~dp0cmd\\conexoes_redes.cmd' },
+    { label: 'Conexões de Rede', cmd: 'conexoes_redes', script: 'cmd /c %~dp0cmd\\conexoes_redes.cmd' },
     { label: 'Mostrar o cache DNS', cmd: 'display_dns', script: 'cmd /c %~dp0cmd\\display_dns.cmd' },
     { label: 'Limpar o cache DNS', cmd: 'flush_dns', script: 'cmd /c %~dp0cmd\\flush_dns.cmd' },
-    { label: 'Abrir Aba DNS navegador Firefox', cmd: 'firefox_dns', script: 'cmd /c %~dp0cmd\\firefox_dns.cmd' },
-    { label: '(caminho) Aba DNS navegador Google', cmd: 'chrome_dns', script: 'cmd /c %~dp0cmd\\chrome_dns.cmd' },
-    { label: 'Teclas de Atalho do Windows', cmd: 'windows_keys', script: 'cmd /c %~dp0cmd\\windows_keys.cmd' },
-    { label: 'Curso gratuito Windows Rapido e Seguro 2.0', cmd: 'wrs_2', script: 'cmd /c %~dp0cmd\\wrs_2.cmd' },
-    { label: 'Flash USB inicializaveis (softwares)', cmd: 'usb_boot_tools', script: 'cmd /c %~dp0cmd\\usb_boot_tools.cmd' }
+    { label: 'Abrir aba DNS navegador Firefox', cmd: 'firefox_dns', script: 'cmd /c %~dp0cmd\\firefox_dns.cmd' },
+    { label: 'Abrir aba DNS navegador Google', cmd: 'chrome_dns', script: 'cmd /c %~dp0cmd\\chrome_dns.cmd' },
+    { label: 'Teclas de atalho do Windows', cmd: 'windows_keys', script: 'cmd /c %~dp0cmd\\windows_keys.cmd' },
+    { label: 'Curso gratuito Windows Rápido e Seguro 2.0', cmd: 'wrs_2', script: 'cmd /c %~dp0cmd\\wrs_2.cmd' },
+    { label: 'Flash USB inicializáveis (softwares)', cmd: 'usb_boot_tools', script: 'cmd /c %~dp0cmd\\usb_boot_tools.cmd' }
 ];
 
 var COLORS = {
@@ -46,7 +46,7 @@ function padRight(text, length) {
     return text + padding;
 }
 // Função para gerar o script CMD
-function generateCmdScript(options) {
+function generateCmdScript(options) {   
     var script = '@echo off\r\ncolor ' + COLORS.DEFAULT + '\r\n\r\n';
     script += 'rem Verifica se o script esta sendo executado como administrador\r\n';
     script += 'net session >nul 2>&1\r\n';
@@ -55,6 +55,7 @@ function generateCmdScript(options) {
     script += '    echo Solicitando permissao de administrador...\r\n';
     script += '    goto elevate\r\n';
     script += ') else (\r\n';
+    script += '    chcp 65001\r\n';
     script += '    goto runScript\r\n';
     script += ')\r\n\r\n';
     script += ':elevate\r\n';
