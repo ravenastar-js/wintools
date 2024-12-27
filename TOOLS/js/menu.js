@@ -6,6 +6,7 @@ var menuOptions = [
     { label: 'Iniciar Gerenciador de Tarefas', cmd: 'task_manager', script: 'cmd /c %~dp0cmd\\task_manager.cmd' },
     { label: 'Bloquear a tela', cmd: 'lock_screen', script: 'cmd /c %~dp0cmd\\lock_screen.cmd' },
     { label: 'Abrir a pasta de aplicativos', cmd: 'open_appsfolder', script: 'cmd /c %~dp0cmd\\open_appsfolder.cmd' },
+    { label: 'Gerenciamento de Disco', cmd: 'open_gd', script: 'cmd /c %~dp0cmd\\open_gd.cmd' },
     { label: 'Abrir God Mode', cmd: 'open_godmode', script: 'cmd /c %~dp0cmd\\open_godmode.cmd' },
     { label: 'Limpar arquivos temporários', cmd: 'clean_temp', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\clean_temp_files.cmd\' -Verb RunAs"' },
     { label: 'Abrir Pasta Lixeira', cmd: 'open_lixeira', script: 'cmd /c %~dp0cmd\\open_lixeira.cmd' },
