@@ -31,26 +31,27 @@ echo          github.com/ravenastar-js/wintools
 echo.
 echo ==================================================
 echo.
-echo [ 1 ] Reiniciar para BIOS (UEFI)                  [ 16 ] Configurar início do sistema (msconfig)
-echo [ 2 ] Reiniciar normalmente                       [ 17 ] Verificar arquivos de sistema
-echo [ 3 ] Desligar o PC                               [ 18 ] Abrir Visualizador de Eventos
-echo [ 4 ] Iniciar Gerenciador de Tarefas              [ 19 ] Abrir Quick Launch
-echo [ 5 ] Bloquear a tela                             [ 20 ] Criar Quick Launch
-echo [ 6 ] Abrir a pasta de aplicativos                [ 21 ] Desinstalar ou alterar um programa
-echo [ 7 ] Gerenciamento de Disco                      [ 22 ] Conexões de Rede
-echo [ 8 ] Abrir God Mode                              [ 23 ] Mostrar o cache DNS
-echo [ 9 ] Limpar arquivos temporários                [ 24 ] Limpar o cache DNS
-echo [ 10 ] Abrir Pasta Lixeira                        [ 25 ] Abrir aba DNS navegador Firefox
-echo [ 11 ] Habilitar F8                               [ 26 ] Abrir aba DNS navegador Google
-echo [ 12 ] Desabilitar F8                             [ 27 ] Teclas de atalho do Windows
-echo [ 13 ] Criar ponto de restauração               [ 28 ] Curso gratuito Windows Rápido e Seguro 2.0
-echo [ 14 ] Habilitar ponto de restauração ilimitado [ 29 ] Flash USB inicializáveis (softwares)
-echo [ 15 ] Exibir informações do sistema            
+echo [ 1 ] Reiniciar para BIOS (UEFI)                  [ 17 ] Verificar arquivos de sistema
+echo [ 2 ] Reiniciar normalmente                       [ 18 ] Abrir Visualizador de Eventos
+echo [ 3 ] Desligar o PC                               [ 19 ] Abrir Quick Launch
+echo [ 4 ] Iniciar Gerenciador de Tarefas              [ 20 ] Criar Quick Launch
+echo [ 5 ] Bloquear a tela                             [ 21 ] Desinstalar ou alterar um programa
+echo [ 6 ] Abrir a pasta de aplicativos                [ 22 ] Conexões de Rede
+echo [ 7 ] Gerenciamento de Disco                      [ 23 ] Mostrar o cache DNS
+echo [ 8 ] Abrir God Mode                              [ 24 ] Limpar o cache DNS
+echo [ 9 ] Limpar arquivos temporários                [ 25 ] Abrir aba DNS navegador Firefox
+echo [ 10 ] Abrir Pasta Lixeira                        [ 26 ] Abrir aba DNS navegador Google
+echo [ 11 ] Habilitar F8                               [ 27 ] Teclas de atalho do Windows
+echo [ 12 ] Desabilitar F8                             [ 28 ] Curso gratuito Windows Rápido e Seguro 2.0
+echo [ 13 ] Criar ponto de restauração               [ 29 ] Flash USB inicializáveis (softwares)
+echo [ 14 ] Habilitar ponto de restauração ilimitado [ 30 ] Ativar Suporte à PVM para usar o WSL
+echo [ 15 ] Exibir informações do sistema            [ 31 ] Desativar Suporte à PVM (caso necessário)
+echo [ 16 ] Configurar início do sistema (msconfig)   
 echo [0m
 echo [ [97mG[0m ] [97mAcessar Codigo Fonte no GitHub[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-29, G ou E):[93m 
+set /p choice=Digite a sua escolha (1-31, G ou E):[93m 
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto reboot_normal
@@ -60,7 +61,7 @@ if /i "%choice%"=="5" goto lock_screen
 if /i "%choice%"=="6" goto open_appsfolder
 if /i "%choice%"=="7" goto open_gd
 if /i "%choice%"=="8" goto open_godmode
-if /i "%choice%"=="9" goto clean_temp
+if /i "%choice%"=="9" goto clean_temp_files
 if /i "%choice%"=="10" goto open_lixeira
 if /i "%choice%"=="11" goto enable_f8
 if /i "%choice%"=="12" goto disable_f8
@@ -81,6 +82,8 @@ if /i "%choice%"=="26" goto chrome_dns
 if /i "%choice%"=="27" goto windows_keys
 if /i "%choice%"=="28" goto wrs_2
 if /i "%choice%"=="29" goto usb_boot_tools
+if /i "%choice%"=="30" goto a_vm
+if /i "%choice%"=="31" goto d_vm
 if /i "%choice%"=="G" goto github
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
@@ -133,7 +136,7 @@ cmd /c %~dp0cmd\open_godmode.cmd
 pause
 goto menu
 
-: clean_temp
+: clean_temp_files
 echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\clean_temp_files.cmd' -Verb RunAs"
 pause
@@ -259,6 +262,18 @@ cmd /c %~dp0cmd\usb_boot_tools.cmd
 pause
 goto menu
 
+: a_vm
+echo [0m
+powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\a_vm.cmd' -Verb RunAs"
+pause
+goto menu
+
+: d_vm
+echo [0m
+powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\d_vm.cmd' -Verb RunAs"
+pause
+goto menu
+
 :github
 echo [0m
 start https://github.com/ravenastar-js/wintools
@@ -268,6 +283,6 @@ goto menu
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 29, G ou E.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 31, G ou E.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu

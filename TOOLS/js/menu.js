@@ -8,7 +8,7 @@ var menuOptions = [
     { label: 'Abrir a pasta de aplicativos', cmd: 'open_appsfolder', script: 'cmd /c %~dp0cmd\\open_appsfolder.cmd' },
     { label: 'Gerenciamento de Disco', cmd: 'open_gd', script: 'cmd /c %~dp0cmd\\open_gd.cmd' },
     { label: 'Abrir God Mode', cmd: 'open_godmode', script: 'cmd /c %~dp0cmd\\open_godmode.cmd' },
-    { label: 'Limpar arquivos temporários', cmd: 'clean_temp', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\clean_temp_files.cmd\' -Verb RunAs"' },
+    { label: 'Limpar arquivos temporários', cmd: 'clean_temp_files', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\clean_temp_files.cmd\' -Verb RunAs"' },
     { label: 'Abrir Pasta Lixeira', cmd: 'open_lixeira', script: 'cmd /c %~dp0cmd\\open_lixeira.cmd' },
     { label: 'Habilitar F8', cmd: 'enable_f8', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\enable_f8.cmd\' -Verb RunAs"' },
     { label: 'Desabilitar F8', cmd: 'disable_f8', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\disable_f8.cmd\' -Verb RunAs"' },
@@ -28,7 +28,9 @@ var menuOptions = [
     { label: 'Abrir aba DNS navegador Google', cmd: 'chrome_dns', script: 'cmd /c %~dp0cmd\\chrome_dns.cmd' },
     { label: 'Teclas de atalho do Windows', cmd: 'windows_keys', script: 'cmd /c %~dp0cmd\\windows_keys.cmd' },
     { label: 'Curso gratuito Windows Rápido e Seguro 2.0', cmd: 'wrs_2', script: 'cmd /c %~dp0cmd\\wrs_2.cmd' },
-    { label: 'Flash USB inicializáveis (softwares)', cmd: 'usb_boot_tools', script: 'cmd /c %~dp0cmd\\usb_boot_tools.cmd' }
+    { label: 'Flash USB inicializáveis (softwares)', cmd: 'usb_boot_tools', script: 'cmd /c %~dp0cmd\\usb_boot_tools.cmd' },
+    { label: 'Ativar Suporte à PVM para usar o WSL', cmd: 'a_vm', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\a_vm.cmd\' -Verb RunAs"' },
+    { label: 'Desativar Suporte à PVM (caso necessário)', cmd: 'd_vm', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\d_vm.cmd\' -Verb RunAs"' }
 ];
 
 var COLORS = {
