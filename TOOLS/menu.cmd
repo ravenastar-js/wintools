@@ -1,11 +1,11 @@
 @echo off
 color 0A
 
-rem Verifica se o script esta sendo executado como administrador
+rem Verifica se o script está sendo executado como administrador
 net session >nul 2>&1
 if %errorLevel% neq 0 (
     color 0C
-    echo Solicitando permissao de administrador...
+    echo Solicitando permissão de administrador...
     goto elevate
 ) else (
     chcp 65001
@@ -13,13 +13,13 @@ if %errorLevel% neq 0 (
 )
 
 :elevate
-rem Reexecuta o script com permissoes de administrador
+rem Reexecuta o script com permissões de administrador
 cd /d "%~dp0"
 powershell -Command "Start-Process '%~s0' -Verb RunAs"
 exit /b
 
 :runScript
-rem Muda para o diretorio correto
+rem Muda para o diretório correto
 cd /d "%~dp0"
 
 :menu
@@ -48,7 +48,7 @@ echo [ 14 ] Habilitar ponto de restauração ilimitado [ 30 ] Ativar Suporte à 
 echo [ 15 ] Exibir informações do sistema            [ 31 ] Desativar Suporte à PVM (caso necessário)
 echo [ 16 ] Configurar início do sistema (msconfig)   
 echo [0m
-echo [ [97mG[0m ] [97mAcessar Codigo Fonte no GitHub[0m
+echo [ [97mG[0m ] [97mAcessar Código Fonte no GitHub[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
 set /p choice=Digite a sua escolha (1-31, G ou E):[93m 
@@ -88,187 +88,187 @@ if /i "%choice%"=="G" goto github
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
 
-: reboot_bios
+:reboot_bios
 echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\reboot_bios.cmd' -Verb RunAs"
 pause
 goto menu
 
-: reboot_normal
+:reboot_normal
 echo [0m
 cmd /c %~dp0cmd\reboot_normal.cmd
 pause
 goto menu
 
-: shutdown
+:shutdown
 echo [0m
 cmd /c %~dp0cmd\shutdown.cmd
 pause
 goto menu
 
-: task_manager
+:task_manager
 echo [0m
 cmd /c %~dp0cmd\task_manager.cmd
 pause
 goto menu
 
-: lock_screen
+:lock_screen
 echo [0m
 cmd /c %~dp0cmd\lock_screen.cmd
 pause
 goto menu
 
-: open_appsfolder
+:open_appsfolder
 echo [0m
 cmd /c %~dp0cmd\open_appsfolder.cmd
 pause
 goto menu
 
-: open_gd
+:open_gd
 echo [0m
 cmd /c %~dp0cmd\open_gd.cmd
 pause
 goto menu
 
-: open_godmode
+:open_godmode
 echo [0m
 cmd /c %~dp0cmd\open_godmode.cmd
 pause
 goto menu
 
-: clean_temp_files
+:clean_temp_files
 echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\clean_temp_files.cmd' -Verb RunAs"
 pause
 goto menu
 
-: open_lixeira
+:open_lixeira
 echo [0m
 cmd /c %~dp0cmd\open_lixeira.cmd
 pause
 goto menu
 
-: enable_f8
+:enable_f8
 echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\enable_f8.cmd' -Verb RunAs"
 pause
 goto menu
 
-: disable_f8
+:disable_f8
 echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\disable_f8.cmd' -Verb RunAs"
 pause
 goto menu
 
-: create_restore_point
+:create_restore_point
 echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\create_restore_point.cmd' -Verb RunAs"
 pause
 goto menu
 
-: enable_unlimited_restore_points
+:enable_unlimited_restore_points
 echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\enable_unlimited_restore_points.cmd' -Verb RunAs"
 pause
 goto menu
 
-: system_info
+:system_info
 echo [0m
 cmd /c %~dp0cmd\system_info.cmd
 pause
 goto menu
 
-: msconfig
+:msconfig
 echo [0m
 cmd /c %~dp0cmd\msconfig.cmd
 pause
 goto menu
 
-: sfc_scan
+:sfc_scan
 echo [0m
 cmd /c sfc /scannow
 pause
 goto menu
 
-: event_viewer
+:event_viewer
 echo [0m
 cmd /c %~dp0cmd\event_viewer.cmd
 pause
 goto menu
 
-: open_quicklaunch
+:open_quicklaunch
 echo [0m
 start explorer "%appdata%\Microsoft\Internet Explorer\Quick Launch"
 pause
 goto menu
 
-: create_quicklaunch
+:create_quicklaunch
 echo [0m
 cmd /c %~dp0cmd\create_quicklaunch.cmd
 pause
 goto menu
 
-: uninstall_programs
+:uninstall_programs
 echo [0m
 cmd /c %~dp0cmd\uninstall_programs.cmd
 pause
 goto menu
 
-: conexoes_redes
+:conexoes_redes
 echo [0m
 cmd /c %~dp0cmd\conexoes_redes.cmd
 pause
 goto menu
 
-: display_dns
+:display_dns
 echo [0m
 cmd /c %~dp0cmd\display_dns.cmd
 pause
 goto menu
 
-: flush_dns
+:flush_dns
 echo [0m
 cmd /c %~dp0cmd\flush_dns.cmd
 pause
 goto menu
 
-: firefox_dns
+:firefox_dns
 echo [0m
 cmd /c %~dp0cmd\firefox_dns.cmd
 pause
 goto menu
 
-: chrome_dns
+:chrome_dns
 echo [0m
 cmd /c %~dp0cmd\chrome_dns.cmd
 pause
 goto menu
 
-: windows_keys
+:windows_keys
 echo [0m
 cmd /c %~dp0cmd\windows_keys.cmd
 pause
 goto menu
 
-: wrs_2
+:wrs_2
 echo [0m
 cmd /c %~dp0cmd\wrs_2.cmd
 pause
 goto menu
 
-: usb_boot_tools
+:usb_boot_tools
 echo [0m
 cmd /c %~dp0cmd\usb_boot_tools.cmd
 pause
 goto menu
 
-: a_vm
+:a_vm
 echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\a_vm.cmd' -Verb RunAs"
 pause
 goto menu
 
-: d_vm
+:d_vm
 echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\d_vm.cmd' -Verb RunAs"
 pause
