@@ -110,7 +110,7 @@ Ideal para administradores de sistemas, desenvolvedores, e todos que desejam oti
 `Aula 7:` <a href="https://www.baboo.com.br/cursos/aula-07">AdwCleaner + uBlock Origin + TrafficLight</a><br>
 `Aula 8:` <a href="https://www.baboo.com.br/cursos/aula-08">KVRT e HouseCall</a><br>
 `Aula 9:` <a href="https://www.baboo.com.br/cursos/aula-09">ESET Online Scanner, Emsisoft Emergency Kit e Malwarebytes Premium</a><br>
-`Aula 10:` <a href="https://www.baboo.com.br/cursos/aula-010">Desfragmentação e dicas finais</a><br>
+`Aula 10:` <a href="https://www.baboo.com.br/cursos/aula-10">Desfragmentação e dicas finais</a><br>
 </details>
 
 
