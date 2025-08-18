@@ -7,11 +7,12 @@
 <summary> 📁 ESTRUTURA</summary>
 
 ```
-📁 wintools/  
-├── 📁 TOOLS/
-│   ├── 📁 pastas
-│   └── 📄 arquivos
-└── 📄 GerarArquivos.bat
+💽 DiscoRemovível/
+└── 📁 wintools/
+    ├── 📁 TOOLS/
+    │   ├── 📁 pastas
+    │   └── 📄 arquivos
+    └── 📄 GerarArquivos.bat
 ```
 
 </details>
