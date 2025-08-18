@@ -1,7 +1,7 @@
 > [!TIP]
 > Usar a seguinte estrutura:
 > 
-> Pasta > Arquivos (📁  > 📄)
+> Pasta > Pastas e Arquivos (📁 | 📄)
 
 <details>
 <summary> 📁 ESTRUTURA</summary>
