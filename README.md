@@ -23,9 +23,9 @@ Este projeto oferece uma coleção de scripts que facilitam suas tarefas diária
 Ideal para administradores de sistemas, desenvolvedores, e todos que desejam otimizar seu fluxo de trabalho no Windows. 💻✨
 
 ### ✨ Observações
-- O arquivo `WINTOOLS (CMD)` é o [TOOLS/menu.cmd](TOOLS/menu.cmd), um atalho para facilitar a execução do script.
-- Se o atalho `WINTOOLS (CMD)` não funcionar, basta editar e mudar o caminho e apontar para o arquivo respectivo:
-  - `WINTOOLS (CMD)` => [TOOLS/menu.cmd](TOOLS/menu.cmd)
+- O arquivo `WinTools (CMD)` é o [TOOLS/menu.cmd](TOOLS/menu.cmd), um atalho para facilitar a execução do script.
+- Se o atalho `WinTools (CMD)` não funcionar, basta editar e mudar o caminho e apontar para o arquivo respectivo:
+  - `WinTools (CMD)` => [TOOLS/menu.cmd](TOOLS/menu.cmd)
 
 
 ### 📷 Prévias
