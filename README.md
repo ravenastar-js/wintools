@@ -1,3 +1,20 @@
+> [!TIP]
+> Usar a seguinte estrutura: 
+> Pasta > Arquivos (📁  > 📄)
+
+<details>
+<summary> 📁 ESTRUTURA</summary>
+
+```
+📁 wintools/  
+├── 📁 TOOLS/
+│   ├── 📁 pastas
+│   └── 📄 arquivos
+└── 📄 GerarArquivos.bat
+```
+
+</details>
+
 > [!IMPORTANT]
 > ⚠️ Para evitar problemas, os scripts são executados automaticamente como administrador.
 > 
