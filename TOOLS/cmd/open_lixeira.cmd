@@ -1,4 +1,4 @@
 @echo off
-:: Abre a Lixeira
+rem Abre a Lixeira
 start shell:RecycleBinFolder
 exit /b

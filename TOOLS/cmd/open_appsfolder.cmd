@@ -1,2 +1,2 @@
 @echo off
-explorer shell:appsfolder
+start explorer shell:appsfolder

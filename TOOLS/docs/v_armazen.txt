@@ -1,0 +1,40 @@
+🛠 Verificação de HD/SSD  
+------------------------------------------------------------ 
+
+📚 Categoria: Diagnóstico / Armazenamento  
+🔧 Formação: Básica a Intermediária  
+💻 Sistema: Windows 10 / 11
+
+------------------------------------------------------------  
+
+🔧 WD Data Lifeguard Diagnostic for Windows  
+🔗 Download: https://www.windowsrapidoeseguro.com.br/1
+
+📌 Detalhes:
+🔹 Compatibilidade:
+- Funciona com HDs de qualquer marca, não apenas Western Digital
+- Apesar de descontinuado, ainda é funcional e confiável
+
+🔹 Substituto Oficial:
+- Western Digital Dashboard
+- Compatível exclusivamente com modelos da WD
+
+🔹 Uso Recomendado:
+- Ideal para diagnósticos básicos em HDs de outras marcas
+- Pode ser mantido como ferramenta auxiliar
+
+📎 Nota:
+- Mesmo fora de linha, continua sendo uma opção viável para testes rápidos e verificação de integridade
+
+------------------------------------------------------------ 
+
+🔧 Western Digital Dashboard  
+🔗 Download: https://support.wdc.com/downloads.aspx?&p=279&lang=bp
+
+📌 Recursos:
+✅ Diagnóstico completo de saúde do disco  
+✅ Gerenciamento de RAID (em modelos compatíveis)  
+✅ Apagamento seguro e formatação  
+✅ Registro do dispositivo e configuração de senha  
+✅ Monitoramento de desempenho e temperatura  
+✅ Compatível com linhas WD_BLACK, Red, Blue, Green, Gold, Purple, My Passport, My Book, My Cloud e outros

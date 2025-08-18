@@ -1,0 +1,71 @@
+🚀 Ferramentas para Criar USB Inicializável  
+------------------------------------------------------------ 
+
+📚 Categoria: Instalação / Ferramentas  
+🔧 Formação: Básica a Intermediária  
+💻 Sistema: Windows / Linux
+
+------------------------------------------------------------ 
+ 
+🔸 Guia com as melhores ferramentas para criar pendrives bootáveis com sistemas operacionais. 
+ 
+------------------------------------------------------------ 
+ 
+📌 1. VENTOY (RECOMENDADO) 
+ 
+🔹 Site oficial: ventoy.net 
+- Suporte a múltiplas ISOs no mesmo pendrive 
+- Não precisa formatar o pendrive a cada nova ISO 
+- Interface simples e eficiente 
+ 
+Como usar: 
+1. Baixe e instale o Ventoy 
+2. Conecte seu pendrive (backup dos dados primeiro!) 
+3. Execute o Ventoy2Disk.exe 
+4. Selecione seu dispositivo e clique em Install 
+5. Copie suas ISOs para o pendrive 
+ 
+------------------------------------------------------------ 
+ 
+📌 2. RUFUS (TRADICIONAL) 
+ 
+🔹 Site oficial: rufus.ie 
+- Opções avançadas de formatação 
+- Suporte a BIOS e UEFI 
+- Verificação de bad blocks 
+ 
+Como usar: 
+1. Baixe e execute o Rufus 
+2. Selecione seu pendrive 
+3. Escolha a ISO desejada 
+4. Clique em Start (isso apagará todos os dados!) 
+ 
+------------------------------------------------------------ 
+ 
+📌 3. YUMI MULTIBOOT (MÚLTIPLOS SISTEMAS) 
+ 
+🔹 Site oficial: pendrivelinux.com/yumi-multiboot-usb-creator 
+- Ideal para testar distribuições Linux 
+- Permite adicionar várias ISOs sequencialmente 
+- Versão UEFI disponível 
+ 
+Como usar: 
+1. Baixe e execute o YUMI 
+2. Selecione seu pendrive 
+3. Escolha a primeira distribuição 
+4. Repita para adicionar mais sistemas 
+ 
+------------------------------------------------------------ 
+ 
+📌 DICA IMPORTANTE 
+ 
+🔸 Sempre faça backup dos dados antes de criar um pendrive bootável! 
+🔸 O processo geralmente apaga todos os dados do dispositivo USB. 
+🔸 Para Windows, prefira o Media Creation Tool oficial da Microsoft. 
+ 
+------------------------------------------------------------ 
+ 
+🎥 VÍDEO TUTORIAL RECOMENDADO 
+ 
+Como criar um pendrive bootável - Guia completo: 
+🔗 youtu.be/Qrd4acipw3Q

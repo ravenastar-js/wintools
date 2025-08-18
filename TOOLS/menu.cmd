@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 > nul
 color 0A
 
 rem Verifica se o script está sendo executado como administrador
@@ -27,63 +28,98 @@ cls
 color 0A
 echo ==================================================
 echo.
-echo          github.com/ravenastar-js/wintools
+echo [93m         github.com/ravenastar-js/wintools[32m
 echo.
 echo ==================================================
 echo.
-echo [ 1 ] Reiniciar para BIOS (UEFI)                  [ 17 ] Verificar arquivos de sistema
-echo [ 2 ] Reiniciar normalmente                       [ 18 ] Abrir Visualizador de Eventos
-echo [ 3 ] Desligar o PC                               [ 19 ] Abrir Quick Launch
-echo [ 4 ] Iniciar Gerenciador de Tarefas              [ 20 ] Criar Quick Launch
-echo [ 5 ] Bloquear a tela                             [ 21 ] Desinstalar ou alterar um programa
-echo [ 6 ] Abrir a pasta de aplicativos                [ 22 ] Conexões de Rede
-echo [ 7 ] Gerenciamento de Disco                      [ 23 ] Mostrar o cache DNS
-echo [ 8 ] Abrir God Mode                              [ 24 ] Limpar o cache DNS
-echo [ 9 ] Limpar arquivos temporários                [ 25 ] Abrir aba DNS navegador Firefox
-echo [ 10 ] Abrir Pasta Lixeira                        [ 26 ] Abrir aba DNS navegador Google
-echo [ 11 ] Habilitar F8                               [ 27 ] Teclas de atalho do Windows
-echo [ 12 ] Desabilitar F8                             [ 28 ] Curso gratuito Windows Rápido e Seguro 2.0
-echo [ 13 ] Criar ponto de restauração               [ 29 ] Flash USB inicializáveis (softwares)
-echo [ 14 ] Habilitar ponto de restauração ilimitado [ 30 ] Ativar Suporte à PVM para usar o WSL
-echo [ 15 ] Exibir informações do sistema            [ 31 ] Desativar Suporte à PVM (caso necessário)
-echo [ 16 ] Configurar início do sistema (msconfig)   
+echo [ 1 ] [94m◙[32m Reiniciar o dispositivo para BIOS (UEFI)
+echo [ 2 ] [94m◙[32m Habilitar F8
+echo [ 3 ] [94m◙[32m Desabilitar F8
+echo [ 4 ] [94m◙[32m Criar ponto de restauração
+echo [ 5 ] [94m◙[32m Habilitar ponto de restauração ilimitado
+echo [ 6 ] [94m◙[32m Limpar arquivos temporários
+echo [ 7 ] [94m◙[32m Verificar arquivos de sistema
+echo [ 8 ] [94m◙[32m Reiniciar o dispositivo normalmente
+echo [ 9 ] [94m◙[32m Desligar o dispositivo
+echo [ 10 ] [94m◙[32m Bloquear a tela
+echo [ 11 ] [94m◙[32m Iniciar Gerenciador de Tarefas
+echo [ 12 ] [94m◙[32m Gerenciamento de Disco
+echo [ 13 ] [94m◙[32m Abrir God Mode
+echo [ 14 ] [94m◙[32m Abrir Pasta Lixeira
+echo [ 15 ] [94m◙[32m Exibir informações do sistema
+echo [ 16 ] [94m◙[32m Configurar início do sistema (msconfig)
+echo [ 17 ] [94m◙[32m Abrir Visualizador de Eventos
+echo [ 18 ] [94m◙[32m Desinstalar ou alterar um programa
+echo [ 19 ] [94m◙[32m Ativar ou desativar recursos do Windows
+echo [ 20 ] [94m◙[32m Conexões de Rede
+echo [ 21 ] [94m◙[32m Mostrar o cache DNS
+echo [ 22 ] [94m◙[32m Limpar o cache DNS
+echo [ 23 ] [94m◙[32m Abrir aba DNS navegador Firefox
+echo [ 24 ] [94m◙[32m Abrir aba DNS navegador Google
+echo [ 25 ] [94m◙[32m Abrir a pasta de aplicativos
+echo [ 26 ] [94m◙[32m Abrir Quick Launch
+echo [ 27 ] [94m◙[32m Ativar Suporte à PVM para usar o WSL
+echo [ 28 ] [94m◙[32m Desativar Suporte à PVM (caso necessário)
+echo [ 29 ] [37m◙[32m Verificação do HD/SSD
+echo [ 30 ] [37m◙[32m Corrigindo arquivos do Windows
+echo [ 31 ] [37m◙[32m Arquivos temporários
+echo [ 32 ] [37m◙[32m Remoção de Bloatwares e programas indesejados
+echo [ 33 ] [37m◙[32m Instalar o Windows 11 com Conta Local (sem conexão obrigatória)
+echo [ 34 ] [37m◙[32m Configurações Importantes na BIOS/UEFI
+echo [ 35 ] [37m◙[32m Criar Quick Launch
+echo [ 36 ] [37m◙[32m Teclas de atalho do Windows
+echo [ 37 ] [37m◙[32m Curso gratuito Windows Rápido e Seguro 2.0
+echo [ 38 ] [37m◙[32m Flash USB inicializáveis (softwares)
+echo [ 39 ] [37m◙[32m MBR Filter
+echo [ 40 ] [37m◙[32m Instalação do Kali Linux no Windows via WSL
 echo [0m
+echo [94m ◙ COMANDO [37m ◙ GUIA[0m 
+echo.
 echo [ [97mG[0m ] [97mAcessar Código Fonte no GitHub[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-31, G ou E):[93m 
+set /p choice=Digite a sua escolha (1-40, G ou E):[93m 
 
 if /i "%choice%"=="1" goto reboot_bios
-if /i "%choice%"=="2" goto reboot_normal
-if /i "%choice%"=="3" goto shutdown
-if /i "%choice%"=="4" goto task_manager
-if /i "%choice%"=="5" goto lock_screen
-if /i "%choice%"=="6" goto open_appsfolder
-if /i "%choice%"=="7" goto open_gd
-if /i "%choice%"=="8" goto open_godmode
-if /i "%choice%"=="9" goto clean_temp_files
-if /i "%choice%"=="10" goto open_lixeira
-if /i "%choice%"=="11" goto enable_f8
-if /i "%choice%"=="12" goto disable_f8
-if /i "%choice%"=="13" goto create_restore_point
-if /i "%choice%"=="14" goto enable_unlimited_restore_points
+if /i "%choice%"=="2" goto enable_f8
+if /i "%choice%"=="3" goto disable_f8
+if /i "%choice%"=="4" goto create_restore_point
+if /i "%choice%"=="5" goto enable_unlimited_restore_points
+if /i "%choice%"=="6" goto clean_temp_files
+if /i "%choice%"=="7" goto sfc_scan
+if /i "%choice%"=="8" goto reboot_normal
+if /i "%choice%"=="9" goto shutdown
+if /i "%choice%"=="10" goto lock_screen
+if /i "%choice%"=="11" goto task_manager
+if /i "%choice%"=="12" goto open_gd
+if /i "%choice%"=="13" goto open_godmode
+if /i "%choice%"=="14" goto open_lixeira
 if /i "%choice%"=="15" goto system_info
 if /i "%choice%"=="16" goto msconfig
-if /i "%choice%"=="17" goto sfc_scan
-if /i "%choice%"=="18" goto event_viewer
-if /i "%choice%"=="19" goto open_quicklaunch
-if /i "%choice%"=="20" goto create_quicklaunch
-if /i "%choice%"=="21" goto uninstall_programs
-if /i "%choice%"=="22" goto conexoes_redes
-if /i "%choice%"=="23" goto display_dns
-if /i "%choice%"=="24" goto flush_dns
-if /i "%choice%"=="25" goto firefox_dns
-if /i "%choice%"=="26" goto chrome_dns
-if /i "%choice%"=="27" goto windows_keys
-if /i "%choice%"=="28" goto wrs_2
-if /i "%choice%"=="29" goto usb_boot_tools
-if /i "%choice%"=="30" goto a_vm
-if /i "%choice%"=="31" goto d_vm
+if /i "%choice%"=="17" goto event_viewer
+if /i "%choice%"=="18" goto uninstall_programs
+if /i "%choice%"=="19" goto open_optwin
+if /i "%choice%"=="20" goto conexoes_redes
+if /i "%choice%"=="21" goto display_dns
+if /i "%choice%"=="22" goto flush_dns
+if /i "%choice%"=="23" goto firefox_dns
+if /i "%choice%"=="24" goto chrome_dns
+if /i "%choice%"=="25" goto open_appsfolder
+if /i "%choice%"=="26" goto open_quicklaunch
+if /i "%choice%"=="27" goto a_vm
+if /i "%choice%"=="28" goto d_vm
+if /i "%choice%"=="29" goto v_armazen
+if /i "%choice%"=="30" goto win_chkdsk
+if /i "%choice%"=="31" goto temp_files
+if /i "%choice%"=="32" goto r_bloatwares
+if /i "%choice%"=="33" goto win11_cl
+if /i "%choice%"=="34" goto config_bios
+if /i "%choice%"=="35" goto create_quicklaunch
+if /i "%choice%"=="36" goto windows_keys
+if /i "%choice%"=="37" goto wrs_2
+if /i "%choice%"=="38" goto usb_boot_tools
+if /i "%choice%"=="39" goto mbr_filter
+if /i "%choice%"=="40" goto win_wsl
 if /i "%choice%"=="G" goto github
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
@@ -91,60 +127,6 @@ goto invalid_choice
 :reboot_bios
 echo [0m
 powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\reboot_bios.cmd' -Verb RunAs"
-pause
-goto menu
-
-:reboot_normal
-echo [0m
-cmd /c %~dp0cmd\reboot_normal.cmd
-pause
-goto menu
-
-:shutdown
-echo [0m
-cmd /c %~dp0cmd\shutdown.cmd
-pause
-goto menu
-
-:task_manager
-echo [0m
-cmd /c %~dp0cmd\task_manager.cmd
-pause
-goto menu
-
-:lock_screen
-echo [0m
-cmd /c %~dp0cmd\lock_screen.cmd
-pause
-goto menu
-
-:open_appsfolder
-echo [0m
-cmd /c %~dp0cmd\open_appsfolder.cmd
-pause
-goto menu
-
-:open_gd
-echo [0m
-cmd /c %~dp0cmd\open_gd.cmd
-pause
-goto menu
-
-:open_godmode
-echo [0m
-cmd /c %~dp0cmd\open_godmode.cmd
-pause
-goto menu
-
-:clean_temp_files
-echo [0m
-powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\clean_temp_files.cmd' -Verb RunAs"
-pause
-goto menu
-
-:open_lixeira
-echo [0m
-cmd /c %~dp0cmd\open_lixeira.cmd
 pause
 goto menu
 
@@ -172,6 +154,60 @@ powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\enable_unl
 pause
 goto menu
 
+:clean_temp_files
+echo [0m
+powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\clean_temp_files.cmd' -Verb RunAs"
+pause
+goto menu
+
+:sfc_scan
+echo [0m
+cmd /c sfc /scannow
+pause
+goto menu
+
+:reboot_normal
+echo [0m
+cmd /c %~dp0cmd\reboot_normal.cmd
+pause
+goto menu
+
+:shutdown
+echo [0m
+cmd /c %~dp0cmd\shutdown.cmd
+pause
+goto menu
+
+:lock_screen
+echo [0m
+cmd /c %~dp0cmd\lock_screen.cmd
+pause
+goto menu
+
+:task_manager
+echo [0m
+cmd /c %~dp0cmd\task_manager.cmd
+pause
+goto menu
+
+:open_gd
+echo [0m
+cmd /c %~dp0cmd\open_gd.cmd
+pause
+goto menu
+
+:open_godmode
+echo [0m
+cmd /c %~dp0cmd\open_godmode.cmd
+pause
+goto menu
+
+:open_lixeira
+echo [0m
+cmd /c %~dp0cmd\open_lixeira.cmd
+pause
+goto menu
+
 :system_info
 echo [0m
 cmd /c %~dp0cmd\system_info.cmd
@@ -184,33 +220,21 @@ cmd /c %~dp0cmd\msconfig.cmd
 pause
 goto menu
 
-:sfc_scan
-echo [0m
-cmd /c sfc /scannow
-pause
-goto menu
-
 :event_viewer
 echo [0m
 cmd /c %~dp0cmd\event_viewer.cmd
 pause
 goto menu
 
-:open_quicklaunch
-echo [0m
-start explorer "%appdata%\Microsoft\Internet Explorer\Quick Launch"
-pause
-goto menu
-
-:create_quicklaunch
-echo [0m
-cmd /c %~dp0cmd\create_quicklaunch.cmd
-pause
-goto menu
-
 :uninstall_programs
 echo [0m
 cmd /c %~dp0cmd\uninstall_programs.cmd
+pause
+goto menu
+
+:open_optwin
+echo [0m
+cmd /c %~dp0cmd\open_optwin.cmd
 pause
 goto menu
 
@@ -244,21 +268,15 @@ cmd /c %~dp0cmd\chrome_dns.cmd
 pause
 goto menu
 
-:windows_keys
+:open_appsfolder
 echo [0m
-cmd /c %~dp0cmd\windows_keys.cmd
+cmd /c %~dp0cmd\open_appsfolder.cmd
 pause
 goto menu
 
-:wrs_2
+:open_quicklaunch
 echo [0m
-cmd /c %~dp0cmd\wrs_2.cmd
-pause
-goto menu
-
-:usb_boot_tools
-echo [0m
-cmd /c %~dp0cmd\usb_boot_tools.cmd
+start explorer "%appdata%\Microsoft\Internet Explorer\Quick Launch"
 pause
 goto menu
 
@@ -274,6 +292,78 @@ powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\d_vm.cmd' 
 pause
 goto menu
 
+:v_armazen
+echo [0m
+cmd /c start "" "%~dp0docs\v_armazen.txt"
+pause
+goto menu
+
+:win_chkdsk
+echo [0m
+cmd /c start "" "%~dp0docs\win_chkdsk.txt"
+pause
+goto menu
+
+:temp_files
+echo [0m
+cmd /c start "" "%~dp0docs\temp_files.txt"
+pause
+goto menu
+
+:r_bloatwares
+echo [0m
+cmd /c start "" "%~dp0docs\r_bloatwares.txt"
+pause
+goto menu
+
+:win11_cl
+echo [0m
+cmd /c start "" "%~dp0docs\win11_cl.txt"
+pause
+goto menu
+
+:config_bios
+echo [0m
+cmd /c start "" "%~dp0docs\config_bios.txt"
+pause
+goto menu
+
+:create_quicklaunch
+echo [0m
+cmd /c start "" "%~dp0docs\create_quicklaunch.txt"
+pause
+goto menu
+
+:windows_keys
+echo [0m
+cmd /c start "" "%~dp0docs\windows_keys.txt"
+pause
+goto menu
+
+:wrs_2
+echo [0m
+cmd /c start "" "%~dp0docs\wrs_2.txt"
+pause
+goto menu
+
+:usb_boot_tools
+echo [0m
+cmd /c start "" "%~dp0docs\usb_boot_tools.txt"
+pause
+goto menu
+
+:mbr_filter
+echo [0m
+cmd /c start "" "%~dp0docs\mbr_filter.txt"
+pause
+goto menu
+
+:win_wsl
+echo [0m
+cmd /c start "" "%~dp0docs\win_wsl.txt"
+pause
+goto menu
+
 :github
 echo [0m
 start https://github.com/ravenastar-js/wintools
@@ -283,6 +373,6 @@ goto menu
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 31, G ou E.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 40, ou E.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu

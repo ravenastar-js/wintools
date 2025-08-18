@@ -1,0 +1,54 @@
+🐧 Instalação do Kali Linux via WSL  
+------------------------------------------------------------ 
+
+📚 Categoria: Pentest / OSINT / Linux  
+🔧 Formação: Intermediária  
+💻 Sistema: Windows 10 / 11 com WSL habilitado
+
+------------------------------------------------------------ 
+
+🔧 Instalação do Kali Linux no Windows via WSL
+
+1. Abra o PowerShell como administrador.
+2. Execute o comando:
+   wsl --install -d kali-linux
+   → Isso fará o download e instalação do Kali Linux.
+3. Após a instalação, defina um nome de usuário e senha.
+4. Atualize os pacotes com o comando:
+   sudo apt update
+
+------------------------------------------------------------ 
+
+🖥️ Acesso à Interface Gráfica do Kali Linux
+
+1. Instale o ambiente de desktop XFCE:
+   sudo apt install kali-desktop-xfce -y
+
+2. Instale o servidor RDP:
+   sudo apt install xrdp
+
+3. Obtenha o endereço IP do Kali com o comando:
+   ifconfig
+
+4. No Windows, abra a “Conexão de Área de Trabalho Remota” e insira o IP obtido.
+
+💡 Dica:
+Se a conexão remota não funcionar, inicie o serviço manualmente com:
+   sudo service xrdp start
+
+------------------------------------------------------------ 
+
+⚠️ Aviso sobre o uso do WSL
+
+WSL possui limitações e não oferece todos os recursos de uma máquina virtual.  
+Use para tarefas básicas como OSINT.  
+Para foco em segurança cibernética, é recomendado usar uma VM com distribuições Linux.
+
+------------------------------------------------------------ 
+
+🔌 Para desligar o serviço xrdp
+
+Use o comando:
+   sudo service xrdp stop
+
+------------------------------------------------------------ 

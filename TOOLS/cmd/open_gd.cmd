@@ -1,2 +1,2 @@
 @echo off
-diskmgmt.msc
+start diskmgmt.msc

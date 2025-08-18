@@ -1,0 +1,43 @@
+🛡️ Instalar o MBR Filter da Cisco Talos  
+------------------------------------------------------------ 
+
+📚 Categoria: Segurança / Proteção contra Ransomware  
+🔧 Formação: Intermediária  
+💻 Sistema: Windows 10 / 11 (32-bit ou 64-bit)
+
+------------------------------------------------------------ 
+
+🔹 Função:
+- Bloqueia escrita no setor 0 (MBR) do disco rígido  
+- Protege contra malwares que tentam sobrescrever o MBR  
+- Impede ataques como o ransomware Petya
+
+🔹 Requisitos:
+- Sistema Windows com permissões de administrador  
+- Arquitetura compatível (32-bit ou 64-bit)  
+- Acesso à internet para download
+
+------------------------------------------------------------ 
+
+📥 Etapas de Instalação
+
+1. Acesse o repositório oficial do Cisco Talos MBRFilter
+🔗 Download: talosintelligence.com/mbrfilter
+🔗 GitHub: github.com/Cisco-Talos/MBRFilter
+2. Baixe o arquivo ZIP correspondente à sua arquitetura
+3. Extraia os arquivos para uma pasta local
+4. Localize o arquivo .INF dentro da pasta extraída
+5. Clique com o botão direito no .INF ➤ Instalar
+6. Reinicie o computador quando solicitado
+
+------------------------------------------------------------ 
+
+⚠️ Observações Importantes
+
+🔸 O driver bloqueia qualquer tentativa de escrita no setor 0  
+🔸 Pode interferir na inicialização de novos discos no Gerenciador de Disco  
+🔸 Se solicitado a escrever no MBR/GPT, clique em Cancelar  
+🔸 Para acesso ao setor 0, use o Modo de Segurança  
+🔸 O driver é resistente à remoção para evitar desativação por malware
+
+------------------------------------------------------------ 

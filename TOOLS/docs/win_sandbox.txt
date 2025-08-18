@@ -1,0 +1,46 @@
+🛡️ Windows Defender em Modo Sandbox  
+------------------------------------------------------------ 
+
+📚 Categoria: Segurança / Proteção Avançada  
+🔧 Formação: Intermediária  
+💻 Sistema: Windows 10 / 11
+
+------------------------------------------------------------ 
+
+📌 O que é:
+Windows Defender em modo sandbox é um ambiente seguro e isolado que não permite acesso direto ao sistema operacional. Tudo que acontece ali não afeta em nada o Windows.
+
+Alguns malwares tentam se aproveitar de falhas do próprio antivírus para infectar o sistema. Em 2017, a Microsoft corrigiu uma falha no Windows Defender que permitia que um arquivo malicioso infectasse o sistema operacional assim que fosse escaneado pelo próprio antivírus.
+
+Para minimizar esse tipo de vulnerabilidade, a Microsoft permite que o Windows Defender rode em sandbox. Dessa forma, qualquer falha ou vulnerabilidade não permite que o malware afete o sistema.
+
+------------------------------------------------------------ 
+
+⚙️ Como ativar o modo sandbox:
+
+🖥️ Abra o Prompt de Comando como administrador  
+🛠️ Habilitar:  
+setx /M MP_FORCE_USE_SANDBOX 1
+
+🚫 Desabilitar:  
+setx /M MP_FORCE_USE_SANDBOX 0
+
+🔄 Após realizar os procedimentos, reinicie o computador.
+
+------------------------------------------------------------ 
+
+⚠️ Requisitos:
+Verifique se seu computador é compatível com virtualização (VT-x ou AMD-V). O modo sandbox depende dessa tecnologia para funcionar corretamente.
+
+------------------------------------------------------------ 
+
+🔍 Como verificar se está funcionando:
+
+Abra o Gerenciador de Tarefas e verifique se os processos abaixo estão rodando em conjunto:
+
+- MsMpEng.exe  
+- MsMpEngCP.exe
+
+Se ambos estiverem ativos, o modo sandbox está funcionando corretamente.
+
+------------------------------------------------------------ 

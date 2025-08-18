@@ -1,0 +1,39 @@
+🧹 Limpeza de Disco e Remoção de Arquivos Temporários  
+------------------------------------------------------------ 
+
+📚 Categoria: Manutenção / Otimização  
+🔧 Formação: Básica  
+💻 Sistema: Windows 10 / 11
+
+------------------------------------------------------------ 
+
+🔧 CCleaner Portable  
+🔗 Download: ccleaner.com/pt-br/ccleaner/download/portable
+
+📌 Recomendações:
+🔹 Use sempre que possível a versão Portable — não requer instalação  
+🔹 A versão gratuita é suficiente para limpar arquivos temporários  
+🔹 Versões pagas não oferecem ganho real de desempenho no Windows
+
+📎 Observação:
+- Ideal para remover arquivos temporários de navegadores e do sistema  
+- Evite ativar funções como “Limpeza Inteligente” ou “Monitoramento em tempo real”  
+- Cuidado com recursos invasivos e práticas de privacidade da empresa responsável
+
+------------------------------------------------------------ 
+
+🆕 Script do BABOO para apagar arquivos temporários  
+🔗 Tutorial e download: baboo.com.br/tutorial-windows/script-do-baboo-para-apagar-arquivos-temporarios/
+
+📌 Vantagens:
+✅ Código aberto e leve (.bat com ~150 linhas)  
+✅ Remove arquivos temporários do Windows e dos navegadores:  
+- Edge, Edge Chromium, Chrome, Firefox, Vivaldi, Brave  
+✅ Não apaga cookies, histórico ou senhas  
+✅ Pode ser agendado via Agendador de Tarefas  
+✅ Permite desligar, suspender ou hibernar o PC após execução
+
+📎 Observação:
+- Executar como Administrador para limpeza completa  
+- Compatível com todas as versões do Windows  
+- Ideal para manter o sistema leve e evitar fragmentação excessiva

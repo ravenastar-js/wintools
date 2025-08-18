@@ -1,0 +1,50 @@
+⚙️ Ativar Configurações Importantes na BIOS/UEFI  
+------------------------------------------------------------ 
+
+📚 Categoria: Hardware / Configuração Avançada  
+🔧 Formação: Intermediária  
+💻 Sistema: Windows 10 / 11
+
+------------------------------------------------------------ 
+
+🔹 Virtualização:
+- Intel Virtualization Technology
+- Virtualization Technology
+- intel-VT
+- AMD-V
+- VT-d
+
+🔹 Desempenho:
+- Turbo Boost
+- Turbo Mode
+
+🔹 Processamento (opcional):
+- Hyper-Threading (HT)
+- Multi Core
+- Core Multi-Processing
+- SMT
+
+🔹 Economia de energia (somente para notebooks):
+- SpeedStep
+- Intel EIST
+
+🔹 Outros:
+- Hardware Prefetcher
+
+------------------------------------------------------------ 
+
+🔧 SATA Mode Selection ➤ AHCI
+
+📌 Como alterar de RAID ou IDE para AHCI sem reinstalar o Windows:
+
+1. Execute o comando abaixo no Prompt de Comando (Admin):
+   bcdedit /set safeboot minimal
+
+2. Reinicie o Windows e entre na BIOS/UEFI  
+3. Altere o modo SATA de RAID ou IDE para AHCI  
+4. Reinicie o PC  
+5. O Windows entrará em Modo de Segurança  
+6. Execute o comando abaixo no Prompt de Comando (Admin):
+   bcdedit /deletevalue safeboot
+
+7. Reinicie o Windows normalmente

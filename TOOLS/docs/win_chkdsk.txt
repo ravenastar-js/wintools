@@ -1,0 +1,63 @@
+🛠️ Correção de Arquivos do Windows  
+------------------------------------------------------------ 
+
+📚 Categoria: Manutenção / Recuperação  
+🔧 Formação: Intermediária  
+💻 Sistema: Windows 10 / 11
+
+------------------------------------------------------------ 
+
+📂 1. Verificação de Disco (CHKDSK)
+
+🔹 Comando: chkdsk /r  
+- Verifica o disco rígido e tenta recuperar setores defeituosos.  
+- Pode exigir reinicialização.  
+- Aguarde a conclusão (pode demorar bastante).
+
+🧭 Como usar:
+1. Abra o Prompt de Comando como administrador.  
+2. Digite o comando acima.  
+3. Pressione "S" para agendar a verificação.  
+4. Reinicie o computador.
+
+------------------------------------------------------------ 
+
+📂 2. Verificação de Arquivos do Sistema (SFC)
+
+🔹 Comando: sfc /scannow  
+- Verifica e repara arquivos protegidos do Windows.  
+- Ideal para corrigir falhas de inicialização ou lentidão.
+
+🧭 Como usar:
+1. Abra o Prompt de Comando como administrador.  
+2. Digite o comando acima.  
+3. Aguarde a verificação (até 20 minutos).
+
+🔸 SFC Offline (caso o Windows não inicie):  
+Comando: sfc /scannow /offbootdir=X:\ /offwindir=X:\Windows  
+- Substitua X: pela letra correta da partição do sistema.
+
+------------------------------------------------------------ 
+
+📂 3. Reparo da Imagem do Sistema (DISM)
+
+🔹 Comando: dism /online /cleanup-image /restorehealth  
+- Repara arquivos corrompidos usando fontes online (Windows Update).  
+- Útil quando o SFC não resolve o problema.
+
+🧭 Como usar:
+1. Abra o Prompt de Comando como administrador.  
+2. Digite o comando acima.  
+3. Aguarde até 30 minutos.
+
+💡 Dica:
+Execute o SFC antes e depois do DISM para garantir que todos os arquivos foram corrigidos.
+
+------------------------------------------------------------ 
+ 
+📚 FONTE DE REFERÊNCIA 
+ 
+Como saber o resultado do "CHKDSK /R" – BABOO: 
+🔗 baboo.com.br/windows-10/dicas-tutoriais-windows/como-saber-o-resultado-do-chkdsk-r/ 
+
+------------------------------------------------------------ 

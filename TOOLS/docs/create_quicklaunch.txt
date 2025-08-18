@@ -1,0 +1,50 @@
+🚀 Configurando a Quick Launch  
+------------------------------------------------------------ 
+
+📚 Categoria: Produtividade / Interface  
+🔧 Formação: Básica  
+💻 Sistema: Windows 10 / 11
+
+------------------------------------------------------------ 
+ 
+Guia prático para adicionar a barra Quick Launch ao Windows 10/11, facilitando o acesso rápido a programas. 
+ 
+------------------------------------------------------------ 
+ 
+📌 1. PREPARAÇÃO 
+ 
+🔹 O caminho da Quick Launch foi copiado para sua área de transferência: 
+📋 C:\Users\WinSec\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch 
+ 
+------------------------------------------------------------ 
+ 
+🛠️ 2. ADICIONANDO A BARRA DE FERRAMENTAS 
+ 
+🔹 Passo a passo: 
+1. Clique com o botão DIREITO na barra de tarefas 
+2. Selecione "Barra de ferramentas" 
+3. Escolha "Nova barra de ferramentas..." 
+4. COLE o caminho copiado (Ctrl+V) no campo de endereço 
+5. Clique em "Selecionar pasta" 
+ 
+🔸 Dica: Arraste itens para a pasta Quick Launch para adicionar atalhos 
+ 
+------------------------------------------------------------ 
+ 
+🎉 3. PERSONALIZAÇÃO 
+ 
+🔹 Para melhor aparência: 
+- Clique com o botão direito na barra "Quick Launch" 
+- Desmarque "Mostrar texto" e "Mostrar título" 
+- Ajuste a posição arrastando a alça à esquerda 
+ 
+------------------------------------------------------------ 
+ 
+📚 DICA EXTRA 
+ 
+Para adicionar programas à Quick Launch: 
+1. Localize o programa no Menu Iniciar 
+2. Arraste-o para a pasta Quick Launch 
+OU 
+2. Crie um atalho e mova para: 
+C:\Users\WinSec\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\Shortcuts 

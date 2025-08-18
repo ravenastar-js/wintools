@@ -1,2 +1,2 @@
 @echo off
-start eventvwr
+start "" eventvwr

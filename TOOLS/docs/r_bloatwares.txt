@@ -1,0 +1,53 @@
+🧼 Remoção de Bloatwares e Programas Indesejados  
+------------------------------------------------------------ 
+
+📚 Categoria: Otimização / Segurança  
+🔧 Formação: Básica a Intermediária  
+💻 Sistema: Windows 10 / 11
+
+------------------------------------------------------------ 
+
+🔧 AdwCleaner (Malwarebytes)  
+🔗 Download: br.malwarebytes.com/adwcleaner
+
+📌 O que é:
+- Ferramenta gratuita e portátil para remover adware, bloatware, PUPs e programas indesejados.
+- Não requer instalação: basta baixar e executar.
+- Ideal para otimizar o desempenho do Windows e restaurar a navegação segura.
+
+------------------------------------------------------------ 
+
+📚 Artigo recomendado:  
+🔗 Guia completo: baboo.com.br/cursos/aula-07-adwcleaner-ublock-origin-trafficlight-windows-rapido-seguro-2-0/
+
+📌 Dicas do BABOO:
+🔹 Execute o AdwCleaner e clique em "Verificar Agora".  
+🔹 Após a varredura, selecione todos os itens e mova para a Quarentena.  
+🔹 Salve seus arquivos antes de continuar, pois o programa fecha apps abertos.  
+🔹 Após a limpeza, reinicie o Windows e execute novamente para eliminar o restante.  
+🔹 Apague a pasta do AdwCleaner manualmente após o processo.
+
+📎 Curiosidade:
+- Um teste da Gamers Nexus mostrou que a remoção de bloatwares pode deixar um notebook até 40% mais rápido.  
+- Em 2019, milhares de usuários da ASUS foram infectados por um software pré-instalado, reforçando a importância da limpeza.
+
+------------------------------------------------------------ 
+
+📦 Extras: Ferramentas Adicionais para Limpeza
+
+🔧 Bloatbox  
+🔗 GitHub: github.com/builtbybel/bloatbox
+
+📌 O que é:
+- Aplicativo leve e gratuito para desinstalar apps modernos do Windows 10/11.
+- Originalmente criado como extensão do Privatezilla, mas virou ferramenta independente.
+- Ideal para quem busca controle total sobre os aplicativos nativos do sistema.
+
+💡 Destaques:
+- Interface simples e direta.
+- Baseado em projetos como ConditionalException e inspirado no AppManager da Microsoft.
+- Foco em código enxuto e eficiência, sem "bloat" no próprio Bloatbox 😏
+
+🛠️ Recomendado para:
+- Usuários avançados que desejam personalizar o Windows.
+- Remoção de apps pré-instalados que não aparecem no painel de controle.

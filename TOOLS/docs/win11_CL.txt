@@ -1,0 +1,55 @@
+🔐 Instalar o Windows 11 com Conta Local (sem conexão obrigatória)  
+------------------------------------------------------------ 
+
+📚 Categoria: Instalação / Privacidade  
+🔧 Formação: Intermediária  
+💻 Sistema: Windows 11 (versões recentes)
+
+------------------------------------------------------------ 
+
+📌 Situação:
+
+- As versões mais recentes do Windows 11 removeram a opção OOBE\BYPASSNRO.
+- Isso impede a criação de conta local durante a instalação padrão.
+- A instalação exige conexão com a internet e conta Microsoft.
+
+------------------------------------------------------------ 
+
+🛠 Solução Manual:
+
+1. Quando aparecer a tela de conexão com a rede, pressione:  
+   👉 SHIFT + F10 (abre o Prompt de Comando)
+
+2. Execute o seguinte comando:  
+   reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE" /v BypassNRO /t REG_DWORD /d 1 /f
+
+3. Reinicie o PC com:  
+   shutdown /r /t 0
+
+✅ Após reiniciar, você poderá prosseguir com a instalação usando uma conta local.
+
+------------------------------------------------------------ 
+
+🧠 Alternativa via Editor de Registro:
+
+1. Pressione SHIFT + F10 e digite: regedit
+
+2. Navegue até a chave:  
+   HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE
+
+3. Crie um novo valor DWORD (32 bits) chamado:  
+   BypassNRO
+
+4. Defina o valor como: 1
+
+5. Feche o Regedit e reinicie com:  
+   shutdown /r /t 0
+
+------------------------------------------------------------ 
+
+📎 Observação:
+
+- Esse método contorna a exigência de conexão com a internet e conta Microsoft.
+- Ideal para quem prefere configurar o Windows com mais controle e privacidade.
+
+------------------------------------------------------------ 
