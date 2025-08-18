@@ -72,13 +72,14 @@ echo [ 37 ] [37m◙[32m Curso gratuito Windows Rápido e Seguro 2.0
 echo [ 38 ] [37m◙[32m Flash USB inicializáveis (softwares)
 echo [ 39 ] [37m◙[32m MBR Filter
 echo [ 40 ] [37m◙[32m Instalação do Kali Linux no Windows via WSL
+echo [ 41 ] [37m◙[32m Monitoramento de Segurança com o Visualizador de Eventos
 echo [0m
 echo [94m ◙ COMANDO [37m ◙ GUIA[0m 
 echo.
 echo [ [97mG[0m ] [97mAcessar Código Fonte no GitHub[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-40, G ou E):[93m 
+set /p choice=Digite a sua escolha (1-41, G ou E):[93m 
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto enable_f8
@@ -120,6 +121,7 @@ if /i "%choice%"=="37" goto wrs_2
 if /i "%choice%"=="38" goto usb_boot_tools
 if /i "%choice%"=="39" goto mbr_filter
 if /i "%choice%"=="40" goto win_wsl
+if /i "%choice%"=="41" goto v_eventos
 if /i "%choice%"=="G" goto github
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
@@ -364,6 +366,12 @@ cmd /c start "" "%~dp0docs\win_wsl.txt"
 pause
 goto menu
 
+:v_eventos
+echo [0m
+cmd /c start "" "%~dp0docs\v_eventos.txt"
+pause
+goto menu
+
 :github
 echo [0m
 start https://github.com/ravenastar-js/wintools
@@ -373,6 +381,6 @@ goto menu
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 40, ou E.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 41, ou E.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu

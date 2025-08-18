@@ -1,0 +1,89 @@
+🛡️ Monitoramento de Segurança com o Visualizador de Eventos  
+------------------------------------------------------------ 
+
+📚 Categoria: Segurança / Auditoria  
+🔧 Formação: Intermediária a Avançada  
+💻 Sistema: Windows 10 / 11
+
+------------------------------------------------------------ 
+
+📌 O que é:
+
+O Visualizador de Eventos é uma ferramenta poderosa para monitorar a segurança do Windows.  
+Ele registra atividades como logins, falhas de autenticação, alterações em configurações sensíveis, execução de aplicativos e eventos relacionados a políticas de segurança.
+
+Permite identificar comportamentos suspeitos, ataques ou falhas operacionais que podem comprometer o sistema.
+
+🧭 Como acessar:
+1. Clique com o botão direito no logotipo do Windows na barra de tarefas  
+2. Selecione "Visualizador de Eventos"  
+3. Expanda o menu "Logs do Windows"  
+4. Clique em "Segurança"
+
+------------------------------------------------------------ 
+
+📂 Eventos de Segurança Importantes
+
+4624 – Logon bem-sucedido  
+4625 – Tentativa de logon malsucedida  
+4634 – Logoff de conta  
+4647 – Usuário iniciou o processo de logoff  
+4648 – Logon usando credenciais explícitas  
+4657 – Registro de chave de objeto modificado  
+4662 – Operação realizada em objeto monitorado  
+4663 – Tentativa de acesso a objeto  
+4672 – Privilégios especiais atribuídos a novo logon  
+4688 – Novo processo criado  
+4697 – Serviço instalado no sistema  
+4702 – Tarefa agendada modificada  
+4719 – Política de auditoria alterada  
+4720 – Conta de usuário criada  
+4722 – Conta de usuário habilitada  
+4725 – Conta de usuário desabilitada  
+4726 – Conta de usuário excluída  
+4732 – Membro adicionado a grupo de segurança  
+4740 – Conta bloqueada por falhas de logon  
+4798 – Consulta de membros de grupo de segurança
+
+------------------------------------------------------------ 
+
+📂 Eventos para Detecção de Intrusões
+
+🔹 Tentativas de logon:
+4624 – Logon bem-sucedido  
+4625 – Falha de logon  
+4648 – Logon com credenciais explícitas  
+4634 – Logoff  
+4672 – Logon com privilégios administrativos  
+4776 – Validação de credenciais via controlador de domínio  
+4768, 4759, 4771, 4770 - Autenticação Kerberos
+
+🔹 Alterações de contas ou grupos:
+4720 – Conta criada  
+4722 – Conta habilitada  
+4723 – Tentativa de alteração de senha  
+4724 – Tentativa de redefinir senha  
+4725 – Conta desabilitada  
+4726 – Conta excluída  
+4732 – Usuário adicionado a grupo  
+4733 – Usuário removido de grupo  
+4756 – Adição a grupo global  
+4757 – Remoção de grupo global
+
+🔹 Atividades suspeitas:
+4688 – Novo processo criado  
+4689 – Processo encerrado  
+4697 – Serviço instalado  
+7045 – Novo serviço instalado (log System)  
+1102 – Log de eventos foi limpo  
+5156 – Conexão de rede permitida  
+5140 – Recurso compartilhado acessado  
+4621 – Estação de trabalho bloqueada
+
+🔹 Eventos relacionados a RDP:
+1149 - Logon via Remote Desktop  
+4625 (tipo de logon 10) - Falha de logon remoto  
+4778 - Sessão RDP reconectada  
+4779 - Sessão RDP desconectada
+
+------------------------------------------------------------ 
