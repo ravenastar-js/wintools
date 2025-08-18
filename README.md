@@ -1,5 +1,6 @@
 > [!TIP]
-> Usar a seguinte estrutura: 
+> Usar a seguinte estrutura:
+> 
 > Pasta > Arquivos (📁  > 📄)
 
 <details>
