@@ -31,6 +31,7 @@ Se precisar de ajuda ou quiser falar com a equipe, entre no nosso servidor de su
 > 
 > O arquivo `GerarArquivos.bat` cria o atalho `WinTools (CMD)` que fica na raiz do projeto e o arquivo `menu.cmd` que fica na pasta `TOOLS`. Caso o `menu.cmd` já exista, o conteúdo de `menu.cmd` será atualizado automaticamente. O arquivo `menu.js`, localizado na pasta `js` que fica dentro da pasta `TOOLS`, é o responsável por criar ou atualizar o conteúdo de `menu.cmd`.
 
+---
 
 ### 🚀 **WinTools: Um Simples e Útil Kit de Ferramentas para Windows!**
 
