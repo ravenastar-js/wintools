@@ -23,6 +23,11 @@ Permite identificar comportamentos suspeitos, ataques ou falhas operacionais que
 
 ------------------------------------------------------------  
 
+💡 Consulta rápida, prática e básica? Acesse o site abaixo:  
+🔗 secguide.pages.dev/win-eventos/
+
+------------------------------------------------------------  
+
 📂 Eventos de Segurança Importantes
 
 4624 – Logon bem-sucedido: indica que um usuário conseguiu se autenticar com sucesso. Verifique o tipo de logon (interativo, remoto, rede) e o nome da conta. Logins fora do horário normal ou com contas administrativas merecem atenção especial.
