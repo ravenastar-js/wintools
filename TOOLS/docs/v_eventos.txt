@@ -1,15 +1,16 @@
 🛡️ Monitoramento de Segurança com o Visualizador de Eventos  
------------------------------------------------------------- 
+------------------------------------------------------------  
 
 📚 Categoria: Segurança / Auditoria  
 🔧 Formação: Intermediária a Avançada  
-💻 Sistema: Windows 10 / 11
+💻 Sistema: Windows 10 / 11  
 
------------------------------------------------------------- 
+------------------------------------------------------------  
 
 📌 O que é:
 
 O Visualizador de Eventos é uma ferramenta poderosa para monitorar a segurança do Windows.  
+
 Ele registra atividades como logins, falhas de autenticação, alterações em configurações sensíveis, execução de aplicativos e eventos relacionados a políticas de segurança.
 
 Permite identificar comportamentos suspeitos, ataques ou falhas operacionais que podem comprometer o sistema.
@@ -18,72 +19,125 @@ Permite identificar comportamentos suspeitos, ataques ou falhas operacionais que
 1. Clique com o botão direito no logotipo do Windows na barra de tarefas  
 2. Selecione "Visualizador de Eventos"  
 3. Expanda o menu "Logs do Windows"  
-4. Clique em "Segurança"
+4. Clique em "Segurança"  
 
------------------------------------------------------------- 
+------------------------------------------------------------  
 
 📂 Eventos de Segurança Importantes
 
-4624 – Logon bem-sucedido  
-4625 – Tentativa de logon malsucedida  
-4634 – Logoff de conta  
-4647 – Usuário iniciou o processo de logoff  
-4648 – Logon usando credenciais explícitas  
-4657 – Registro de chave de objeto modificado  
-4662 – Operação realizada em objeto monitorado  
-4663 – Tentativa de acesso a objeto  
-4672 – Privilégios especiais atribuídos a novo logon  
-4688 – Novo processo criado  
-4697 – Serviço instalado no sistema  
-4702 – Tarefa agendada modificada  
-4719 – Política de auditoria alterada  
-4720 – Conta de usuário criada  
-4722 – Conta de usuário habilitada  
-4725 – Conta de usuário desabilitada  
-4726 – Conta de usuário excluída  
-4732 – Membro adicionado a grupo de segurança  
-4740 – Conta bloqueada por falhas de logon  
-4798 – Consulta de membros de grupo de segurança
+4624 – Logon bem-sucedido: indica que um usuário conseguiu se autenticar com sucesso. Verifique o tipo de logon (interativo, remoto, rede) e o nome da conta. Logins fora do horário normal ou com contas administrativas merecem atenção especial.
 
------------------------------------------------------------- 
+4625 – Tentativa de logon malsucedida: gerado quando há falha na autenticação (senha incorreta, conta inexistente, etc.). Múltiplos eventos em sequência podem indicar ataque de força bruta. 
 
-📂 Eventos para Detecção de Intrusões
+4634 – Logoff de conta: mostra que uma sessão foi encerrada. Útil para entender a duração de sessões e detectar logoffs suspeitos ou automáticos. 
+
+4647 – Usuário iniciou o processo de logoff: registrado quando o próprio usuário solicita o logoff. Pode indicar encerramento intencional após atividade suspeita.
+
+4648 – Logon usando credenciais explícitas: ocorre quando um processo usa credenciais diferentes das do usuário logado. Comum em ataques pass-the-hash ou uso de ferramentas administrativas remotas.
+
+4657 – Registro de chave de objeto modificado: indica que uma chave do Registro foi criada, modificada ou excluída. Pode revelar alterações em áreas sensíveis como Run, Services ou permissões de inicialização automática.  
+4662 – Operação realizada em objeto monitorado: usado para auditoria detalhada em arquivos, pastas ou objetos do Active Directory. Informa qual objeto foi acessado, por quem e com qual permissão.
+
+4663 – Tentativa de acesso a objeto: evento crucial para saber quando arquivos ou pastas monitoradas foram acessados. Muito útil para detectar exfiltração de dados ou movimentações suspeitas.
+
+4672 – Privilégios especiais atribuídos a novo logon: registra quando um login é feito com privilégios administrativos. Essencial para detectar elevação de privilégio ou uso indevido de contas elevadas.
+
+4688 – Novo processo criado: indica que um processo foi iniciado no sistema. Permite identificar execuções inesperadas de scripts, programas em diretórios incomuns ou possíveis cargas maliciosas.
+
+4697 – Serviço instalado no sistema: indica a criação de um novo serviço, algo que pode ser legítimo (como uma nova impressora) ou suspeito (persistência de malware via serviço oculto).
+
+4702 – Tarefa agendada modificada: detecta alterações em tarefas agendadas que podem ser usadas por malwares para obter persistência. Tarefas com nomes aleatórios ou incomuns devem ser investigadas.
+
+4719 – Política de auditoria alterada: mostra quando as configurações de auditoria foram modificadas. Um atacante pode tentar desativar o log de eventos para esconder rastros.
+
+4720 – Conta de usuário criada: registra quando uma nova conta de usuário é criada. Deve ser auditado rigorosamente em ambientes onde contas só são criadas por administradores autorizados.
+
+4722 – Conta de usuário habilitada: informa quando uma conta anteriormente desativada foi reativada. Reativar uma conta antiga e esquecida pode ser uma tática de intrusão.
+
+4725 – Conta de usuário desabilitada: mostra quando uma conta foi desativada, seja por ação administrativa ou script. Pode ser usado por atacantes para ocultar contas ou desabilitar alertas automáticos.
+
+4726 – Conta de usuário excluída: evento crítico que registra a exclusão de contas. Pode indicar tentativa de apagar rastros ou remover usuários legítimos de forma maliciosa.
+
+4732 – Membro adicionado a grupo de segurança: indica que um usuário foi adicionado a um grupo (como Administradores ou Usuários Avançados). Alterações em grupos administrativos são críticas e devem ser auditadas.
+
+4740 – Conta bloqueada por falhas de logon: indica que uma conta foi bloqueada após múltiplas tentativas de senha incorreta. Sinal claro de tentativa de adivinhação de senha ou ataque automatizado.
+
+4798 – Consulta de membros de grupo de segurança: registra quando alguém inspeciona os membros de um grupo de segurança, como o grupo de administradores. Pode indicar reconhecimento de alvos por parte de um invasor.
+
+------------------------------------------------------------  
+
+📂 Eventos para Detecção de Intrusões  
 
 🔹 Tentativas de logon:
-4624 – Logon bem-sucedido  
-4625 – Falha de logon  
-4648 – Logon com credenciais explícitas  
-4634 – Logoff  
-4672 – Logon com privilégios administrativos  
-4776 – Validação de credenciais via controlador de domínio  
-4768, 4759, 4771, 4770 - Autenticação Kerberos
+
+4624 – Logon bem-sucedido: indica autenticação bem-sucedida. Útil para rastrear acessos legítimos e horários incomuns.
+
+4625 – Falha de logon: mostra tentativas de autenticação malsucedidas. Múltiplos eventos podem indicar ataque de força bruta.
+
+4648 – Logon com credenciais explícitas: ocorre quando um processo usa credenciais diferentes das do usuário logado. Comum em ataques pass-the-hash.
+
+4634 – Logoff: indica encerramento de sessão. Pode ajudar a identificar sessões curtas ou logoffs automáticos após tentativas de acesso.
+
+4672 – Logon com privilégios administrativos: registra logins com privilégios elevados. Essencial para detectar uso indevido de contas administrativas.
+
+4776 – Validação de credenciais via controlador de domínio: mostra quando credenciais são verificadas por um controlador de domínio.
+
+4768 – Solicitação de ticket Kerberos (TGT): evento inicial na autenticação Kerberos.
+
+4759 – Solicitação de ticket de serviço Kerberos (TGS): usado para acessar serviços específicos.
+
+4771 – Falha na solicitação de ticket Kerberos: pode indicar problemas de autenticação ou ataques.
+
+4770 – Renovação de ticket Kerberos: mostra quando um ticket é renovado, útil para rastrear sessões persistentes.
 
 🔹 Alterações de contas ou grupos:
-4720 – Conta criada  
-4722 – Conta habilitada  
-4723 – Tentativa de alteração de senha  
-4724 – Tentativa de redefinir senha  
-4725 – Conta desabilitada  
-4726 – Conta excluída  
-4732 – Usuário adicionado a grupo  
-4733 – Usuário removido de grupo  
-4756 – Adição a grupo global  
-4757 – Remoção de grupo global
+
+4720 – Conta criada: indica criação de nova conta. Deve ser auditada em ambientes restritos.
+
+4722 – Conta habilitada: mostra reativação de conta anteriormente desativada. Pode ser usada para acesso não autorizado.
+
+4723 – Tentativa de alteração de senha: pode indicar tentativa de comprometimento de conta.
+
+4724 – Tentativa de redefinir senha: semelhante ao evento anterior, mas com foco em redefinição forçada.
+
+4725 – Conta desabilitada: pode ser usada para ocultar contas ou interromper alertas.
+
+4726 – Conta excluída: evento crítico que pode indicar tentativa de apagar rastros.
+
+4732 – Usuário adicionado a grupo: alterações em grupos administrativos devem ser monitoradas.
+
+4733 – Usuário removido de grupo: pode indicar tentativa de reduzir privilégios ou ocultar ações.
+
+4756 – Adição a grupo global: relevante para ambientes com múltiplos domínios.
+
+4757 – Remoção de grupo global: semelhante ao anterior, mas com foco em remoção.
 
 🔹 Atividades suspeitas:
-4688 – Novo processo criado  
-4689 – Processo encerrado  
-4697 – Serviço instalado  
-7045 – Novo serviço instalado (log System)  
-1102 – Log de eventos foi limpo  
-5156 – Conexão de rede permitida  
-5140 – Recurso compartilhado acessado  
-4621 – Estação de trabalho bloqueada
+
+4688 – Novo processo criado: permite identificar execução de scripts e programas suspeitos.
+
+4689 – Processo encerrado: útil para rastrear duração de processos maliciosos.
+
+4697 – Serviço instalado: pode indicar persistência de malware via serviço oculto.
+
+7045 – Novo serviço instalado (log System): semelhante ao 4697, mas registrado no log do sistema.
+
+1102 – Log de eventos foi limpo: pode indicar tentativa de ocultar rastros.
+
+5156 – Conexão de rede permitida: mostra comunicações externas, útil para detectar conexões suspeitas.
+
+5140 – Recurso compartilhado acessado: indica acesso a pastas ou arquivos via rede.
+
+4621 – Estação de trabalho bloqueada: pode indicar tentativa de ocultar atividade ou proteger sessão.
 
 🔹 Eventos relacionados a RDP:
-1149 - Logon via Remote Desktop  
-4625 (tipo de logon 10) - Falha de logon remoto  
-4778 - Sessão RDP reconectada  
-4779 - Sessão RDP desconectada
 
------------------------------------------------------------- 
+1149 – Logon via Remote Desktop: autenticação bem-sucedida via RDP.
+
+4625 (tipo de logon 10) – Falha de logon remoto: tentativa de acesso remoto malsucedida.
+
+4778 – Sessão RDP reconectada: mostra reconexão a sessão remota.
+
+4779 – Sessão RDP desconectada: indica encerramento de sessão remota.  
+
+------------------------------------------------------------
