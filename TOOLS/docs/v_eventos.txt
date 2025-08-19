@@ -35,7 +35,8 @@ Permite identificar comportamentos suspeitos, ataques ou falhas operacionais que
 
 4648 – Logon usando credenciais explícitas: ocorre quando um processo usa credenciais diferentes das do usuário logado. Comum em ataques pass-the-hash ou uso de ferramentas administrativas remotas.
 
-4657 – Registro de chave de objeto modificado: indica que uma chave do Registro foi criada, modificada ou excluída. Pode revelar alterações em áreas sensíveis como Run, Services ou permissões de inicialização automática.  
+4657 – Registro de chave de objeto modificado: indica que uma chave do Registro foi criada, modificada ou excluída. Pode revelar alterações em áreas sensíveis como Run, Services ou permissões de inicialização automática.
+
 4662 – Operação realizada em objeto monitorado: usado para auditoria detalhada em arquivos, pastas ou objetos do Active Directory. Informa qual objeto foi acessado, por quem e com qual permissão.
 
 4663 – Tentativa de acesso a objeto: evento crucial para saber quando arquivos ou pastas monitoradas foram acessados. Muito útil para detectar exfiltração de dados ou movimentações suspeitas.
