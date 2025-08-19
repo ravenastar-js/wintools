@@ -10,18 +10,17 @@ Se precisar de ajuda ou quiser falar com a equipe, entre no nosso servidor de su
 > Usar a seguinte estrutura:
 > 
 > Pasta > Pastas e Arquivos (📁 | 📄)
-
-<details>
-<summary> 📁 ESTRUTURA</summary>
-
-```
-💽 DiscoRemovível/
-└── 📁 wintools/
-    ├── 📁 TOOLS/
-    │   ├── 📁 pastas
-    │   └── 📄 arquivos
-    └── 📄 GerarArquivos.bat
-```
+> <details>
+> <summary> 📁 ESTRUTURA</summary>
+> 
+> ```
+> 💽 DiscoRemovível/
+> └── 📁 wintools/
+>     ├── 📁 TOOLS/
+>     │   ├── 📁 pastas
+>     │   └── 📄 arquivos
+>     └── 📄 GerarArquivos.bat
+> ```
 
 </details>
 
