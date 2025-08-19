@@ -1,3 +1,11 @@
+## 📞 Suporte
+
+Se precisar de ajuda ou quiser falar com a equipe, entre no nosso servidor de suporte:
+
+[![Servidor de Suporte](https://img.shields.io/badge/Servidor%20de%20Suporte-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/FncVNprdgP)
+
+---
+
 > [!TIP]
 > Usar a seguinte estrutura:
 > 
