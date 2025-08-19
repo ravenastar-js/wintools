@@ -51,35 +51,36 @@ echo [ 16 ] [94m◙[32m Configurar início do sistema (msconfig)
 echo [ 17 ] [94m◙[32m Abrir Visualizador de Eventos
 echo [ 18 ] [94m◙[32m Desinstalar ou alterar um programa
 echo [ 19 ] [94m◙[32m Ativar ou desativar recursos do Windows
-echo [ 20 ] [94m◙[32m Conexões de Rede
-echo [ 21 ] [94m◙[32m Mostrar o cache DNS
-echo [ 22 ] [94m◙[32m Limpar o cache DNS
-echo [ 23 ] [94m◙[32m Abrir aba DNS navegador Firefox
-echo [ 24 ] [94m◙[32m Abrir aba DNS navegador Google
-echo [ 25 ] [94m◙[32m Abrir a pasta de aplicativos
-echo [ 26 ] [94m◙[32m Abrir Quick Launch
-echo [ 27 ] [94m◙[32m Ativar Suporte à PVM para usar o WSL
-echo [ 28 ] [94m◙[32m Desativar Suporte à PVM (caso necessário)
-echo [ 29 ] [37m◙[32m Verificação do HD/SSD
-echo [ 30 ] [37m◙[32m Corrigindo arquivos do Windows
-echo [ 31 ] [37m◙[32m Arquivos temporários
-echo [ 32 ] [37m◙[32m Remoção de Bloatwares e programas indesejados
-echo [ 33 ] [37m◙[32m Instalar o Windows 11 com Conta Local (sem conexão obrigatória)
-echo [ 34 ] [37m◙[32m Configurações Importantes na BIOS/UEFI
-echo [ 35 ] [37m◙[32m Criar Quick Launch
-echo [ 36 ] [37m◙[32m Teclas de atalho do Windows
-echo [ 37 ] [37m◙[32m Curso gratuito Windows Rápido e Seguro 2.0
-echo [ 38 ] [37m◙[32m Flash USB inicializáveis (softwares)
-echo [ 39 ] [37m◙[32m MBR Filter
-echo [ 40 ] [37m◙[32m Instalação do Kali Linux no Windows via WSL
-echo [ 41 ] [37m◙[32m Monitoramento de Segurança com o Visualizador de Eventos
+echo [ 20 ] [94m◙[32m Auditoria de Eventos de Segurança do Windows (Últimas 168h)
+echo [ 21 ] [94m◙[32m Conexões de Rede
+echo [ 22 ] [94m◙[32m Mostrar o cache DNS
+echo [ 23 ] [94m◙[32m Limpar o cache DNS
+echo [ 24 ] [94m◙[32m Abrir aba DNS navegador Firefox
+echo [ 25 ] [94m◙[32m Abrir aba DNS navegador Google
+echo [ 26 ] [94m◙[32m Abrir a pasta de aplicativos
+echo [ 27 ] [94m◙[32m Abrir Quick Launch
+echo [ 28 ] [94m◙[32m Ativar Suporte à PVM para usar o WSL
+echo [ 29 ] [94m◙[32m Desativar Suporte à PVM (caso necessário)
+echo [ 30 ] [37m◙[32m Verificação do HD/SSD
+echo [ 31 ] [37m◙[32m Corrigindo arquivos do Windows
+echo [ 32 ] [37m◙[32m Arquivos temporários
+echo [ 33 ] [37m◙[32m Remoção de Bloatwares e programas indesejados
+echo [ 34 ] [37m◙[32m Instalar o Windows 11 com Conta Local (sem conexão obrigatória)
+echo [ 35 ] [37m◙[32m Configurações Importantes na BIOS/UEFI
+echo [ 36 ] [37m◙[32m Criar Quick Launch
+echo [ 37 ] [37m◙[32m Teclas de atalho do Windows
+echo [ 38 ] [37m◙[32m Curso gratuito Windows Rápido e Seguro 2.0
+echo [ 39 ] [37m◙[32m Flash USB inicializáveis (softwares)
+echo [ 40 ] [37m◙[32m MBR Filter
+echo [ 41 ] [37m◙[32m Instalação do Kali Linux no Windows via WSL
+echo [ 42 ] [37m◙[32m Monitoramento de Segurança com o Visualizador de Eventos
 echo [0m
 echo [94m ◙ COMANDO [37m ◙ GUIA[0m 
 echo.
 echo [ [97mG[0m ] [97mAcessar Código Fonte no GitHub[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-41, G ou E):[93m 
+set /p choice=Digite a sua escolha (1-42, G ou E):[93m 
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto enable_f8
@@ -100,28 +101,29 @@ if /i "%choice%"=="16" goto msconfig
 if /i "%choice%"=="17" goto event_viewer
 if /i "%choice%"=="18" goto uninstall_programs
 if /i "%choice%"=="19" goto open_optwin
-if /i "%choice%"=="20" goto conexoes_redes
-if /i "%choice%"=="21" goto display_dns
-if /i "%choice%"=="22" goto flush_dns
-if /i "%choice%"=="23" goto firefox_dns
-if /i "%choice%"=="24" goto chrome_dns
-if /i "%choice%"=="25" goto open_appsfolder
-if /i "%choice%"=="26" goto open_quicklaunch
-if /i "%choice%"=="27" goto a_vm
-if /i "%choice%"=="28" goto d_vm
-if /i "%choice%"=="29" goto v_armazen
-if /i "%choice%"=="30" goto win_chkdsk
-if /i "%choice%"=="31" goto temp_files
-if /i "%choice%"=="32" goto r_bloatwares
-if /i "%choice%"=="33" goto win11_cl
-if /i "%choice%"=="34" goto config_bios
-if /i "%choice%"=="35" goto create_quicklaunch
-if /i "%choice%"=="36" goto windows_keys
-if /i "%choice%"=="37" goto wrs_2
-if /i "%choice%"=="38" goto usb_boot_tools
-if /i "%choice%"=="39" goto mbr_filter
-if /i "%choice%"=="40" goto win_wsl
-if /i "%choice%"=="41" goto v_eventos
+if /i "%choice%"=="20" goto monitor_eventos
+if /i "%choice%"=="21" goto conexoes_redes
+if /i "%choice%"=="22" goto display_dns
+if /i "%choice%"=="23" goto flush_dns
+if /i "%choice%"=="24" goto firefox_dns
+if /i "%choice%"=="25" goto chrome_dns
+if /i "%choice%"=="26" goto open_appsfolder
+if /i "%choice%"=="27" goto open_quicklaunch
+if /i "%choice%"=="28" goto a_vm
+if /i "%choice%"=="29" goto d_vm
+if /i "%choice%"=="30" goto v_armazen
+if /i "%choice%"=="31" goto win_chkdsk
+if /i "%choice%"=="32" goto temp_files
+if /i "%choice%"=="33" goto r_bloatwares
+if /i "%choice%"=="34" goto win11_cl
+if /i "%choice%"=="35" goto config_bios
+if /i "%choice%"=="36" goto create_quicklaunch
+if /i "%choice%"=="37" goto windows_keys
+if /i "%choice%"=="38" goto wrs_2
+if /i "%choice%"=="39" goto usb_boot_tools
+if /i "%choice%"=="40" goto mbr_filter
+if /i "%choice%"=="41" goto win_wsl
+if /i "%choice%"=="42" goto v_eventos
 if /i "%choice%"=="G" goto github
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
@@ -237,6 +239,12 @@ goto menu
 :open_optwin
 echo [0m
 cmd /c %~dp0cmd\open_optwin.cmd
+pause
+goto menu
+
+:monitor_eventos
+echo [0m
+cmd /c %~dp0cmd\monitor_eventos.cmd
 pause
 goto menu
 
@@ -381,6 +389,6 @@ goto menu
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 41, ou E.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 42, ou E.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu
