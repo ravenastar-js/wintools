@@ -8,7 +8,6 @@
 [![🐞 Issues](https://img.shields.io/github/issues/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%90%9E%20Issues&color=red&logo=bug&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/issues)
 [![📦 Repo Size](https://img.shields.io/github/repo-size/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%93%A6%20Repo%20Size&color=lightgrey&logo=database&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools)
 [![🖥️ Platform](https://img.shields.io/badge/%F0%9F%96%A5%EF%B8%8F%20Platform-Windows-blue?style=for-the-badge&logo=windows&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools)
-[![🛠️ Made with](https://img.shields.io/badge/%F0%9F%9B%A0%EF%B8%8F%20Made%20with-JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools)
 
 </div>
 
