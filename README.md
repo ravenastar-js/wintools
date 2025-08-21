@@ -1,6 +1,6 @@
 <div align="center">
 
-[![⭐ Stars](https://img.shields.io/github/stars/ravenastar-js/wintools?style=for-the-badge&label=%E2%AD%90%20Stars&color=FFD700&logo=star&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/stargazers)
+[![⭐ Stars](https://img.shields.io/github/stars/ravenastar-js/wintools?style=for-the-badge&label=%E2%AD%90%20Stars&color=2d7445&logo=star&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/stargazers)
 [![🔱 Forks](https://img.shields.io/github/forks/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%94%B1%20Forks&color=2d7445&logo=git&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/network/members)
 [![👁️ Watchers](https://img.shields.io/github/watchers/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%91%81%EF%B8%8F%20Watchers&color=2d7445&logo=eye&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/watchers)
 [![📄 License](https://img.shields.io/github/license/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%93%84%20License&color=2d7445&logo=book&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/blob/main/LICENSE)
