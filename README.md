@@ -21,7 +21,7 @@ Se precisar de ajuda ou quiser falar com a equipe, entre no nosso servidor de su
 ---
 
 > [!TIP]
-> Usar a seguinte estrutura:
+> Usar estrutura recomendada:
 > 
 > Pasta > Pastas e Arquivos (📁 | 📄)
 > <details>
