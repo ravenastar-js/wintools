@@ -1,10 +1,20 @@
-## 📞 Suporte
+[![⭐ Stars](https://img.shields.io/github/stars/ravenastar-js/wintools?style=for-the-badge&label=%E2%AD%90%20Stars&color=FFD700&logo=star&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/stargazers)
+[![🔱 Forks](https://img.shields.io/github/forks/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%94%B1%20Forks&color=orange&logo=git&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/network/members)
+[![👁️ Watchers](https://img.shields.io/github/watchers/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%91%81%EF%B8%8F%20Watchers&color=blueviolet&logo=eye&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/watchers)
+[![📄 License](https://img.shields.io/github/license/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%93%84%20License&color=brightgreen&logo=book&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/blob/main/LICENSE)
+[![🕒 Last Commit](https://img.shields.io/github/last-commit/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%95%92%20Last%20Commit&color=blue&logo=clock&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/commits/main)
+[![🐞 Issues](https://img.shields.io/github/issues/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%90%9E%20Issues&color=red&logo=bug&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/issues)
+[![📦 Repo Size](https://img.shields.io/github/repo-size/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%93%A6%20Repo%20Size&color=lightgrey&logo=database&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools)
+[![🖥️ Platform](https://img.shields.io/badge/%F0%9F%96%A5%EF%B8%8F%20Platform-Windows-blue?style=for-the-badge&logo=windows&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools)
+[![🛠️ Made with](https://img.shields.io/badge/%F0%9F%9B%A0%EF%B8%8F%20Made%20with-JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools)
+
+---
+
+## 📞 Suporte 
 
 Se precisar de ajuda ou quiser falar com a equipe, entre no nosso servidor de suporte:
 
 [![Servidor de Suporte](https://img.shields.io/badge/Servidor%20de%20Suporte-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/FncVNprdgP)
-[![⭐ Stars](https://img.shields.io/github/stars/ravenastar-js/wintools?style=for-the-badge&label=%E2%AD%90%20Stars)](https://github.com/ravenastar-js/wintools/stargazers)
-
 
 ---
 
