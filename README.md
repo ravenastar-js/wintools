@@ -3,6 +3,8 @@
 Se precisar de ajuda ou quiser falar com a equipe, entre no nosso servidor de suporte:
 
 [![Servidor de Suporte](https://img.shields.io/badge/Servidor%20de%20Suporte-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/FncVNprdgP)
+[![⭐ Stars](https://img.shields.io/github/stars/ravenastar-js/wintools?style=for-the-badge&label=%E2%AD%90%20Stars)](https://github.com/ravenastar-js/wintools/stargazers)
+
 
 ---
 
