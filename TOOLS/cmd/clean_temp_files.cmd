@@ -30,6 +30,9 @@ REM | normalmente no Windows 10 e Windows 11, se voce utiliza Windows 7 ou 8
 REM | atualize o PowerShell em https://bit.ly/instalar-powershell
 REM | 
 
+chcp 65001
+color 0A
+
 REM ******************** LIXEIRA ********************
 del c:\$recycle.bin\* /s /q
 PowerShell.exe -NoProfile -Command Clear-RecycleBin -Confirm:$false >$null

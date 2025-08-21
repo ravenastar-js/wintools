@@ -24,6 +24,7 @@ var menuOptions = [
     { label: '\x1b[94m◙\x1b[32m Desinstalar ou alterar um programa', cmd: 'uninstall_programs', script: 'cmd /c %~dp0cmd\\uninstall_programs.cmd' },
     { label: '\x1b[94m◙\x1b[32m Ativar ou desativar recursos do Windows', cmd: 'open_optwin', script: 'cmd /c %~dp0cmd\\open_optwin.cmd' },
     { label: '\x1b[94m◙\x1b[32m Auditoria de Eventos de Segurança do Windows (Últimas 168h)', cmd: 'monitor_eventos', script: 'cmd /c %~dp0cmd\\monitor_eventos.cmd' },
+    { label: '\x1b[94m◙\x1b[32m Abrir Histórico de Atualizações do Windows', cmd: 'winupdate_history', script: 'cmd /c %~dp0cmd\\winupdate_history.cmd' },
 
     // ========== REDES E INTERNET ==========
     { label: '\x1b[94m◙\x1b[32m Conexões de Rede', cmd: 'conexoes_redes', script: 'cmd /c %~dp0cmd\\conexoes_redes.cmd' },
