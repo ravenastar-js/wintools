@@ -1,3 +1,5 @@
+<div align="center">
+
 [![⭐ Stars](https://img.shields.io/github/stars/ravenastar-js/wintools?style=for-the-badge&label=%E2%AD%90%20Stars&color=FFD700&logo=star&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/stargazers)
 [![🔱 Forks](https://img.shields.io/github/forks/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%94%B1%20Forks&color=orange&logo=git&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/network/members)
 [![👁️ Watchers](https://img.shields.io/github/watchers/ravenastar-js/wintools?style=for-the-badge&label=%F0%9F%91%81%EF%B8%8F%20Watchers&color=blueviolet&logo=eye&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools/watchers)
@@ -8,7 +10,8 @@
 [![🖥️ Platform](https://img.shields.io/badge/%F0%9F%96%A5%EF%B8%8F%20Platform-Windows-blue?style=for-the-badge&logo=windows&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools)
 [![🛠️ Made with](https://img.shields.io/badge/%F0%9F%9B%A0%EF%B8%8F%20Made%20with-JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=white&labelColor=444&radius=10)](https://github.com/ravenastar-js/wintools)
 
----
+</div>
+
 
 ## 📞 Suporte 
 
