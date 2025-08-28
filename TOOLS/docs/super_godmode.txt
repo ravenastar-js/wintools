@@ -1,0 +1,46 @@
+🧠 Ativação do Super God Mode no Windows
+------------------------------------------------------------
+📚 Categoria: Produtividade / Administração / Windows  
+🔧 Formação: Básica a Intermediária  
+💻 Sistema: Windows 10 / 11 com PowerShell habilitado  
+------------------------------------------------------------
+
+🔧 Instalação do Super God Mode
+1. Baixe os arquivos do repositório:
+   → https://github.com/ThioJoe/Windows-Super-God-Mode
+   - Super_God_Mode.ps1
+   - SuperGodMode-EasyLauncher.bat
+
+2. Coloque os dois arquivos na mesma pasta.
+
+3. Execute o arquivo `SuperGodMode-EasyLauncher.bat` com duplo clique.
+
+→ Isso criará uma pasta com centenas de atalhos para configurações avançadas do Windows.
+
+💡 Alternativa: Execute manualmente via PowerShell:
+   Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process  
+   .\Super_God_Mode.ps1
+
+------------------------------------------------------------
+
+🧭 Recursos Disponíveis
+- Atalhos para pastas ocultas do sistema (CLSID)
+- Links diretos para configurações avançadas (ms-settings)
+- Ferramentas para explorar DLLs e XMLs do Windows
+- Interface gráfica com organização por categorias
+
+💡 Dica: Nenhuma configuração é alterada — apenas atalhos são criados.
+
+------------------------------------------------------------
+
+⚠️ Aviso sobre o uso
+O "Super God Mode" não altera o sistema.  
+É ideal para usuários curiosos, administradores e entusiastas.  
+Não substitui ferramentas profissionais de gerenciamento.
+
+------------------------------------------------------------
+
+🧹 Remoção dos atalhos
+→ Basta excluir a pasta gerada após a execução do script.
+
+------------------------------------------------------------
