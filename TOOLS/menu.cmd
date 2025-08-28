@@ -39,49 +39,51 @@ echo [ 4 ] [94m◙[32m Criar ponto de restauração
 echo [ 5 ] [94m◙[32m Habilitar ponto de restauração ilimitado
 echo [ 6 ] [94m◙[32m Limpar arquivos temporários
 echo [ 7 ] [94m◙[32m Verificar arquivos de sistema
-echo [ 8 ] [94m◙[32m Reiniciar o dispositivo normalmente
-echo [ 9 ] [94m◙[32m Desligar o dispositivo
-echo [ 10 ] [94m◙[32m Bloquear a tela
-echo [ 11 ] [94m◙[32m Iniciar Gerenciador de Tarefas
-echo [ 12 ] [94m◙[32m Gerenciamento de Disco
-echo [ 13 ] [94m◙[32m Abrir God Mode
-echo [ 14 ] [94m◙[32m Abrir Pasta Lixeira
-echo [ 15 ] [94m◙[32m Exibir informações do sistema
-echo [ 16 ] [94m◙[32m Configurar início do sistema (msconfig)
-echo [ 17 ] [94m◙[32m Abrir Visualizador de Eventos
-echo [ 18 ] [94m◙[32m Desinstalar ou alterar um programa
-echo [ 19 ] [94m◙[32m Ativar ou desativar recursos do Windows
-echo [ 20 ] [94m◙[32m Auditoria de Eventos de Segurança do Windows (Últimas 168h)
-echo [ 21 ] [94m◙[32m Abrir Histórico de Atualizações do Windows
-echo [ 22 ] [94m◙[32m Conexões de Rede
-echo [ 23 ] [94m◙[32m Mostrar o cache DNS
-echo [ 24 ] [94m◙[32m Limpar o cache DNS
-echo [ 25 ] [94m◙[32m Abrir aba DNS navegador Firefox
-echo [ 26 ] [94m◙[32m Abrir aba DNS navegador Google
-echo [ 27 ] [94m◙[32m Abrir a pasta de aplicativos
-echo [ 28 ] [94m◙[32m Abrir Quick Launch
-echo [ 29 ] [94m◙[32m Ativar Suporte à PVM para usar o WSL
-echo [ 30 ] [94m◙[32m Desativar Suporte à PVM (caso necessário)
-echo [ 31 ] [37m◙[32m Verificação do HD/SSD
-echo [ 32 ] [37m◙[32m Corrigindo arquivos do Windows
-echo [ 33 ] [37m◙[32m Arquivos temporários
-echo [ 34 ] [37m◙[32m Remoção de Bloatwares e programas indesejados
-echo [ 35 ] [37m◙[32m Instalar o Windows 11 com Conta Local (sem conexão obrigatória)
-echo [ 36 ] [37m◙[32m Configurações Importantes na BIOS/UEFI
-echo [ 37 ] [37m◙[32m Criar Quick Launch
-echo [ 38 ] [37m◙[32m Teclas de atalho do Windows
-echo [ 39 ] [37m◙[32m Curso gratuito Windows Rápido e Seguro 2.0
-echo [ 40 ] [37m◙[32m Flash USB inicializáveis (softwares)
-echo [ 41 ] [37m◙[32m MBR Filter
-echo [ 42 ] [37m◙[32m Instalação do Kali Linux no Windows via WSL
-echo [ 43 ] [37m◙[32m Monitoramento de Segurança com o Visualizador de Eventos
+echo [ 8 ] [94m◙[32m Gerenciar contas de usuário
+echo [ 9 ] [94m◙[32m Reiniciar o dispositivo normalmente
+echo [ 10 ] [94m◙[32m Desligar o dispositivo
+echo [ 11 ] [94m◙[32m Bloquear a tela
+echo [ 12 ] [94m◙[32m Iniciar Gerenciador de Tarefas
+echo [ 13 ] [94m◙[32m Gerenciamento de Disco
+echo [ 14 ] [94m◙[32m Abrir God Mode
+echo [ 15 ] [94m◙[32m Abrir Pasta Lixeira
+echo [ 16 ] [94m◙[32m Exibir informações do sistema
+echo [ 17 ] [94m◙[32m Configurar início do sistema (msconfig)
+echo [ 18 ] [94m◙[32m Abrir Visualizador de Eventos
+echo [ 19 ] [94m◙[32m Desinstalar ou alterar um programa
+echo [ 20 ] [94m◙[32m Ativar ou desativar recursos do Windows
+echo [ 21 ] [94m◙[32m Auditoria de Eventos de Segurança do Windows (Últimas 168h)
+echo [ 22 ] [94m◙[32m Abrir Histórico de Atualizações do Windows
+echo [ 23 ] [94m◙[32m Conexões de Rede
+echo [ 24 ] [94m◙[32m Mostrar o cache DNS
+echo [ 25 ] [94m◙[32m Limpar o cache DNS
+echo [ 26 ] [94m◙[32m Abrir aba DNS navegador Firefox
+echo [ 27 ] [94m◙[32m Abrir aba DNS navegador Google
+echo [ 28 ] [94m◙[32m Abrir a pasta de aplicativos
+echo [ 29 ] [94m◙[32m Abrir Quick Launch
+echo [ 30 ] [94m◙[32m Ativar Suporte à PVM para usar o WSL
+echo [ 31 ] [94m◙[32m Desativar Suporte à PVM (caso necessário)
+echo [ 32 ] [37m◙[32m Verificação do HD/SSD
+echo [ 33 ] [37m◙[32m Corrigindo arquivos do Windows
+echo [ 34 ] [37m◙[32m Arquivos temporários
+echo [ 35 ] [37m◙[32m Remoção de Bloatwares e programas indesejados
+echo [ 36 ] [37m◙[32m Instalar o Windows 11 com Conta Local (sem conexão obrigatória)
+echo [ 37 ] [37m◙[32m Configurações Importantes na BIOS/UEFI
+echo [ 38 ] [37m◙[32m Criar Quick Launch
+echo [ 39 ] [37m◙[32m Teclas de atalho do Windows
+echo [ 40 ] [37m◙[32m Curso gratuito Windows Rápido e Seguro 2.0
+echo [ 41 ] [37m◙[32m Flash USB inicializáveis (softwares)
+echo [ 42 ] [37m◙[32m MBR Filter
+echo [ 43 ] [37m◙[32m Instalação do Kali Linux no Windows via WSL
+echo [ 44 ] [37m◙[32m Monitoramento de Segurança com o Visualizador de Eventos
+echo [ 45 ] [37m◙[32m Ativação do Super God Mode
 echo [0m
 echo [94m ◙ COMANDO [37m ◙ GUIA[0m 
 echo.
 echo [ [97mG[0m ] [97mAcessar Código Fonte no GitHub[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-43, G ou E):[93m 
+set /p choice=Digite a sua escolha (1-45, G ou E):[93m 
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto enable_f8
@@ -90,42 +92,44 @@ if /i "%choice%"=="4" goto create_restore_point
 if /i "%choice%"=="5" goto enable_unlimited_restore_points
 if /i "%choice%"=="6" goto clean_temp_files
 if /i "%choice%"=="7" goto sfc_scan
-if /i "%choice%"=="8" goto reboot_normal
-if /i "%choice%"=="9" goto shutdown
-if /i "%choice%"=="10" goto lock_screen
-if /i "%choice%"=="11" goto task_manager
-if /i "%choice%"=="12" goto open_gd
-if /i "%choice%"=="13" goto open_godmode
-if /i "%choice%"=="14" goto open_lixeira
-if /i "%choice%"=="15" goto system_info
-if /i "%choice%"=="16" goto msconfig
-if /i "%choice%"=="17" goto event_viewer
-if /i "%choice%"=="18" goto uninstall_programs
-if /i "%choice%"=="19" goto open_optwin
-if /i "%choice%"=="20" goto monitor_eventos
-if /i "%choice%"=="21" goto winupdate_history
-if /i "%choice%"=="22" goto conexoes_redes
-if /i "%choice%"=="23" goto display_dns
-if /i "%choice%"=="24" goto flush_dns
-if /i "%choice%"=="25" goto firefox_dns
-if /i "%choice%"=="26" goto chrome_dns
-if /i "%choice%"=="27" goto open_appsfolder
-if /i "%choice%"=="28" goto open_quicklaunch
-if /i "%choice%"=="29" goto a_vm
-if /i "%choice%"=="30" goto d_vm
-if /i "%choice%"=="31" goto v_armazen
-if /i "%choice%"=="32" goto win_chkdsk
-if /i "%choice%"=="33" goto temp_files
-if /i "%choice%"=="34" goto r_bloatwares
-if /i "%choice%"=="35" goto win11_cl
-if /i "%choice%"=="36" goto config_bios
-if /i "%choice%"=="37" goto create_quicklaunch
-if /i "%choice%"=="38" goto windows_keys
-if /i "%choice%"=="39" goto wrs_2
-if /i "%choice%"=="40" goto usb_boot_tools
-if /i "%choice%"=="41" goto mbr_filter
-if /i "%choice%"=="42" goto win_wsl
-if /i "%choice%"=="43" goto v_eventos
+if /i "%choice%"=="8" goto open_guser
+if /i "%choice%"=="9" goto reboot_normal
+if /i "%choice%"=="10" goto shutdown
+if /i "%choice%"=="11" goto lock_screen
+if /i "%choice%"=="12" goto task_manager
+if /i "%choice%"=="13" goto open_gd
+if /i "%choice%"=="14" goto open_godmode
+if /i "%choice%"=="15" goto open_lixeira
+if /i "%choice%"=="16" goto system_info
+if /i "%choice%"=="17" goto msconfig
+if /i "%choice%"=="18" goto event_viewer
+if /i "%choice%"=="19" goto uninstall_programs
+if /i "%choice%"=="20" goto open_optwin
+if /i "%choice%"=="21" goto monitor_eventos
+if /i "%choice%"=="22" goto winupdate_history
+if /i "%choice%"=="23" goto conexoes_redes
+if /i "%choice%"=="24" goto display_dns
+if /i "%choice%"=="25" goto flush_dns
+if /i "%choice%"=="26" goto firefox_dns
+if /i "%choice%"=="27" goto chrome_dns
+if /i "%choice%"=="28" goto open_appsfolder
+if /i "%choice%"=="29" goto open_quicklaunch
+if /i "%choice%"=="30" goto a_vm
+if /i "%choice%"=="31" goto d_vm
+if /i "%choice%"=="32" goto v_armazen
+if /i "%choice%"=="33" goto win_chkdsk
+if /i "%choice%"=="34" goto temp_files
+if /i "%choice%"=="35" goto r_bloatwares
+if /i "%choice%"=="36" goto win11_cl
+if /i "%choice%"=="37" goto config_bios
+if /i "%choice%"=="38" goto create_quicklaunch
+if /i "%choice%"=="39" goto windows_keys
+if /i "%choice%"=="40" goto wrs_2
+if /i "%choice%"=="41" goto usb_boot_tools
+if /i "%choice%"=="42" goto mbr_filter
+if /i "%choice%"=="43" goto win_wsl
+if /i "%choice%"=="44" goto v_eventos
+if /i "%choice%"=="45" goto super_godmode
 if /i "%choice%"=="G" goto github
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
@@ -169,6 +173,12 @@ goto menu
 :sfc_scan
 echo [0m
 cmd /c sfc /scannow
+pause
+goto menu
+
+:open_guser
+echo [0m
+powershell -command "Start-Process cmd.exe -ArgumentList '/c %~dp0cmd\open_guser.cmd' -Verb RunAs"
 pause
 goto menu
 
@@ -388,6 +398,12 @@ cmd /c start "" "%~dp0docs\v_eventos.txt"
 pause
 goto menu
 
+:super_godmode
+echo [0m
+cmd /c start "" "%~dp0docs\super_godmode.txt"
+pause
+goto menu
+
 :github
 echo [0m
 start https://github.com/ravenastar-js/wintools
@@ -397,6 +413,6 @@ goto menu
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 43, ou E.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 45, ou E.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu

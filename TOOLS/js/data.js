@@ -7,6 +7,7 @@ var menuOptions = [
     { label: '\x1b[94m◙\x1b[32m Habilitar ponto de restauração ilimitado', cmd: 'enable_unlimited_restore_points', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\enable_unlimited_restore_points.cmd\' -Verb RunAs"' },
     { label: '\x1b[94m◙\x1b[32m Limpar arquivos temporários', cmd: 'clean_temp_files', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\clean_temp_files.cmd\' -Verb RunAs"' },
     { label: '\x1b[94m◙\x1b[32m Verificar arquivos de sistema', cmd: 'sfc_scan', script: 'cmd /c sfc /scannow' },
+    { label: '\x1b[94m◙\x1b[32m Gerenciar contas de usuário', cmd: 'open_guser', script: 'powershell -command "Start-Process cmd.exe -ArgumentList \'/c %~dp0cmd\\open_guser.cmd\' -Verb RunAs"' },
 
     // ========== GERENCIAMENTO DE ENERGIA ==========
     { label: '\x1b[94m◙\x1b[32m Reiniciar o dispositivo normalmente', cmd: 'reboot_normal', script: 'cmd /c %~dp0cmd\\reboot_normal.cmd' },
