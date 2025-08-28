@@ -1,0 +1,50 @@
+🛡️ Comparativo: MRT vs Antivírus no Windows  
+------------------------------------------------------------
+
+📚 Categoria: Segurança / Diagnóstico / Windows  
+🔧 Formação: Básica a Intermediária  
+💻 Sistema: Windows 10 / 11 com acesso ao PowerShell ou Executar
+
+------------------------------------------------------------
+
+🔧 O que é o MRT (Malicious Software Removal Tool)
+
+1. Ferramenta nativa do Windows para remoção de malwares específicos.
+2. Atualizada mensalmente via Windows Update.
+3. Executa verificações pontuais (rápida, completa ou personalizada).
+4. Não possui proteção em tempo real.
+
+💡 Como abrir:
+   Pressione Win + R → digite: mrt → pressione Enter
+
+💡 Via script:
+   start mrt.exe
+
+------------------------------------------------------------
+
+🧠 Diferenças entre MRT e Antivírus
+
+1. O MRT não oferece proteção em tempo real, ele apenas escaneia sob demanda.  
+2. O MRT detecta um conjunto limitado de malwares conhecidos.  
+3. Antivírus modernos protegem contra uma variedade maior de ameaças (vírus, trojans, ransomwares).  
+4. Antivírus funcionam continuamente em segundo plano, enquanto o MRT precisa ser executado manualmente.  
+5. O MRT é ideal como verificação complementar, mas não substitui um antivírus completo.  
+6. Antivírus incluem recursos extras como firewall, proteção web, sandbox e controle de aplicativos.  
+7. O MRT não protege contra ameaças zero-day, pois depende de assinaturas já conhecidas.  
+8. Antivírus com heurística e análise comportamental são mais eficazes contra ataques desconhecidos e emergentes.
+
+------------------------------------------------------------
+
+✅ Quando usar o MRT
+
+- Após suspeita de infecção que o antivírus não detectou.  
+- Como verificação extra mensal (ele é atualizado com o Windows Update).  
+- Em ambientes corporativos como camada adicional de segurança.  
+
+------------------------------------------------------------
+
+⚠️ Aviso sobre o uso do MRT
+
+O MRT é útil para eliminar malwares persistentes que passaram pelas defesas do antivírus comum, mas não substitui uma solução completa de segurança
+
+------------------------------------------------------------

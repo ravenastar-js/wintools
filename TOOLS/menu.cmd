@@ -77,13 +77,14 @@ echo [ 42 ] [37m◙[32m MBR Filter
 echo [ 43 ] [37m◙[32m Instalação do Kali Linux no Windows via WSL
 echo [ 44 ] [37m◙[32m Monitoramento de Segurança com o Visualizador de Eventos
 echo [ 45 ] [37m◙[32m Ativação do Super God Mode
+echo [ 46 ] [37m◙[32m MRT vs Antivírus no Windows
 echo [0m
 echo [94m ◙ COMANDO [37m ◙ GUIA[0m 
 echo.
 echo [ [97mG[0m ] [97mAcessar Código Fonte no GitHub[0m
 echo [ [91mE[0m ] [91mSair - Sai do script.[32m
 echo ==================================================
-set /p choice=Digite a sua escolha (1-45, G ou E):[93m 
+set /p choice=Digite a sua escolha (1-46, G ou E):[93m 
 
 if /i "%choice%"=="1" goto reboot_bios
 if /i "%choice%"=="2" goto enable_f8
@@ -130,6 +131,7 @@ if /i "%choice%"=="42" goto mbr_filter
 if /i "%choice%"=="43" goto win_wsl
 if /i "%choice%"=="44" goto v_eventos
 if /i "%choice%"=="45" goto super_godmode
+if /i "%choice%"=="46" goto win_MRT
 if /i "%choice%"=="G" goto github
 if /i "%choice%"=="E" goto exit
 goto invalid_choice
@@ -404,6 +406,12 @@ cmd /c start "" "%~dp0docs\super_godmode.txt"
 pause
 goto menu
 
+:win_MRT
+echo [0m
+cmd /c start "" "%~dp0docs\win_MRT.txt"
+pause
+goto menu
+
 :github
 echo [0m
 start https://github.com/ravenastar-js/wintools
@@ -413,6 +421,6 @@ goto menu
 :exit
 exit
 :invalid_choice
-powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 45, ou E.', 'Erro', 'OK', 'Error')}"
+powershell -command "& {Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Escolher entre 1 a 46, ou E.', 'Erro', 'OK', 'Error')}"
 pause
 goto menu

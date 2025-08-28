@@ -56,7 +56,8 @@ var menuOptions = [
     { label: '\x1b[37m◙\x1b[32m MBR Filter', cmd: 'mbr_filter', script: 'cmd /c start "" "%~dp0docs\\mbr_filter.txt"' },
     { label: '\x1b[37m◙\x1b[32m Instalação do Kali Linux no Windows via WSL', cmd: 'win_wsl', script: 'cmd /c start "" "%~dp0docs\\win_wsl.txt"' },
     { label: '\x1b[37m◙\x1b[32m Monitoramento de Segurança com o Visualizador de Eventos', cmd: 'v_eventos', script: 'cmd /c start "" "%~dp0docs\\v_eventos.txt"' },
-    { label: '\x1b[37m◙\x1b[32m Ativação do Super God Mode', cmd: 'super_godmode', script: 'cmd /c start "" "%~dp0docs\\super_godmode.txt"' }
+    { label: '\x1b[37m◙\x1b[32m Ativação do Super God Mode', cmd: 'super_godmode', script: 'cmd /c start "" "%~dp0docs\\super_godmode.txt"' },
+    { label: '\x1b[37m◙\x1b[32m MRT vs Antivírus no Windows', cmd: 'win_MRT', script: 'cmd /c start "" "%~dp0docs\\win_MRT.txt"' }
 ];
 
 var NameAndSite = "github.com/ravenastar-js/wintools"
